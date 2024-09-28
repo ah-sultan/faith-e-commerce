@@ -54,6 +54,7 @@ BASE CSS START
 body {
   font-family: var(--font-body);
   line-height: 1.5;
+  position: relative;
 }
 ul,
 li,
@@ -314,7 +315,7 @@ p {
 ANNOUNCE BAR START
 ======================== */
 .announcement-bar {
-  position: fixed;
+  position: absolute;
   z-index: 20;
   top: 0;
   width: 100%;
@@ -376,7 +377,7 @@ HEADER SECTION START
   --color-foreground: #fff;
   padding: 24px 0px;
   border-bottom: 1px solid rgb(255, 255, 255, 0.2);
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 60px;
   z-index: 20;

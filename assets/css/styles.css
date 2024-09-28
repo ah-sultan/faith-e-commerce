@@ -231,6 +231,31 @@ p {
   }
 }
 
+/* =========================
+ SECTION Caption 
+ ========================== */
+.section-caption .section-heading {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 120%;
+  color: var(--color-heading);
+}
+
+.section-caption .section-heading span {
+  color: #bffd3b;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-heading);
+}
+.section-caption .section-desc {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 150%;
+  color: var(--color-foreground);
+}
+
 /* ========================
  SWIPER MODULES
 ======================== */
@@ -383,7 +408,7 @@ ANNOUNCE BAR START
   fill: var(--color-foreground);
 }
 
-.announce-bar-swipper{
+.announce-bar-swipper {
   height: 543px;
 }
 
@@ -546,7 +571,7 @@ HEADER SECTION START
 /* ========================
 HERO SECTION START
 ======================== */
-.hero .hero-wrapper {
+.hero-wrapper {
   --color-foreground: #fff;
   padding-top: 280px;
   padding-bottom: 155px;
@@ -556,7 +581,7 @@ HERO SECTION START
   position: relative;
 }
 
-.hero .hero-heading {
+.hero-heading {
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 700;
@@ -566,7 +591,7 @@ HERO SECTION START
   text-shadow: 0px 0px 4px var(--color-shadow);
 }
 
-.hero .hero-heading span {
+.hero-heading span {
   color: transparent;
   -webkit-text-stroke: 2px var(--color-foreground);
   text-shadow: transparent;

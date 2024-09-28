@@ -12,6 +12,49 @@ marqueSlider.forEach((slide) => {
 });
 
 // =====================
+// ANNOUNCE BAR
+
+const announcementBar = document.getElementById("announcement-bar");
+const announcementBarToggler = document.getElementById(
+  "announcement-bar-toggler"
+);
+const announcementBarDrawer = document.getElementById(
+  "announcement-bar-drawer"
+);
+
+// Default Style announcement Bar Drawer
+announcementBarDrawer.style.display = "none";
+announcementBarDrawer.style.transform = "translateY(-100%)";
+
+console.log(announcementBarDrawer.clientHeight);
+
+announcementBarToggler.addEventListener("click", () => {
+  if (announcementBarToggler.classList.contains("show")) {
+    announcementBarToggler.classList.remove("show");
+    announcementBarDrawer.style.transform = "translateY(-100%)";
+    setTimeout(() => {
+      announcementBarDrawer.style.display = "none";
+    }, 700);
+  } else {
+    announcementBarDrawer.style.display = "block";
+    announcementBarToggler.classList.add("show");
+    setTimeout(() => {
+      announcementBarDrawer.style.transform = "translateY(0%)";
+    }, 100);
+  }
+});
+
+const announceBarSwiper = new Swiper(".announce-bar-swipper", {
+  loop: true,
+  direction: "vertical",
+  speed: 700,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+// =====================
 // HERO SECTION START
 
 const heroSwiper = new Swiper(".hero-swipper", {
@@ -26,3 +69,6 @@ const heroSwiper = new Swiper(".hero-swipper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// =====================
+// HERO SECTION START

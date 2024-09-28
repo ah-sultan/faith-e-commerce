@@ -64,7 +64,7 @@ ol {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: currentColor;
 }
 
 button {
@@ -78,7 +78,7 @@ button {
 
 svg,
 path {
-  fill: inherit;
+  fill: currentColor;
   transition: all ease-in 0.3s;
   -webkit-transition: all ease-in 0.3s;
   -moz-transition: all ease-in 0.3s;
@@ -98,6 +98,15 @@ input {
   border: 0;
   outline: 0;
   display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
 }
 
 /* ========================
@@ -170,7 +179,6 @@ p {
   gap: 4px;
   background: var(--color-primary-button);
   color: var(--color-primary-button-text);
-  fill: var(--color-primary-button-text);
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -181,19 +189,16 @@ p {
 .secondary-button {
   background: var(--color-secondary-button);
   color: var(--color-secondary-button-text);
-  fill: var(--color-secondary-button-text);
 }
 
 .primary-button:hover {
   background: var(--color-primary-button-hover);
   color: var(--color-primary-button-hover-text);
-  fill: var(--color-primary-button-hover-text);
 }
 
 .secondary-button:hover {
   background: var(--color-secondary-button-hover);
   color: var(--color-secondary-button-hover-text);
-  fill: var(--color-secondary-button-hover-text);
 }
 
 .marquee-slider {
@@ -249,7 +254,7 @@ p {
   width: 40px;
   height: 40px;
   border: 1px solid var(--color-primary-button-outline);
-  fill: var(--color-primary-button-outline);
+  color: var(--color-primary-button-outline);
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -268,7 +273,6 @@ p {
   border-color: var(--color-primary-button-outline-hover);
   background: var(--color-primary-button-hover);
   color: var(--color-primary-button-hover-text);
-  fill: var(--color-primary-button-hover-text);
 }
 
 .swiper-pagination {
@@ -316,15 +320,18 @@ ANNOUNCE BAR START
 ======================== */
 .announcement-bar {
   position: absolute;
-  z-index: 20;
+  z-index: 900;
   top: 0;
   width: 100%;
   --color-background: #020714;
+  --color-foreground: #fff;
+}
+
+.announcement-bar-header {
   background: var(--color-background);
 }
 
 .announcement-bar-wrapper {
-  --color-foreground: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -337,15 +344,17 @@ ANNOUNCE BAR START
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.announcement-bar-social path {
   fill: var(--color-foreground);
 }
 
-.announcement-bar-social li:hover path {
+.announcement-bar-social svg:hover path {
   fill: var(--color-accent);
 }
 
 .announcement-bar-toggler {
-  fill: var(--color-foreground);
   --color-foreground: #ffff;
   color: var(--color-foreground);
   background: transparent;
@@ -361,6 +370,10 @@ ANNOUNCE BAR START
   -o-border-radius: 20px;
   margin-left: 16px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.5;
 }
 .announcement-bar-toggler:hover,
 .announcement-bar-toggler:hover path {
@@ -368,6 +381,83 @@ ANNOUNCE BAR START
   background: var(--color-accent);
   color: var(--color-foreground);
   fill: var(--color-foreground);
+}
+
+.announce-bar-swipper{
+  height: 543px;
+}
+
+.announcement-bar-drawer {
+  background: url("../images/announcement-bar/bg.png");
+  background-position: center center;
+  background-size: contain;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  display: none;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+}
+.announcement-bar-drawer-wrapper {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  position: relative;
+}
+
+.announcement-bar-drawer-content {
+  padding-left: 122px;
+  color: var(--color-foreground);
+}
+
+.announcement-bar-drawer-content h6 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+.announcement-bar-drawer-content h3 {
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 100%;
+  color: #bffd3b;
+  padding-top: 12px;
+  padding-bottom: 20px;
+}
+
+.announcement-bar-drawer-content p {
+  padding-bottom: 48px;
+}
+
+.announcement-bar-drawer-images img {
+  max-width: 524px;
+}
+
+.announcement-bar-drawer .swiper-navigation {
+  --color-primary-button-outline: #fff;
+  --color-primary-button-text: #fff;
+  --color-primary-button: #fff;
+  --color-primary-button-hover: #fff;
+  --color-primary-button-hover-text: #020713;
+  --color-primary-button-outline-hover: #fff;
+
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  justify-content: space-between;
+  z-index: 40;
 }
 
 /* ========================

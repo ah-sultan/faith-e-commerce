@@ -46,11 +46,17 @@ announcementBarToggler.addEventListener("click", () => {
 
 const announceBarSwiper = new Swiper(".announce-bar-swipper", {
   loop: true,
-  direction: "vertical",
+
   speed: 700,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    992: {
+      direction: "vertical",
+    },
   },
 });
 

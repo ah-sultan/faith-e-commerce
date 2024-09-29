@@ -63,56 +63,35 @@ const announceBarSwiper = new Swiper(".announce-bar-swipper", {
 // =====================
 // HEADER SECTION START
 
-// Header Drawer
-const hasDropDownItem = document.querySelectorAll(".has-dropdown-menu");
+(function () {
+  const header = document.getElementById("header");
+  let lastScrollY = 0;
+  window.addEventListener("scroll", () => {
+    let currentScrollY = window.pageYOffset;
 
-/* 
-gsap.set(".header-menu-drawer", {
-  overflow: "hidden",
-  visibility: "hidden",
-});
+    if (window.pageYOffset > 40) {
+      if (currentScrollY < lastScrollY) {
+        // User is scrolling up
+        header.classList.add("sticky-header");
+      } else {
+        // User is scrolling down
+        header.classList.remove("sticky-header");
+      }
+    } else {
+      header.classList.remove("sticky-header");
+    }
 
-gsap.set(".header-menu-drawer-wrapper", {
-  yPercent: -150,
-});
-
-
-hasDropDownItem.forEach((item) => {
-  // MOUSE ENTER
-  item.addEventListener("mouseenter", () => {
-    gsap.to(item.querySelector(".header-menu-drawer"), {
-      duration: 0.3,
-      visibility: "visible",
-    });
-
-    gsap.to(item.querySelector(".header-menu-drawer-wrapper"), {
-      yPercent: 0,
-      duration: 0.3,
-      overflow: "visible",
-    });
+    lastScrollY = currentScrollY;
   });
-  // MOUSE LEAVE
-  item.addEventListener("mouseleave", () => {
-    gsap.to(item.querySelector(".header-menu-drawer-wrapper"), {
-      yPercent: -150,
-      duration: 0.3,
-    });
-
-    gsap.to(item.querySelector(".header-menu-drawer"), {
-      visibility: "hidden",
-      overflow: "hidden",
-      delay: 0.4,
-    });
-  });
-});
-
-*/
+})();
 
 // =====================
 // HERO SECTION START
 
-const heroSwiper = new Swiper(".hero-swipper", {
+const heroSwiper = new Swiper(".slideshow-swipper", {
   loop: true,
+
+  speed: 700,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

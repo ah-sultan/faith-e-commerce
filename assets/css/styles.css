@@ -787,13 +787,46 @@ HEADER SECTION START
 ======================== */
 .header {
   --color-foreground: var(--color-heading);
+  --color-border: rgb(255, 255, 255, 0.2);
   padding: 16px 0px;
-  border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--color-border);
   position: absolute;
   width: 100%;
   top: 60px;
-  z-index: 20;
+  z-index: 9999;
   background: var(--color-background);
+}
+.header.sticky-header {
+  --color-foreground: var(--color-heading);
+  --color-border: #ddd;
+  background: var(--color-background);
+  fill: var(--color-foreground);
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 2px 20px rgba(57, 57, 57, 0.1);
+  animation: stickyHeader 0.3s ease-in;
+  -webkit-animation: stickyHeader 0.3s ease-in-out;
+}
+
+body {
+  padding-bottom: 3000px;
+}
+
+@keyframes stickyHeader {
+  0% {
+    transform: translateY(-120%);
+    -webkit-transform: translateY(-120%px);
+    -moz-transform: translateY(-120%px);
+    -ms-transform: translateY(-120%px);
+    -o-transform: translateY(-120%px);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
 }
 
 .header-warpper {
@@ -803,6 +836,7 @@ HEADER SECTION START
 @media screen and (min-width: 1200px) {
   .header {
     --color-foreground: #fff;
+
     padding: 0px 0px;
     background: transparent;
   }
@@ -819,6 +853,7 @@ HEADER SECTION START
 
 header:hover {
   --color-foreground: var(--color-heading);
+  --color-border: #e3e3e3;
   background: var(--color-background);
   fill: var(#000);
 }
@@ -1042,16 +1077,17 @@ SUBMENU MENU SECTION START
 }
 
 .header .has-submenu .header-submenu-wrapper {
-  transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
+  transform: translateY(-150%);
+  -webkit-transform: translateY(-150%);
+  -moz-transform: translateY(-150%);
+  -ms-transform: translateY(-150%);
+  -o-transform: translateY(-150%);
+  transition-delay: 0.2s;
+  transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
 }
 
 .header .has-submenu:hover > .header-submenu > .header-submenu-wrapper {
@@ -1090,17 +1126,20 @@ MEGA MENU SECTION
 
 .header-magamenu {
   --background-color: #fbfcff;
-
   min-width: inherit;
   width: 100%;
   left: 0;
   right: 0;
   top: 100%;
-  background: var(--background-color);
 }
 
 .header-magamenu .header-submenu-wrapper {
   margin-top: 0;
+  border-radius: 0px 0px 24px 24px;
+  -webkit-border-radius: 0px 0px 24px 24px;
+  -moz-border-radius: 0px 0px 24px 24px;
+  -ms-border-radius: 0px 0px 24px 24px;
+  -o-border-radius: 0px 0px 24px 24px;
 }
 
 .header-magamenu .header-submenu-wrapper::after {
@@ -1174,7 +1213,15 @@ MEGA MENU SECTION
 }
 
 .header-megamenu-banner .banner-title {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 992px) {
+  .header-megamenu-banner .banner-title {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
 }
 .header-megamenu-banner .megamenu-banner-image {
   border-radius: 24px;
@@ -1240,11 +1287,17 @@ MEGA MENU SECTION
 /* MEGA PRODUCTS  */
 .megamenu-collection-product-list li {
   display: grid;
-  grid-template-columns: 116px auto;
+  grid-template-columns: 80px auto;
   column-gap: 12px;
   margin-bottom: 24px;
   align-items: center;
   --product-image-radius: 12px;
+}
+
+@media screen and (min-width: 1400px) {
+  .megamenu-collection-product-list li {
+    grid-template-columns: 116px auto;
+  }
 }
 
 .megamenu-collection-product-list li:last-child {
@@ -1264,19 +1317,23 @@ MEGA MENU SECTION
 }
 
 /* ========================
-HERO SECTION START
+SLIDESHOW SECTION START
 ======================== */
-.hero-wrapper {
+.slideshow-section {
   --color-foreground: #fff;
-  padding-top: 280px;
-  padding-bottom: 155px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 }
 
-.hero-heading {
+.slideshow-content {
+  position: absolute;
+  top: 280px;
+  left: 0;
+}
+
+.slideshow-content-wrapper {
+  width: 560px;
+  max-width: 100%;
+}
+.slideshow-heading {
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 700;
@@ -1284,35 +1341,75 @@ HERO SECTION START
   line-height: 110%;
   color: var(--color-foreground);
   text-shadow: 0px 0px 4px var(--color-shadow);
+  opacity: 0;
+  transform: translate(20%, 20%);
+  -webkit-transform: translate(20%, 20%);
+  -moz-transform: translate(20%, 20%);
+  -ms-transform: translate(20%, 20%);
+  -o-transform: translate(20%, 20%);
+  transition: all ease-in-out 0.4s;
+  -webkit-transition: all ease-in-out 0.4s;
+  -moz-transition: all ease-in-out 0.4s;
+  -ms-transition: all ease-in-out 0.4s;
+  -o-transition: all ease-in-out 0.4s;
 }
 
-.hero-heading span {
+.slideshow-section .swiper-slide-active .slideshow-heading {
+  opacity: 1;
+  transition-delay: 0.8s;
+  transform: translate(0%, 0%);
+  -webkit-transform: translate(0%, 0%);
+  -moz-transform: translate(0%, 0%);
+  -ms-transform: translate(0%, 0%);
+  -o-transform: translate(0%, 0%);
+}
+
+.slideshow-heading span {
   color: transparent;
   -webkit-text-stroke: 2px var(--color-foreground);
   text-shadow: transparent;
 }
 
-.hero-desc {
+.slideshow-desc {
   font-size: 20px;
   line-height: 150%;
   color: var(--color-foreground);
   padding: 48px 0;
 }
 
-.hero-swiper-modules {
-  position: absolute;
-  bottom: 48px;
-  z-index: 300;
-  width: 100%;
-}
-
-.hero-swiper-modules {
+.slideshow-swiper-elements {
   --color-primary-button: #fff;
   --color-primary-button-text: #fff;
   --color-primary-button-hover: #fff;
   --color-primary-button-hover-text: #020714;
   --color-primary-button-outline: #fff;
   --color-primary-button-outline-hover: #fff;
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  width: 100%;
+}
+
+.slideshow-swiper-elements .swiper-elements-wrapper {
+  position: relative;
+}
+
+.slideshow-swiper-elements .swiper-pagination {
+  position: absolute;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.slideshow-swiper-elements .swiper-navigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /* ========================

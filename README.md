@@ -1,1 +1,1 @@
-# faith-e-commerce
+@media screen and (min-width: 992px) {}

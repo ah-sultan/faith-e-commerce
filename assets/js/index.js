@@ -61,6 +61,54 @@ const announceBarSwiper = new Swiper(".announce-bar-swipper", {
 });
 
 // =====================
+// HEADER SECTION START
+
+// Header Drawer
+const hasDropDownItem = document.querySelectorAll(".has-dropdown-menu");
+
+/* 
+gsap.set(".header-menu-drawer", {
+  overflow: "hidden",
+  visibility: "hidden",
+});
+
+gsap.set(".header-menu-drawer-wrapper", {
+  yPercent: -150,
+});
+
+
+hasDropDownItem.forEach((item) => {
+  // MOUSE ENTER
+  item.addEventListener("mouseenter", () => {
+    gsap.to(item.querySelector(".header-menu-drawer"), {
+      duration: 0.3,
+      visibility: "visible",
+    });
+
+    gsap.to(item.querySelector(".header-menu-drawer-wrapper"), {
+      yPercent: 0,
+      duration: 0.3,
+      overflow: "visible",
+    });
+  });
+  // MOUSE LEAVE
+  item.addEventListener("mouseleave", () => {
+    gsap.to(item.querySelector(".header-menu-drawer-wrapper"), {
+      yPercent: -150,
+      duration: 0.3,
+    });
+
+    gsap.to(item.querySelector(".header-menu-drawer"), {
+      visibility: "hidden",
+      overflow: "hidden",
+      delay: 0.4,
+    });
+  });
+});
+
+*/
+
+// =====================
 // HERO SECTION START
 
 const heroSwiper = new Swiper(".hero-swipper", {

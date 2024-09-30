@@ -154,7 +154,9 @@ UTILITIES SECTION START
   .container {
     --container-width: 1440px;
     --container-px: 24px;
-    max-width: calc(1440 + var(--container-px) + var(--container-px));
+    max-width: calc(
+      var(--container-width) + var(--container-px) + var(--container-px)
+    );
   }
 }
 
@@ -545,7 +547,7 @@ ANNOUNCE BAR START
 ======================== */
 .announcement-bar {
   position: absolute;
-  z-index: 900;
+  z-index: 99999;
   top: 0;
   width: 100%;
   --color-background: #020714;
@@ -1150,7 +1152,7 @@ MEGA MENU SECTION
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  padding: 60px;
+  padding: 60px 0px;
 }
 
 .header-megamenu-list {

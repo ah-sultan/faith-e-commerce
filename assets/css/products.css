@@ -1,0 +1,443 @@
+/* ========================
+ PRODUCT COMMON CSS
+  ======================== */
+
+.product-add-cart-outline-button {
+  --color-background: "#fff";
+  --color-foreground: var(--color-heading);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  position: relative;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-add-cart-outline-button.is-loading,
+.product-add-cart-outline-button:hover {
+  --color-background: var(--color-heading);
+  --color-border: var(--color-heading);
+  --color-foreground: #fff;
+}
+
+.product-add-cart-outline-button.is-loading .spinner {
+  background-color: var(--color-background);
+  --spinner-ratio: 2rem;
+  opacity: 1;
+}
+
+/* ======================
+PRODUCT SIZE VARIANT 
+======================== */
+.product-size-variant {
+  --size-variant-gap: 1.8rem;
+  --size-variant-px: 1.6rem;
+  --size-variant-py: 0.8rem;
+  --size-variant-font-size: 1.6rem;
+}
+
+.product-size-variant-list {
+  display: flex;
+  align-items: center;
+  gap: var(--size-variant-gap);
+}
+
+.product-size-variant li {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: var(--size-variant-py) var(--size-variant-px);
+  border: 1px solid var(--color-border);
+  border-radius: 10rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--size-variant-font-size);
+  line-height: 100%;
+  color: var(--color-foreground);
+  position: relative;
+}
+
+.product-size-variant li input {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+.product-size-variant li.selected,
+.product-size-variant li:hover {
+  --color-border: var(--color-heading);
+  background-color: var(--color-heading);
+  --color-foreground: var(--color-background);
+}
+/* ======================
+PRODUCT COLOR VARIANT 
+======================== */
+.product-color-variant ul {
+  --color-variant-gap: 1.8rem;
+  --color-variant-ratio: 4rem;
+  --color-radio-gap: 0.8rem;
+  display: flex;
+  column-gap: calc(var(--color-variant-gap) - var(--color-radio-gap));
+}
+.product-color-variant ul li {
+  cursor: pointer;
+  --color-variant-color: #000;
+  width: var(--color-variant-ratio);
+  height: var(--color-variant-ratio);
+  border: 2px solid transparent;
+  background: transparent;
+  position: relative;
+  z-index: 30;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.product-color-variant ul li::after {
+  cursor: pointer;
+  position: absolute;
+  content: "";
+  display: block;
+  top: var(--color-radio-gap);
+  left: var(--color-radio-gap);
+  bottom: var(--color-radio-gap);
+  right: var(--color-radio-gap);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  background: var(--color-variant-color);
+}
+
+.product-color-variant ul li.selected,
+.product-color-variant ul li:hover {
+  border-color: var(--color-variant-color);
+}
+.product-color-variant ul li input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.product-color-variant ul li label {
+  cursor: pointer;
+  --color-background: #020714;
+  position: absolute;
+  bottom: 100%;
+  opacity: 0;
+  left: 50%;
+  width: fit-content;
+  display: block;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  background: var(--color-background);
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: #ffffff;
+  padding: 0.2rem 0.2rem;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.product-color-variant ul li:hover label {
+  bottom: calc(100% + 1rem);
+  opacity: 1;
+}
+
+.product-color-variant ul li label::after {
+  content: "";
+  display: block;
+  background-color: var(--color-background);
+  bottom: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  rotate: 45%;
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  rotate: 45deg;
+  z-index: -1;
+}
+
+/* ========================
+ Products Card
+  ======================== */
+
+.product-card * {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+/* PRODUCT IMAGE WRAPPER */
+.product-card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+.product-card-image-wrapper .product-images img {
+  width: 100%;
+  max-width: 100%;
+  background: var(--color-background);
+}
+
+.product-card:hover
+  .product-card-image-wrapper
+  .product-images
+  img:first-child {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  opacity: 0;
+}
+
+.product-card-image-wrapper .product-images img:last-child {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0%;
+  z-index: 1;
+  left: -100%;
+  opacity: 0;
+}
+
+.product-card:hover .product-card-image-wrapper .product-images img:last-child {
+  left: 0;
+  opacity: 1;
+}
+
+/* BADGE CSS */
+.product-card-image-wrapper .badge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: fit-content;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  z-index: 20;
+}
+
+.product-card-image-wrapper .badge-list .badge {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* BUTTON WRAPPER */
+.product-card-quickview-button {
+  --quickview-button-ratio: 3.6rem;
+  --color-background: #fff;
+  --color-foreground: #020714;
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-foreground);
+  position: absolute;
+  width: var(--quickview-button-ratio);
+  height: var(--quickview-button-ratio);
+  right: -1.6rem;
+  top: -1.6rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  z-index: 20;
+  opacity: 0;
+}
+
+.product-card-quickview-button:hover {
+  --color-background: #020714;
+  --color-foreground: #fff;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+.product-card:hover .product-card-quickview-button {
+  right: 1.6rem;
+  opacity: 1;
+  top: 1.4rem;
+}
+
+/* PRODUCT SIZE BOX */
+.product-card .product-size-box {
+  --color-background: #fff;
+  position: absolute;
+  bottom: -2rem;
+  left: -2rem;
+  opacity: 0;
+  padding: 1rem 1.2rem;
+  background: var(--color-background);
+  border-radius: 1rem;
+  gap: 1rem;
+  z-index: 20;
+  min-width: 22.6rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.product-card:hover .product-size-box {
+  bottom: 2rem;
+  left: 2rem;
+  opacity: 1;
+}
+
+.product-card .product-size-box .box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-card .selected-size {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 150%;
+  color: var(--color-heading);
+}
+
+.product-card .selected-size span {
+  color: var(--color-foreground);
+}
+
+.product-card .product-size-box .product-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: var(--color-foreground);
+}
+
+.product-card .product-size-box .product-brand span {
+  color: var(--color-heading);
+}
+
+/* PRODUCT SIZE LIST */
+.product-card .product-size-variant {
+  padding-top: 1rem;
+  --size-variant-gap: 1rem;
+  --size-variant-px: 1rem;
+  --size-variant-py: 0.6rem;
+  --size-variant-font-size: 1.2rem;
+}
+
+/* PRODUCT COUNTDOWN TIMER  */
+.product-card-countdown {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  --color-background: var(--color-accent);
+  background: var(--color-background);
+  font-family: var(--font-display);
+  color: var(--color-heading);
+  padding: 0.4rem 0rem;
+  gap: 1.2rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.product-card-countdown b {
+  font-weight: 600;
+}
+
+.product-card-image .count-down ul li {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: var(--color-heading);
+}
+.product-card-image .count-down ul .time {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: var(--color-heading);
+}
+
+.product-card-body {
+  display: flex;
+  gap: 1.6rem;
+  padding: 1.2rem 0.6rem;
+  justify-content: space-between;
+}
+
+/* COLOR LIST */
+.product-card .product-color-variant-list {
+  --color-variant-gap: 0.8rem;
+  --color-variant-ratio: 2rem;
+  --color-radio-gap: 0.4rem;
+  padding-bottom: 0.8rem;
+}
+
+.product-card-title {
+  color: var(--color-heading);
+  padding: 0.4rem 0;
+}
+
+.product-card-price {
+  font-size: 1.4rem;
+}

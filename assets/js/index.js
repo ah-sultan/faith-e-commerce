@@ -86,9 +86,9 @@ const announceBarSwiper = new Swiper(".announce-bar-swipper", {
 })();
 
 // =====================
-// HERO SECTION START
+// SLIDE SHOW SECTION SECTION START
 
-const heroSwiper = new Swiper(".slideshow-swipper", {
+const slideshowSwiper = new Swiper(".slideshow-swipper", {
   loop: true,
 
   speed: 700,
@@ -104,4 +104,38 @@ const heroSwiper = new Swiper(".slideshow-swipper", {
 });
 
 // =====================
-// HERO SECTION START
+// TABS SECTION START
+
+document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
+  const buttons = wrapper.querySelectorAll(".tabs-button");
+  const items = wrapper.querySelectorAll(".tabs-item");
+
+  // Check for an active button or set the first one as default
+  const activeButton = Array.from(buttons).find((button) =>
+    button.classList.contains("active")
+  );
+
+  if (activeButton) {
+    const tabId = activeButton.getAttribute("data-tab-item");
+    wrapper.querySelector(`.${tabId}`).classList.add("active");
+  } else {
+    // If no button is active, set the first button as active by default
+    if (buttons.length > 0) {
+      buttons[0].classList.add("active");
+      items[0].classList.add("active");
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Remove active class from all buttons and tab items within the current wrapper
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      items.forEach((item) => item.classList.remove("active"));
+
+      // Add active class to the clicked button and the corresponding tab item
+      button.classList.add("active");
+      const tabId = button.getAttribute("data-tab-item");
+      wrapper.querySelector(`.${tabId}`).classList.add("active");
+    });
+  });
+});

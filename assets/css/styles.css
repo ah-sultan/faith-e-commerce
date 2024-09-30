@@ -428,7 +428,7 @@ h6,
   display: flex;
   width: fit-content;
   align-items: center;
-  padding: 12px 20px;
+  padding: 8px 16px;
   gap: 4px;
   background: var(--color-primary-button);
   color: var(--color-primary-button-text);
@@ -437,6 +437,13 @@ h6,
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+}
+
+@media screen and (min-width: 576px) {
+  .primary-button,
+  .secondary-button {
+    padding: 12px 20px;
+  }
 }
 
 .secondary-button {
@@ -644,6 +651,7 @@ ANNOUNCE BAR START
 ======================== */
 .announcement-bar {
   z-index: 99999;
+  position: relative;
   top: 0;
   width: 100%;
   --color-background: #020714;
@@ -1538,7 +1546,7 @@ SLIDESHOW SECTION START
   padding: 3.2rem 0;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 576px) {
   .slideshow-desc {
     font-size: 2rem;
     line-height: 150%;

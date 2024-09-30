@@ -73,6 +73,10 @@ body {
   /* overflow-x: hidden !important; */
 }
 
+section {
+  background: var(--background-color);
+}
+
 ul,
 li,
 ol {
@@ -128,7 +132,7 @@ UTILITIES SECTION START
 .container {
   --container-px: 16px;
   --container-width: 100%;
-  max-width: 100%;
+  max-width: var(--container-width);
   padding-left: var(--container-px);
   padding-right: var(--container-px);
   margin: 0 auto;
@@ -247,7 +251,8 @@ h6,
 .h2,
 .h3,
 .h4,
-.h5, .h6{
+.h5,
+.h6 {
   font-family: var(--font-heading);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
@@ -638,12 +643,17 @@ h6,
 ANNOUNCE BAR START
 ======================== */
 .announcement-bar {
-  position: absolute;
   z-index: 99999;
   top: 0;
   width: 100%;
   --color-background: #020714;
   --color-foreground: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    position: absolute;
+  }
 }
 
 .announcement-bar-header {
@@ -884,12 +894,19 @@ HEADER SECTION START
   --color-border: rgb(255, 255, 255, 0.2);
   padding: 16px 0px;
   border-bottom: 1px solid var(--color-border);
-  position: absolute;
+  position: none;
   width: 100%;
   top: 60px;
   z-index: 9999;
   background: var(--color-background);
 }
+
+@media screen and (min-width: 1200px) {
+  .header {
+    position: absolute;
+  }
+}
+
 .header.sticky-header {
   --color-foreground: var(--color-heading);
   --color-border: #ddd;
@@ -1415,38 +1432,96 @@ SLIDESHOW SECTION START
 ======================== */
 .slideshow-section {
   --color-foreground: #fff;
+  background: #000;
+}
+
+.slideshow-desktop-banner {
+  display: none;
+  height: auto;
+}
+
+.slideshow-mobile-banner {
+  display: block;
+  height: auto;
+}
+
+.slideshow-image-wrapper img {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .slideshow-mobile-banner {
+    display: none;
+  }
+
+  .slideshow-desktop-banner {
+    display: block;
+  }
 }
 
 .slideshow-content {
   position: absolute;
   width: 100%;
-  top: 280px;
-  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+@media screen and (min-width: 1200px) {
+  .slideshow-content {
+    top: 14rem;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .slideshow-content {
+    top: 28rem;
+  }
 }
 
 .slideshow-content-wrapper {
-  width: 560px;
+  width: 100%;
   max-width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .slideshow-content-wrapper {
+    width: 61rem;
+    max-width: 100%;
+  }
 }
 .slideshow-heading {
   font-family: var(--font-heading);
   font-style: normal;
   font-weight: 700;
-  font-size: 120px;
+  font-size: 5.6rem;
   line-height: 110%;
   color: var(--color-foreground);
   text-shadow: 0px 0px 4px var(--color-shadow);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 575px) {
   .slideshow-heading {
-    font-size: 80px;
+    font-size: 10rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .slideshow-heading {
+    font-size: 8rem;
   }
 }
 
 @media screen and (min-width: 1536px) {
   .slideshow-heading {
-    font-size: 120px;
+    font-size: 12rem;
   }
 }
 
@@ -1457,10 +1532,18 @@ SLIDESHOW SECTION START
 }
 
 .slideshow-desc {
-  font-size: 20px;
+  font-size: 1.6rem;
   line-height: 150%;
   color: var(--color-foreground);
-  padding: 48px 0;
+  padding: 3.2rem 0;
+}
+
+@media screen and (min-width: 1400px) {
+  .slideshow-desc {
+    font-size: 2rem;
+    line-height: 150%;
+    padding: 4.8rem 0;
+  }
 }
 
 .slideshow-swiper-elements {
@@ -1471,9 +1554,15 @@ SLIDESHOW SECTION START
   --color-primary-button-outline: #fff;
   --color-primary-button-outline-hover: #fff;
   position: absolute;
-  bottom: 48px;
+  bottom: 2rem;
   left: 0;
   width: 100%;
+}
+
+@media screen and (min-width: 575px) {
+  .slideshow-swiper-elements {
+    bottom: 4.8rem;
+  }
 }
 
 .slideshow-swiper-elements .swiper-elements-wrapper {
@@ -1490,6 +1579,13 @@ SLIDESHOW SECTION START
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .slideshow-swiper-elements .swiper-pagination {
+    display: flex;
+  }
 }
 
 .slideshow-swiper-elements .swiper-navigation {

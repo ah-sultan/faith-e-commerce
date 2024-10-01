@@ -523,12 +523,12 @@ h6,
 }
 
 .single-button::after {
-  --background-color: var(--color-heading);
+  --color-background: var(--color-heading);
   content: "";
   display: block;
   width: 0%;
   height: 1px;
-  background: var(--background-color);
+  background: var(--color-background);
   position: absolute;
   left: 0;
   bottom: 0px;
@@ -1390,7 +1390,7 @@ MEGA MENU SECTION
 }
 
 .header-magamenu {
-  --background-color: #fbfcff;
+  --color-background: #fbfcff;
   min-width: inherit;
   width: 100%;
   left: 0;
@@ -2522,7 +2522,6 @@ COLLAGE GALLERY SECTION START
   }
 }
 
-
 .collage-gallery-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2676,7 +2675,7 @@ COLLAGE GALLERY SECTION START
 }
 
 .collage-gallery-media-button::after {
-  --background-color: #fbfcff;
+  --color-background: #fbfcff;
 }
 
 .collage-gallery-media-wrapper:hover .collage-gallery-media-content * {
@@ -2714,10 +2713,10 @@ COLLAGE GALLERY SECTION START
   display: none;
 }
 
-.collage-gallery-video-control.play .play-icon{
+.collage-gallery-video-control.play .play-icon {
   display: block;
 }
-.collage-gallery-video-control.pause .pause-icon{
+.collage-gallery-video-control.pause .pause-icon {
   display: block;
 }
 
@@ -2731,7 +2730,6 @@ COLLAGE GALLERY SECTION START
   inset: -0.8rem;
 }
 
-
 .collage-gallery-video video {
   position: absolute;
   inset: 0;
@@ -2739,6 +2737,237 @@ COLLAGE GALLERY SECTION START
   width: auto;
   height: 100%;
   display: block;
-  object-fit :cover;
-  
+  object-fit: cover;
+}
+
+/* ====================
+COUNTDOWN SECTION START
+=================== */
+.countdown-section {
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 992px) {
+  .countdown-section {
+    margin-top: 11rem;
+  }
+}
+
+.countdown-section .countdown-swiper {
+  height: 38.8rem;
+}
+
+@media screen and (min-width: 575) {
+  .countdown-section .countdown-swiper {
+    height: 35.8rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .countdown-section .countdown-swiper {
+    height: 55rem;
+  }
+}
+
+.countdown-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: 2rem;
+}
+
+.countdown-banner-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  inset: 0;
+  height: 100%;
+}
+
+.countdown-banner-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+.countdown-content-wrapper {
+  color: var(--font-heading);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 2.4rem;
+  gap: 1.6rem;
+  height: 100%;
+}
+
+@media screen and (min-width: 575px) {
+  .countdown-content-wrapper {
+    padding: 4rem 6rem;
+    gap: 2.4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .countdown-content-wrapper {
+    margin-left: 12.2rem;
+    width: 46rem;
+    max-width: 100%;
+    padding: 10rem 0;
+    gap: 4rem;
+  }
+}
+
+.countdown-heading {
+  padding-top: 1rem;
+}
+
+.countdown-timer-heading {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.countdown-timer-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.2rem;
+  gap: 0 2rem;
+}
+
+@media screen and (min-width: 576px) {
+  .countdown-timer-list {
+    gap: 0 4rem;
+  }
+}
+
+.countdown-timer-list-item {
+  position: relative;
+}
+.countdown-timer-list-item::after {
+  content: ":";
+  font-family: var(--font-heading);
+  display: block;
+  position: absolute;
+  right: -1.4rem;
+  top: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.countdown-timer-list-item:last-child::after {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .countdown-timer-list {
+    gap: 0 4rem;
+    right: -2.4rem;
+    font-size: 3rem;
+  }
+}
+
+.countdown-timer-count-block {
+  --color-background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: var(--color-background);
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: var(--color-heading);
+  margin-bottom: 0.8rem;
+}
+
+@media screen and (min-width: 576px) {
+  .countdown-timer-count-block {
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+  }
+}
+
+.countdown-timer-list-caption {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--color-heading);
+  display: block;
+}
+
+.countdown-section .swiper-navigation {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  z-index: 10;
+  justify-content: space-between;
+  padding: 0 1.4rem;
+}
+
+@media screen and (min-width: 576px) {
+  .countdown-section .swiper-navigation {
+    padding: 0 2.4rem;
+  }
+}
+
+/* ANIMATION SECTION */
+.countdown-header,
+.countdown-timer-wrapper,
+.countdown-banner-btn {
+  opacity: 0;
+  transform: translateY(8rem);
+  -webkit-transform: translateY(8rem);
+  -moz-transform: translateY(8rem);
+  -ms-transform: translateY(8rem);
+  -o-transform: translateY(8rem);
+  transition: all ease-in-out 1s;
+  -webkit-transition: all ease-in-out 1s;
+  -moz-transition: all ease-in-out 1s;
+  -ms-transition: all ease-in-out 1s;
+  -o-transition: all ease-in-out 1s;
+}
+
+.countdown-header {
+  transition-delay: 0.2s;
+}
+.countdown-timer-wrapper {
+  transition-delay: 0.6s;
+}
+.countdown-banner-btn {
+  transition-delay: 0.8s;
+}
+
+.countdown-section .swiper-slide-active .countdown-header,
+.countdown-section .swiper-slide-active .countdown-timer-wrapper,
+.countdown-section .swiper-slide-active .countdown-banner-btn {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }

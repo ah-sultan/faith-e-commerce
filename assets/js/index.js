@@ -199,3 +199,18 @@ collageVideo.forEach((item) => {
     }
   });
 });
+
+// =====================
+// COUNTDOWN SECTION START
+
+const countdownSection = new Swiper(".countdown-swiper", {
+  loop: true,
+  direction: "vertical",
+
+  speed: 700,
+  crossFade: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

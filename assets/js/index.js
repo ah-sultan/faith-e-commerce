@@ -71,10 +71,8 @@ const announceBarSwiper = new Swiper(".announce-bar-swipper", {
 
     if (window.pageYOffset > 40) {
       if (currentScrollY < lastScrollY) {
-        // User is scrolling up
         header.classList.add("sticky-header");
       } else {
-        // User is scrolling down
         header.classList.remove("sticky-header");
       }
     } else {
@@ -110,7 +108,7 @@ document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
   const buttons = wrapper.querySelectorAll(".tabs-button");
   const items = wrapper.querySelectorAll(".tabs-item");
 
-  // Check for an active button or set the first one as default
+  // CHECK FOR BUTTON HAS ACTIVE CLASS BY DEFAULT
   const activeButton = Array.from(buttons).find((button) =>
     button.classList.contains("active")
   );
@@ -119,7 +117,7 @@ document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
     const tabId = activeButton.getAttribute("data-tab-item");
     wrapper.querySelector(`.${tabId}`).classList.add("active");
   } else {
-    // If no button is active, set the first button as active by default
+    // IF ANY BUTTON NOT ACTIVE FIRST BUTTON WILL ACTIVE
     if (buttons.length > 0) {
       buttons[0].classList.add("active");
       items[0].classList.add("active");
@@ -128,11 +126,11 @@ document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      // Remove active class from all buttons and tab items within the current wrapper
+      // REMOVE ACTIVE CLASS FROM ALL BUTTON
       buttons.forEach((btn) => btn.classList.remove("active"));
       items.forEach((item) => item.classList.remove("active"));
 
-      // Add active class to the clicked button and the corresponding tab item
+      // ADD ACTIVE CLASS TO CLICKED BUTTON
       button.classList.add("active");
       const tabId = button.getAttribute("data-tab-item");
       wrapper.querySelector(`.${tabId}`).classList.add("active");

@@ -260,7 +260,13 @@ h6,
 }
 
 .hxl {
-  font-size: calc(var(--font-heading-scale) * 3.6rem);
+  font-size: calc(var(--font-heading-scale) * 3rem);
+}
+
+@media only screen and (min-width: 575px) {
+  .hxl {
+    font-size: calc(var(--font-heading-scale) * 3.6rem);
+  }
 }
 
 @media only screen and (min-width: 750px) {
@@ -269,7 +275,7 @@ h6,
   }
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1400px) {
   .hxl {
     font-size: calc(var(--font-heading-scale) * 8rem);
   }
@@ -693,6 +699,7 @@ TAB BUTTON SECTION START
 ======================== */
 
 .tabs-button-list {
+  width: fit-content;
   display: flex;
   align-items: center;
   background: #fff;
@@ -705,10 +712,13 @@ TAB BUTTON SECTION START
 }
 
 .tabs-button-list li {
+  flex-shrink: 0;
+  flex-grow: 1;
+  white-space: nowrap;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.6rem 2rem;
+  padding: 1.2rem 1.4rem;
   gap: 1rem;
   border-radius: 10rem;
   background-color: transparent;
@@ -738,6 +748,12 @@ TAB BUTTON SECTION START
   background-color: var(--color-primary-button);
   color: var(--color-input);
 }
+
+@media screen and (min-width: 992px) {
+  .tabs-button-list li {
+    padding: 1.6rem 2rem;
+  }
+  }
 
 .tabs-item-wrapper {
   overflow: hidden;
@@ -2009,7 +2025,7 @@ PROMO SECTION START
 
 @media screen and (min-width: 1400px) {
   .promo-caption .desc {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 
@@ -2017,23 +2033,82 @@ PROMO SECTION START
   FEATURES PRODUCTS SECTION START
 ======================== */
 .features-products-section {
-  margin-top: 110px;
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 992px) {
+  .features-products-section {
+    margin-top: 11rem;
+  }
 }
 
 .features-products-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 0rem;
+  flex-wrap: wrap;
+  gap: 3.2rem;
 }
 
-.features-products-tab-wrapper {
-  display: block;
-  margin-top: 60px;
+@media screen and (min-width: 992px) {
+  .features-products-header {
+    gap: 4rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.features-products-tabs-button-wrapper {
+  overflow-x: scroll;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .features-products-tabs-button-wrapper {
+    overflow-x: visible;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 .features-products-tab-item {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.features-products-tab-item.active {
+  padding-bottom: 2.4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .features-products-tab-item.active {
+    padding-bottom: 0;
+  }
+  .features-products-tab-item {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    overflow-x: visible;
+    gap: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .features-products-tab-item {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.features-products-section .product-card {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 30rem;
+}
+
+@media screen and (min-width: 992px) {
+  .features-products-section .product-card {
+    width: auto;
+  }
 }

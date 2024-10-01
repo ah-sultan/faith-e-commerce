@@ -227,16 +227,18 @@ PRODUCT COLOR VARIANT
   background: var(--color-background);
 }
 
-.product-card:hover
-  .product-card-image-wrapper
-  .product-images
-  img:first-child {
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  opacity: 0;
+@media screen and (min-width: 992px) {
+  .product-card:hover
+    .product-card-image-wrapper
+    .product-images
+    img:first-child {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    opacity: 0;
+  }
 }
 
 .product-card-image-wrapper .product-images img:last-child {
@@ -249,9 +251,14 @@ PRODUCT COLOR VARIANT
   opacity: 0;
 }
 
-.product-card:hover .product-card-image-wrapper .product-images img:last-child {
-  left: 0;
-  opacity: 1;
+@media screen and (min-width: 992px) {
+  .product-card:hover
+    .product-card-image-wrapper
+    .product-images
+    img:last-child {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 /* BADGE CSS */

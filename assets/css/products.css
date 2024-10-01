@@ -1,6 +1,83 @@
 /* ========================
- PRODUCT COMMON CSS
+ PRODUCT BUTTONS CSS
   ======================== */
+.product-button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.product-add-cart-button {
+  overflow: hidden;
+  position: relative;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  gap: 0.4rem;
+  isolation: isolate;
+  background: var(--color-primary-button);
+  color: var(--color-primary-button-text);
+  fill: var(--color-primary-button-text);
+  border-radius: 10rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
+  font-family: var(--font-heading);
+
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+.product-add-cart-button.is-loading .spinner {
+  background: var(--color-primary-button);
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.product-outline-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  --button-ratio: 4.4rem;
+  --button-radius: 10rem;
+  --color-background: #fff;
+  width: var(--button-ratio);
+  height: var(--button-ratio);
+  color: var(--color-foreground);
+  fill: var(--color-foreground);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--button-radius);
+  -webkit-border-radius: var(--button-radius);
+  -moz-border-radius: var(--button-radius);
+  -ms-border-radius: var(--button-radius);
+  -o-border-radius: var(--button-radius);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-outline-button.spinner {
+  width: 100%;
+  height: 100%;
+}
+
+.product-outline-button:hover {
+  --color-background: var(--color-heading);
+  --color-foreground: #fff;
+  --color-border: var(--color-heading);
+}
 
 .product-add-cart-outline-button {
   --color-background: "#fff";
@@ -30,10 +107,37 @@
   --color-foreground: #fff;
 }
 
+.product-outline-button.is-loading .spinner,
 .product-add-cart-outline-button.is-loading .spinner {
   background-color: var(--color-background);
   --spinner-ratio: 2rem;
   opacity: 1;
+}
+
+/* ========================
+ PRODUCT BUTTONS CSS
+  ======================== */
+.product-rating-review {
+  display: flex;
+  align-items: center;
+}
+
+.product-rating-review .product-review {
+  display: flex;
+  align-items: center;
+}
+.product-rating-review .product-review::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  display: block;
+  background: #464c5a;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  margin: 0 1.2rem;
 }
 
 /* ======================
@@ -162,7 +266,7 @@ PRODUCT COLOR VARIANT
   font-size: 1.2rem;
   line-height: 150%;
   color: #ffffff;
-  padding: 0.2rem 0.2rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 0.4rem;
   -webkit-border-radius: 0.4rem;
   -moz-border-radius: 0.4rem;
@@ -447,4 +551,89 @@ PRODUCT COLOR VARIANT
 
 .product-card-price {
   font-size: 1.4rem;
+}
+
+/* ====================
+COUNTDOWN PRODUCT SECTION START
+=================== */
+.countdown-product-section {
+  margin-top: 11rem;
+}
+
+.countdown-product-section .swiper-slide {
+  width: fit-content;
+}
+.countdown-product-card {
+  --color-background: #fff;
+  width: 88rem;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 41.2rem 1fr;
+  padding: 20px;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 2.4rem;
+  -webkit-border-radius: 2.4rem;
+  -moz-border-radius: 2.4rem;
+  -ms-border-radius: 2.4rem;
+  -o-border-radius: 2.4rem;
+  align-items: center;
+}
+
+.countdown-product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 3.2rem;
+  height: 100%;
+}
+.countdown-product-card .product-price {
+  font-size: 18px;
+}
+
+.countdown-product-card-title {
+  font-size: 3.6rem;
+  padding: 1rem 0;
+}
+
+.countdown-product-card .product-size-variant {
+  --size-variant-gap: 1rem;
+  --size-variant-font-size: 1.2rem;
+}
+
+.countdown-product-card .product-color-variant {
+  --color-variant-gap: 1.2rem;
+  --color-variant-ratio: 3.2rem;
+  --color-radio-gap: 0.8rem;
+}
+
+.countdown-product-card-timer-title {
+  font-size: 1.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.countdown-product-card-timer {
+  display: flex;
+  align-items: center;
+}
+
+.countdown-product-card-timer-item {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 150%;
+  color: var(--color-heading);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-heading);
+}
+
+.countdown-product-card-timer-item::after {
+  content: ":";
+  display: block;
+  margin: 0 1rem;
+}
+
+.countdown-product-card-timer-item:last-child:after {
+  display: none;
 }

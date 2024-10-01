@@ -214,3 +214,15 @@ const countdownSection = new Swiper(".countdown-swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// =====================
+// COUNTDOWN PRODUCT SECTION START
+
+const countdownProductSection = new Swiper(".countdown-product-swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 24,
+  speed: 1200,
+  mousewheel: true,
+  eventsTarget : ".countdown-product-section",
+  invert : true,
+});

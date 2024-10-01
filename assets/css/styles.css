@@ -486,6 +486,8 @@ h6,
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 1.6rem;
 }
 
 @media screen and (min-width: 576px) {
@@ -2869,6 +2871,11 @@ COUNTDOWN SECTION START
 @media screen and (min-width: 576px) {
   .countdown-timer-list {
     gap: 0 4rem;
+    right: -2.4rem;
+    font-size: 3rem;
+  }
+
+  .countdown-timer-list-item::after {
     right: -2.4rem;
     font-size: 3rem;
   }

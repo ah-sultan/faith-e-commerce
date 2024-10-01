@@ -165,7 +165,7 @@ const trendingSwiper = new Swiper(".trending-swiper", {
       slidesPerView: 3.2,
       spaceBetween: 24,
     },
-    
+
     1400: {
       slidesPerView: 3.8,
       spaceBetween: 24,
@@ -176,4 +176,26 @@ const trendingSwiper = new Swiper(".trending-swiper", {
       spaceBetween: 24,
     },
   },
+});
+
+// =====================
+// COLLAGE SECTION START
+
+const collageVideo = document.querySelectorAll(".collage-gallery-video");
+
+collageVideo.forEach((item) => {
+  const button = item.querySelector(".collage-gallery-video-control");
+  const videoPlayer = item.querySelector(".collage-gallery-video-player");
+
+  button.addEventListener("click", function () {
+    if (videoPlayer.paused) {
+      videoPlayer.play();
+      button.classList.remove("play");
+      button.classList.add("pause");
+    } else {
+      videoPlayer.pause();
+      button.classList.remove("pause");
+      button.classList.add("play");
+    }
+  });
 });

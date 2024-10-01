@@ -6,6 +6,9 @@
     <title>Faith E-commerce Shop</title>
 
     <!-- SCRIPT FILE -->
+    <!-- NEED TO REMOVE THIS PLUGINS -->
+    <script src=" https://cdn.jsdelivr.net/npm/compressorjs@1.2.1/dist/compressor.min.js "></script>
+
     <script src="./assets/js/swiper-bundle.min.js" defer="defer"></script>
     <script src="./assets/js/gsap.min.js" defer="defer"></script>
 
@@ -3946,124 +3949,34 @@
             </div>
           </div>
           <!-- PRODUCT WRAPPER -->
-            <div class="swiper trending-swiper trending-product-wrapper">
-              <div class="swiper-wrapper">
-                <!-- PRODUCTS CARD -->
-                <div class="swiper-slide">
-                  <div class="product-card">
-                    <!-- PRODUCT IMAGE -->
-                    <div class="product-card-image-wrapper">
-                      <div class="product-images">
-                        <img
-                          src="./assets/images/products/product-image-01.jpg"
-                          alt="Product Image 01"
-                        />
-                        <img
-                          src="./assets/images/products/product-image-02.jpg"
-                          alt="Product Image 02"
-                        />
-                      </div>
-                      <!-- TAG LIST -->
-                      <div class="badge-list">
-                        <span class="badge arrival">Arrival</span>
-                      </div>
-                      <!-- BUTTON -->
-                      <div class="buttons-wrapper">
-                        <!-- QUICK VIEW BUTTON -->
-                        <button
-                          role="button"
-                          type="button"
-                          class="product-card-quickview-button"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- SIZE BOX -->
-                      <div class="product-size-box">
-                        <div class="box-header">
-                          <h5 class="selected-size">Size : <span>XXL</span></h5>
-                          <p class="product-brand">Brand: <span>Gucci</span></p>
-                        </div>
-                        <fieldset class="product-size-variant">
-                          <ul class="product-size-variant-list" role="list">
-                            <li role="button">
-                              S <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              M <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              L <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XL <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XXL <input type="radio" name="size" id="size" />
-                            </li>
-                          </ul>
-                        </fieldset>
-                      </div>
+          <div class="swiper trending-swiper trending-product-wrapper">
+            <div class="swiper-wrapper">
+              <!-- PRODUCTS CARD -->
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <!-- PRODUCT IMAGE -->
+                  <div class="product-card-image-wrapper">
+                    <div class="product-images">
+                      <img
+                        src="./assets/images/products/product-image-01.jpg"
+                        alt="Product Image 01"
+                      />
+                      <img
+                        src="./assets/images/products/product-image-02.jpg"
+                        alt="Product Image 02"
+                      />
                     </div>
-                    <!-- CARD BODY -->
-                    <div class="product-card-body">
-                      <div class="product-card-content">
-                        <fieldset class="product-color-variant">
-                          <ul role="list" class="product-color-variant-list">
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f6bd60"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Off White</label>
-                            </li>
-                            <li
-                              role="button"
-                              class="selected"
-                              style="--color-variant-color: #000"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Black</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f28482"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Soft Pink</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f5cac3"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Lime Yellow</label>
-                            </li>
-                          </ul>
-                        </fieldset>
-                        <h5 class="product-card-title">
-                          Off-shoulder midi dress
-                        </h5>
-                        <p class="product-card-price product-price">
-                          $120.00 <del>$20.00</del>
-                        </p>
-                      </div>
-
-                      <!-- ADD TO CART BUTTON -->
+                    <!-- TAG LIST -->
+                    <div class="badge-list">
+                      <span class="badge arrival">Arrival</span>
+                    </div>
+                    <!-- BUTTON -->
+                    <div class="buttons-wrapper">
+                      <!-- QUICK VIEW BUTTON -->
                       <button
-                        type="button"
                         role="button"
-                        class="product-add-cart-outline-button"
+                        type="button"
+                        class="product-card-quickview-button"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -4073,143 +3986,100 @@
                           viewBox="0 0 256 256"
                         >
                           <path
-                            d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                            d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
                           ></path>
                         </svg>
-                        <span class="spinner">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
-                            ></path>
-                          </svg>
-                        </span>
                       </button>
+                    </div>
+                    <!-- SIZE BOX -->
+                    <div class="product-size-box">
+                      <div class="box-header">
+                        <h5 class="selected-size">Size : <span>XXL</span></h5>
+                        <p class="product-brand">Brand: <span>Gucci</span></p>
+                      </div>
+                      <fieldset class="product-size-variant">
+                        <ul class="product-size-variant-list" role="list">
+                          <li role="button">
+                            S <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            M <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            L <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XL <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XXL <input type="radio" name="size" id="size" />
+                          </li>
+                        </ul>
+                      </fieldset>
                     </div>
                   </div>
-                </div>
-                <!-- PRODUCTS CARD -->
-                <div class="swiper-slide">
-                  <div class="product-card">
-                    <!-- PRODUCT IMAGE -->
-                    <div class="product-card-image-wrapper">
-                      <div class="product-images">
-                        <img
-                          src="./assets/images/products/product-image-01.jpg"
-                          alt="Product Image 01"
-                        />
-                        <img
-                          src="./assets/images/products/product-image-02.jpg"
-                          alt="Product Image 02"
-                        />
-                      </div>
-                      <!-- TAG LIST -->
-                      <div class="badge-list">
-                        <span class="badge arrival">Arrival</span>
-                      </div>
-                      <!-- BUTTON -->
-                      <div class="buttons-wrapper">
-                        <!-- QUICK VIEW BUTTON -->
-                        <button
-                          role="button"
-                          type="button"
-                          class="product-card-quickview-button"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
+                  <!-- CARD BODY -->
+                  <div class="product-card-body">
+                    <div class="product-card-content">
+                      <fieldset class="product-color-variant">
+                        <ul role="list" class="product-color-variant-list">
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f6bd60"
                           >
-                            <path
-                              d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- SIZE BOX -->
-                      <div class="product-size-box">
-                        <div class="box-header">
-                          <h5 class="selected-size">Size : <span>XXL</span></h5>
-                          <p class="product-brand">Brand: <span>Gucci</span></p>
-                        </div>
-                        <fieldset class="product-size-variant">
-                          <ul class="product-size-variant-list" role="list">
-                            <li role="button">
-                              S <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              M <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              L <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XL <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XXL <input type="radio" name="size" id="size" />
-                            </li>
-                          </ul>
-                        </fieldset>
-                      </div>
+                            <input name="color" type="radio" />
+                            <label for="color">Off White</label>
+                          </li>
+                          <li
+                            role="button"
+                            class="selected"
+                            style="--color-variant-color: #000"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Black</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f28482"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Soft Pink</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f5cac3"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Lime Yellow</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                      <h5 class="product-card-title">
+                        Off-shoulder midi dress
+                      </h5>
+                      <p class="product-card-price product-price">
+                        $120.00 <del>$20.00</del>
+                      </p>
                     </div>
-                    <!-- CARD BODY -->
-                    <div class="product-card-body">
-                      <div class="product-card-content">
-                        <fieldset class="product-color-variant">
-                          <ul role="list" class="product-color-variant-list">
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f6bd60"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Off White</label>
-                            </li>
-                            <li
-                              role="button"
-                              class="selected"
-                              style="--color-variant-color: #000"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Black</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f28482"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Soft Pink</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f5cac3"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Lime Yellow</label>
-                            </li>
-                          </ul>
-                        </fieldset>
-                        <h5 class="product-card-title">
-                          Off-shoulder midi dress
-                        </h5>
-                        <p class="product-card-price product-price">
-                          $120.00 <del>$20.00</del>
-                        </p>
-                      </div>
 
-                      <!-- ADD TO CART BUTTON -->
-                      <button
-                        type="button"
-                        role="button"
-                        class="product-add-cart-outline-button"
+                    <!-- ADD TO CART BUTTON -->
+                    <button
+                      type="button"
+                      role="button"
+                      class="product-add-cart-outline-button"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#000000"
+                        viewBox="0 0 256 256"
                       >
+                        <path
+                          d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                        ></path>
+                      </svg>
+                      <span class="spinner">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -4218,142 +4088,40 @@
                           viewBox="0 0 256 256"
                         >
                           <path
-                            d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                            d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
                           ></path>
                         </svg>
-                        <span class="spinner">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
-                            ></path>
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
+                      </span>
+                    </button>
                   </div>
                 </div>
-                <!-- PRODUCTS CARD -->
-                <div class="swiper-slide">
-                  <div class="product-card">
-                    <!-- PRODUCT IMAGE -->
-                    <div class="product-card-image-wrapper">
-                      <div class="product-images">
-                        <img
-                          src="./assets/images/products/product-image-01.jpg"
-                          alt="Product Image 01"
-                        />
-                        <img
-                          src="./assets/images/products/product-image-02.jpg"
-                          alt="Product Image 02"
-                        />
-                      </div>
-                      <!-- TAG LIST -->
-                      <div class="badge-list">
-                        <span class="badge arrival">Arrival</span>
-                      </div>
-                      <!-- BUTTON -->
-                      <div class="buttons-wrapper">
-                        <!-- QUICK VIEW BUTTON -->
-                        <button
-                          role="button"
-                          type="button"
-                          class="product-card-quickview-button"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- SIZE BOX -->
-                      <div class="product-size-box">
-                        <div class="box-header">
-                          <h5 class="selected-size">Size : <span>XXL</span></h5>
-                          <p class="product-brand">Brand: <span>Gucci</span></p>
-                        </div>
-                        <fieldset class="product-size-variant">
-                          <ul class="product-size-variant-list" role="list">
-                            <li role="button">
-                              S <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              M <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              L <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XL <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XXL <input type="radio" name="size" id="size" />
-                            </li>
-                          </ul>
-                        </fieldset>
-                      </div>
+              </div>
+              <!-- PRODUCTS CARD -->
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <!-- PRODUCT IMAGE -->
+                  <div class="product-card-image-wrapper">
+                    <div class="product-images">
+                      <img
+                        src="./assets/images/products/product-image-01.jpg"
+                        alt="Product Image 01"
+                      />
+                      <img
+                        src="./assets/images/products/product-image-02.jpg"
+                        alt="Product Image 02"
+                      />
                     </div>
-                    <!-- CARD BODY -->
-                    <div class="product-card-body">
-                      <div class="product-card-content">
-                        <fieldset class="product-color-variant">
-                          <ul role="list" class="product-color-variant-list">
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f6bd60"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Off White</label>
-                            </li>
-                            <li
-                              role="button"
-                              class="selected"
-                              style="--color-variant-color: #000"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Black</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f28482"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Soft Pink</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f5cac3"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Lime Yellow</label>
-                            </li>
-                          </ul>
-                        </fieldset>
-                        <h5 class="product-card-title">
-                          Off-shoulder midi dress
-                        </h5>
-                        <p class="product-card-price product-price">
-                          $120.00 <del>$20.00</del>
-                        </p>
-                      </div>
-
-                      <!-- ADD TO CART BUTTON -->
+                    <!-- TAG LIST -->
+                    <div class="badge-list">
+                      <span class="badge arrival">Arrival</span>
+                    </div>
+                    <!-- BUTTON -->
+                    <div class="buttons-wrapper">
+                      <!-- QUICK VIEW BUTTON -->
                       <button
-                        type="button"
                         role="button"
-                        class="product-add-cart-outline-button"
+                        type="button"
+                        class="product-card-quickview-button"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -4363,143 +4131,100 @@
                           viewBox="0 0 256 256"
                         >
                           <path
-                            d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                            d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
                           ></path>
                         </svg>
-                        <span class="spinner">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
-                            ></path>
-                          </svg>
-                        </span>
                       </button>
+                    </div>
+                    <!-- SIZE BOX -->
+                    <div class="product-size-box">
+                      <div class="box-header">
+                        <h5 class="selected-size">Size : <span>XXL</span></h5>
+                        <p class="product-brand">Brand: <span>Gucci</span></p>
+                      </div>
+                      <fieldset class="product-size-variant">
+                        <ul class="product-size-variant-list" role="list">
+                          <li role="button">
+                            S <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            M <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            L <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XL <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XXL <input type="radio" name="size" id="size" />
+                          </li>
+                        </ul>
+                      </fieldset>
                     </div>
                   </div>
-                </div>
-                <!-- PRODUCTS CARD -->
-                <div class="swiper-slide">
-                  <div class="product-card">
-                    <!-- PRODUCT IMAGE -->
-                    <div class="product-card-image-wrapper">
-                      <div class="product-images">
-                        <img
-                          src="./assets/images/products/product-image-01.jpg"
-                          alt="Product Image 01"
-                        />
-                        <img
-                          src="./assets/images/products/product-image-02.jpg"
-                          alt="Product Image 02"
-                        />
-                      </div>
-                      <!-- TAG LIST -->
-                      <div class="badge-list">
-                        <span class="badge arrival">Arrival</span>
-                      </div>
-                      <!-- BUTTON -->
-                      <div class="buttons-wrapper">
-                        <!-- QUICK VIEW BUTTON -->
-                        <button
-                          role="button"
-                          type="button"
-                          class="product-card-quickview-button"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
+                  <!-- CARD BODY -->
+                  <div class="product-card-body">
+                    <div class="product-card-content">
+                      <fieldset class="product-color-variant">
+                        <ul role="list" class="product-color-variant-list">
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f6bd60"
                           >
-                            <path
-                              d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- SIZE BOX -->
-                      <div class="product-size-box">
-                        <div class="box-header">
-                          <h5 class="selected-size">Size : <span>XXL</span></h5>
-                          <p class="product-brand">Brand: <span>Gucci</span></p>
-                        </div>
-                        <fieldset class="product-size-variant">
-                          <ul class="product-size-variant-list" role="list">
-                            <li role="button">
-                              S <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              M <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              L <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XL <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XXL <input type="radio" name="size" id="size" />
-                            </li>
-                          </ul>
-                        </fieldset>
-                      </div>
+                            <input name="color" type="radio" />
+                            <label for="color">Off White</label>
+                          </li>
+                          <li
+                            role="button"
+                            class="selected"
+                            style="--color-variant-color: #000"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Black</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f28482"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Soft Pink</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f5cac3"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Lime Yellow</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                      <h5 class="product-card-title">
+                        Off-shoulder midi dress
+                      </h5>
+                      <p class="product-card-price product-price">
+                        $120.00 <del>$20.00</del>
+                      </p>
                     </div>
-                    <!-- CARD BODY -->
-                    <div class="product-card-body">
-                      <div class="product-card-content">
-                        <fieldset class="product-color-variant">
-                          <ul role="list" class="product-color-variant-list">
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f6bd60"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Off White</label>
-                            </li>
-                            <li
-                              role="button"
-                              class="selected"
-                              style="--color-variant-color: #000"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Black</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f28482"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Soft Pink</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f5cac3"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Lime Yellow</label>
-                            </li>
-                          </ul>
-                        </fieldset>
-                        <h5 class="product-card-title">
-                          Off-shoulder midi dress
-                        </h5>
-                        <p class="product-card-price product-price">
-                          $120.00 <del>$20.00</del>
-                        </p>
-                      </div>
 
-                      <!-- ADD TO CART BUTTON -->
-                      <button
-                        type="button"
-                        role="button"
-                        class="product-add-cart-outline-button"
+                    <!-- ADD TO CART BUTTON -->
+                    <button
+                      type="button"
+                      role="button"
+                      class="product-add-cart-outline-button"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#000000"
+                        viewBox="0 0 256 256"
                       >
+                        <path
+                          d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                        ></path>
+                      </svg>
+                      <span class="spinner">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -4508,142 +4233,40 @@
                           viewBox="0 0 256 256"
                         >
                           <path
-                            d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                            d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
                           ></path>
                         </svg>
-                        <span class="spinner">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
-                            ></path>
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
+                      </span>
+                    </button>
                   </div>
                 </div>
-                <!-- PRODUCTS CARD -->
-                <div class="swiper-slide">
-                  <div class="product-card">
-                    <!-- PRODUCT IMAGE -->
-                    <div class="product-card-image-wrapper">
-                      <div class="product-images">
-                        <img
-                          src="./assets/images/products/product-image-01.jpg"
-                          alt="Product Image 01"
-                        />
-                        <img
-                          src="./assets/images/products/product-image-02.jpg"
-                          alt="Product Image 02"
-                        />
-                      </div>
-                      <!-- TAG LIST -->
-                      <div class="badge-list">
-                        <span class="badge arrival">Arrival</span>
-                      </div>
-                      <!-- BUTTON -->
-                      <div class="buttons-wrapper">
-                        <!-- QUICK VIEW BUTTON -->
-                        <button
-                          role="button"
-                          type="button"
-                          class="product-card-quickview-button"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- SIZE BOX -->
-                      <div class="product-size-box">
-                        <div class="box-header">
-                          <h5 class="selected-size">Size : <span>XXL</span></h5>
-                          <p class="product-brand">Brand: <span>Gucci</span></p>
-                        </div>
-                        <fieldset class="product-size-variant">
-                          <ul class="product-size-variant-list" role="list">
-                            <li role="button">
-                              S <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              M <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              L <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XL <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XXL <input type="radio" name="size" id="size" />
-                            </li>
-                          </ul>
-                        </fieldset>
-                      </div>
+              </div>
+              <!-- PRODUCTS CARD -->
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <!-- PRODUCT IMAGE -->
+                  <div class="product-card-image-wrapper">
+                    <div class="product-images">
+                      <img
+                        src="./assets/images/products/product-image-01.jpg"
+                        alt="Product Image 01"
+                      />
+                      <img
+                        src="./assets/images/products/product-image-02.jpg"
+                        alt="Product Image 02"
+                      />
                     </div>
-                    <!-- CARD BODY -->
-                    <div class="product-card-body">
-                      <div class="product-card-content">
-                        <fieldset class="product-color-variant">
-                          <ul role="list" class="product-color-variant-list">
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f6bd60"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Off White</label>
-                            </li>
-                            <li
-                              role="button"
-                              class="selected"
-                              style="--color-variant-color: #000"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Black</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f28482"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Soft Pink</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f5cac3"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Lime Yellow</label>
-                            </li>
-                          </ul>
-                        </fieldset>
-                        <h5 class="product-card-title">
-                          Off-shoulder midi dress
-                        </h5>
-                        <p class="product-card-price product-price">
-                          $120.00 <del>$20.00</del>
-                        </p>
-                      </div>
-
-                      <!-- ADD TO CART BUTTON -->
+                    <!-- TAG LIST -->
+                    <div class="badge-list">
+                      <span class="badge arrival">Arrival</span>
+                    </div>
+                    <!-- BUTTON -->
+                    <div class="buttons-wrapper">
+                      <!-- QUICK VIEW BUTTON -->
                       <button
-                        type="button"
                         role="button"
-                        class="product-add-cart-outline-button"
+                        type="button"
+                        class="product-card-quickview-button"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -4653,142 +4276,142 @@
                           viewBox="0 0 256 256"
                         >
                           <path
-                            d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                            d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
                           ></path>
                         </svg>
-                        <span class="spinner">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
-                            ></path>
-                          </svg>
-                        </span>
                       </button>
+                    </div>
+                    <!-- SIZE BOX -->
+                    <div class="product-size-box">
+                      <div class="box-header">
+                        <h5 class="selected-size">Size : <span>XXL</span></h5>
+                        <p class="product-brand">Brand: <span>Gucci</span></p>
+                      </div>
+                      <fieldset class="product-size-variant">
+                        <ul class="product-size-variant-list" role="list">
+                          <li role="button">
+                            S <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            M <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            L <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XL <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XXL <input type="radio" name="size" id="size" />
+                          </li>
+                        </ul>
+                      </fieldset>
                     </div>
                   </div>
-                </div>
-                <!-- PRODUCTS CARD -->
-                <div class="swiper-slide">
-                  <div class="product-card">
-                    <!-- PRODUCT IMAGE -->
-                    <div class="product-card-image-wrapper">
-                      <div class="product-images">
-                        <img
-                          src="./assets/images/products/product-image-01.jpg"
-                          alt="Product Image 01"
-                        />
-                        <img
-                          src="./assets/images/products/product-image-02.jpg"
-                          alt="Product Image 02"
-                        />
-                      </div>
-                      <!-- TAG LIST -->
-                      <div class="badge-list">
-                        <span class="badge arrival">Arrival</span>
-                      </div>
-                      <!-- BUTTON -->
-                      <div class="buttons-wrapper">
-                        <!-- QUICK VIEW BUTTON -->
-                        <button
-                          role="button"
-                          type="button"
-                          class="product-card-quickview-button"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
+                  <!-- CARD BODY -->
+                  <div class="product-card-body">
+                    <div class="product-card-content">
+                      <fieldset class="product-color-variant">
+                        <ul role="list" class="product-color-variant-list">
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f6bd60"
                           >
-                            <path
-                              d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- SIZE BOX -->
-                      <div class="product-size-box">
-                        <div class="box-header">
-                          <h5 class="selected-size">Size : <span>XXL</span></h5>
-                          <p class="product-brand">Brand: <span>Gucci</span></p>
-                        </div>
-                        <fieldset class="product-size-variant">
-                          <ul class="product-size-variant-list" role="list">
-                            <li role="button">
-                              S <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              M <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              L <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XL <input type="radio" name="size" id="size" />
-                            </li>
-                            <li role="button">
-                              XXL <input type="radio" name="size" id="size" />
-                            </li>
-                          </ul>
-                        </fieldset>
-                      </div>
+                            <input name="color" type="radio" />
+                            <label for="color">Off White</label>
+                          </li>
+                          <li
+                            role="button"
+                            class="selected"
+                            style="--color-variant-color: #000"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Black</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f28482"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Soft Pink</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f5cac3"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Lime Yellow</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                      <h5 class="product-card-title">
+                        Off-shoulder midi dress
+                      </h5>
+                      <p class="product-card-price product-price">
+                        $120.00 <del>$20.00</del>
+                      </p>
                     </div>
-                    <!-- CARD BODY -->
-                    <div class="product-card-body">
-                      <div class="product-card-content">
-                        <fieldset class="product-color-variant">
-                          <ul role="list" class="product-color-variant-list">
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f6bd60"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Off White</label>
-                            </li>
-                            <li
-                              role="button"
-                              class="selected"
-                              style="--color-variant-color: #000"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Black</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f28482"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Soft Pink</label>
-                            </li>
-                            <li
-                              role="button"
-                              style="--color-variant-color: #f5cac3"
-                            >
-                              <input name="color" type="radio" />
-                              <label for="color">Lime Yellow</label>
-                            </li>
-                          </ul>
-                        </fieldset>
-                        <h5 class="product-card-title">
-                          Off-shoulder midi dress
-                        </h5>
-                        <p class="product-card-price product-price">
-                          $120.00 <del>$20.00</del>
-                        </p>
-                      </div>
 
-                      <!-- ADD TO CART BUTTON -->
+                    <!-- ADD TO CART BUTTON -->
+                    <button
+                      type="button"
+                      role="button"
+                      class="product-add-cart-outline-button"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#000000"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                        ></path>
+                      </svg>
+                      <span class="spinner">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#000000"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
+                          ></path>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- PRODUCTS CARD -->
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <!-- PRODUCT IMAGE -->
+                  <div class="product-card-image-wrapper">
+                    <div class="product-images">
+                      <img
+                        src="./assets/images/products/product-image-01.jpg"
+                        alt="Product Image 01"
+                      />
+                      <img
+                        src="./assets/images/products/product-image-02.jpg"
+                        alt="Product Image 02"
+                      />
+                    </div>
+                    <!-- TAG LIST -->
+                    <div class="badge-list">
+                      <span class="badge arrival">Arrival</span>
+                    </div>
+                    <!-- BUTTON -->
+                    <div class="buttons-wrapper">
+                      <!-- QUICK VIEW BUTTON -->
                       <button
-                        type="button"
                         role="button"
-                        class="product-add-cart-outline-button"
+                        type="button"
+                        class="product-card-quickview-button"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -4798,28 +4421,575 @@
                           viewBox="0 0 256 256"
                         >
                           <path
-                            d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                            d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
                           ></path>
                         </svg>
-                        <span class="spinner">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#000000"
-                            viewBox="0 0 256 256"
-                          >
-                            <path
-                              d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
-                            ></path>
-                          </svg>
-                        </span>
                       </button>
                     </div>
+                    <!-- SIZE BOX -->
+                    <div class="product-size-box">
+                      <div class="box-header">
+                        <h5 class="selected-size">Size : <span>XXL</span></h5>
+                        <p class="product-brand">Brand: <span>Gucci</span></p>
+                      </div>
+                      <fieldset class="product-size-variant">
+                        <ul class="product-size-variant-list" role="list">
+                          <li role="button">
+                            S <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            M <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            L <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XL <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XXL <input type="radio" name="size" id="size" />
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- CARD BODY -->
+                  <div class="product-card-body">
+                    <div class="product-card-content">
+                      <fieldset class="product-color-variant">
+                        <ul role="list" class="product-color-variant-list">
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f6bd60"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Off White</label>
+                          </li>
+                          <li
+                            role="button"
+                            class="selected"
+                            style="--color-variant-color: #000"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Black</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f28482"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Soft Pink</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f5cac3"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Lime Yellow</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                      <h5 class="product-card-title">
+                        Off-shoulder midi dress
+                      </h5>
+                      <p class="product-card-price product-price">
+                        $120.00 <del>$20.00</del>
+                      </p>
+                    </div>
+
+                    <!-- ADD TO CART BUTTON -->
+                    <button
+                      type="button"
+                      role="button"
+                      class="product-add-cart-outline-button"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#000000"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                        ></path>
+                      </svg>
+                      <span class="spinner">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#000000"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
+                          ></path>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- PRODUCTS CARD -->
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <!-- PRODUCT IMAGE -->
+                  <div class="product-card-image-wrapper">
+                    <div class="product-images">
+                      <img
+                        src="./assets/images/products/product-image-01.jpg"
+                        alt="Product Image 01"
+                      />
+                      <img
+                        src="./assets/images/products/product-image-02.jpg"
+                        alt="Product Image 02"
+                      />
+                    </div>
+                    <!-- TAG LIST -->
+                    <div class="badge-list">
+                      <span class="badge arrival">Arrival</span>
+                    </div>
+                    <!-- BUTTON -->
+                    <div class="buttons-wrapper">
+                      <!-- QUICK VIEW BUTTON -->
+                      <button
+                        role="button"
+                        type="button"
+                        class="product-card-quickview-button"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#000000"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                    <!-- SIZE BOX -->
+                    <div class="product-size-box">
+                      <div class="box-header">
+                        <h5 class="selected-size">Size : <span>XXL</span></h5>
+                        <p class="product-brand">Brand: <span>Gucci</span></p>
+                      </div>
+                      <fieldset class="product-size-variant">
+                        <ul class="product-size-variant-list" role="list">
+                          <li role="button">
+                            S <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            M <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            L <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XL <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XXL <input type="radio" name="size" id="size" />
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- CARD BODY -->
+                  <div class="product-card-body">
+                    <div class="product-card-content">
+                      <fieldset class="product-color-variant">
+                        <ul role="list" class="product-color-variant-list">
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f6bd60"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Off White</label>
+                          </li>
+                          <li
+                            role="button"
+                            class="selected"
+                            style="--color-variant-color: #000"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Black</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f28482"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Soft Pink</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f5cac3"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Lime Yellow</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                      <h5 class="product-card-title">
+                        Off-shoulder midi dress
+                      </h5>
+                      <p class="product-card-price product-price">
+                        $120.00 <del>$20.00</del>
+                      </p>
+                    </div>
+
+                    <!-- ADD TO CART BUTTON -->
+                    <button
+                      type="button"
+                      role="button"
+                      class="product-add-cart-outline-button"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#000000"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                        ></path>
+                      </svg>
+                      <span class="spinner">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#000000"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
+                          ></path>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- PRODUCTS CARD -->
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <!-- PRODUCT IMAGE -->
+                  <div class="product-card-image-wrapper">
+                    <div class="product-images">
+                      <img
+                        src="./assets/images/products/product-image-01.jpg"
+                        alt="Product Image 01"
+                      />
+                      <img
+                        src="./assets/images/products/product-image-02.jpg"
+                        alt="Product Image 02"
+                      />
+                    </div>
+                    <!-- TAG LIST -->
+                    <div class="badge-list">
+                      <span class="badge arrival">Arrival</span>
+                    </div>
+                    <!-- BUTTON -->
+                    <div class="buttons-wrapper">
+                      <!-- QUICK VIEW BUTTON -->
+                      <button
+                        role="button"
+                        type="button"
+                        class="product-card-quickview-button"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#000000"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                    <!-- SIZE BOX -->
+                    <div class="product-size-box">
+                      <div class="box-header">
+                        <h5 class="selected-size">Size : <span>XXL</span></h5>
+                        <p class="product-brand">Brand: <span>Gucci</span></p>
+                      </div>
+                      <fieldset class="product-size-variant">
+                        <ul class="product-size-variant-list" role="list">
+                          <li role="button">
+                            S <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            M <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            L <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XL <input type="radio" name="size" id="size" />
+                          </li>
+                          <li role="button">
+                            XXL <input type="radio" name="size" id="size" />
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- CARD BODY -->
+                  <div class="product-card-body">
+                    <div class="product-card-content">
+                      <fieldset class="product-color-variant">
+                        <ul role="list" class="product-color-variant-list">
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f6bd60"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Off White</label>
+                          </li>
+                          <li
+                            role="button"
+                            class="selected"
+                            style="--color-variant-color: #000"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Black</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f28482"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Soft Pink</label>
+                          </li>
+                          <li
+                            role="button"
+                            style="--color-variant-color: #f5cac3"
+                          >
+                            <input name="color" type="radio" />
+                            <label for="color">Lime Yellow</label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                      <h5 class="product-card-title">
+                        Off-shoulder midi dress
+                      </h5>
+                      <p class="product-card-price product-price">
+                        $120.00 <del>$20.00</del>
+                      </p>
+                    </div>
+
+                    <!-- ADD TO CART BUTTON -->
+                    <button
+                      type="button"
+                      role="button"
+                      class="product-add-cart-outline-button"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#000000"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"
+                        ></path>
+                      </svg>
+                      <span class="spinner">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#000000"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"
+                          ></path>
+                        </svg>
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================
+   COLLAGE GALLERY SECTION START
+     =========================== -->
+      <section class="collage-gallery-section">
+        <div class="container">
+          <div class="collage-gallery-wrapper">
+            <!--  GALLERY MEDIA VIDEO -->
+            <div class="collage-gallery-media-wrapper collage-gallery-video">
+              <!-- VIDEO CONTROL -->
+              <button class="collage-gallery-video-control pause" role="button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="play-icon"
+                >
+                  <path
+                    d="M234.49,111.07,90.41,22.94A20,20,0,0,0,60,39.87V216.13a20,20,0,0,0,30.41,16.93l144.08-88.13a19.82,19.82,0,0,0,0-33.86ZM84,208.85V47.15L216.16,128Z"
+                  ></path>
+                </svg>
+                <svg
+                  class="pause-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M200,28H160a20,20,0,0,0-20,20V208a20,20,0,0,0,20,20h40a20,20,0,0,0,20-20V48A20,20,0,0,0,200,28Zm-4,176H164V52h32ZM96,28H56A20,20,0,0,0,36,48V208a20,20,0,0,0,20,20H96a20,20,0,0,0,20-20V48A20,20,0,0,0,96,28ZM92,204H60V52H92Z"
+                  ></path>
+                </svg>
+              </button>
+              <img
+                src="./assets/images/collage-gallery/collage-gallery-video-image.jpg"
+                alt="collage-gallery-video-image.jpg"
+              />
+              <video
+                width="708"
+                height="584"
+                autoplay
+                class="collage-gallery-video-player"
+                preload="auto"
+                loop
+              >
+                <source
+                  src="./assets/images/collage-gallery/video-01.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <!--  GALLERY MEDIA -->
+            <div class="collage-gallery-media-wrapper">
+              <a href="#">
+                <img
+                  src="./assets/images/collage-gallery/collage-gallery-image.jpg"
+                  alt="collage-gallery-video-image.jpg"
+                />
+                <div class="collage-gallery-media-content">
+                  <h6 class="collage-gallery-media-title">Chic Wrap Dress</h6>
+                  <a class="collage-gallery-media-button single-button" href="#"
+                    >Shop Now</a
+                  >
+                </div>
+              </a>
+            </div>
+            <!--  GALLERY MEDIA -->
+            <div class="collage-gallery-media-wrapper">
+              <a href="#">
+                <img
+                  src="./assets/images/collage-gallery/collage-gallery-image.jpg"
+                  alt="collage-gallery-video-image.jpg"
+                />
+                <div class="collage-gallery-media-content">
+                  <h6 class="collage-gallery-media-title">Chic Wrap Dress</h6>
+                  <a class="collage-gallery-media-button single-button" href="#"
+                    >Shop Now</a
+                  >
+                </div>
+              </a>
+            </div>
+            <!--  GALLERY MEDIA -->
+            <div class="collage-gallery-media-wrapper">
+              <a href="#">
+                <img
+                  src="./assets/images/collage-gallery/collage-gallery-image.jpg"
+                  alt="collage-gallery-video-image.jpg"
+                />
+                <div class="collage-gallery-media-content">
+                  <h6 class="collage-gallery-media-title">Chic Wrap Dress</h6>
+                  <a class="collage-gallery-media-button single-button" href="#"
+                    >Shop Now</a
+                  >
+                </div>
+              </a>
+            </div>
+            <!--  GALLERY MEDIA -->
+            <div class="collage-gallery-media-wrapper">
+              <a href="#">
+                <img
+                  src="./assets/images/collage-gallery/collage-gallery-image.jpg"
+                  alt="collage-gallery-video-image.jpg"
+                />
+                <div class="collage-gallery-media-content">
+                  <h6 class="collage-gallery-media-title">Chic Wrap Dress</h6>
+                  <a class="collage-gallery-media-button single-button" href="#"
+                    >Shop Now</a
+                  >
+                </div>
+              </a>
+            </div>
+
+            <!--  GALLERY MEDIA VIDEO -->
+            <div class="collage-gallery-media-wrapper collage-gallery-video">
+              <!-- VIDEO CONTROL -->
+              <button class="collage-gallery-video-control pause" role="button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="play-icon"
+                >
+                  <path
+                    d="M234.49,111.07,90.41,22.94A20,20,0,0,0,60,39.87V216.13a20,20,0,0,0,30.41,16.93l144.08-88.13a19.82,19.82,0,0,0,0-33.86ZM84,208.85V47.15L216.16,128Z"
+                  ></path>
+                </svg>
+                <svg
+                  class="pause-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M200,28H160a20,20,0,0,0-20,20V208a20,20,0,0,0,20,20h40a20,20,0,0,0,20-20V48A20,20,0,0,0,200,28Zm-4,176H164V52h32ZM96,28H56A20,20,0,0,0,36,48V208a20,20,0,0,0,20,20H96a20,20,0,0,0,20-20V48A20,20,0,0,0,96,28ZM92,204H60V52H92Z"
+                  ></path>
+                </svg>
+              </button>
+              <img
+                src="./assets/images/collage-gallery/collage-gallery-video-image.jpg"
+                alt="collage-gallery-video-image.jpg"
+              />
+              <video
+                width="708"
+                height="584"
+                autoplay
+                class="collage-gallery-video-player"
+                preload="auto"
+                loop
+              >
+                <source
+                  src="./assets/images/collage-gallery/video-02.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
       </section>
     </main>

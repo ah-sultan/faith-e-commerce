@@ -137,3 +137,43 @@ document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
     });
   });
 });
+
+// =====================
+// TRENDING SECTION START
+
+const trendingSwiper = new Swiper(".trending-swiper", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 24,
+  speed: 700,
+  navigation: {
+    nextEl: ".trending-sl-next",
+    prevEl: ".trending-sl-prev",
+  },
+
+  breakpoints: {
+    575: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+
+    1200: {
+      slidesPerView: 3.2,
+      spaceBetween: 24,
+    },
+    
+    1400: {
+      slidesPerView: 3.8,
+      spaceBetween: 24,
+    },
+
+    1600: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+  },
+});

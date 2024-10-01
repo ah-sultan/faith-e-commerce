@@ -2328,7 +2328,6 @@ NEW ARRIVAL SECTION START
   color: var(--color-heading);
 }
 
-
 @media screen and (min-width: 992px) {
   .new-arrival-section-heading {
     font-size: 6rem;
@@ -2467,4 +2466,44 @@ NEW ARRIVAL SECTION START
 .new-arrival-card-center .new-arrival-card-body .h2 {
   color: var(--color-heading);
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ====================
+TRENDING SECTION START
+=================== */
+
+.trending-section {
+  --color-background: #fff;
+  padding: 6rem 0;
+  background: var(--color-background);
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 992px) {
+  .trending-section {
+    padding: 11rem 0;
+    margin-top: 11rem;
+  }
+}
+
+.trending-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.trending-header .swiper-navigation{
+  margin-left: auto;
+}
+
+.trending-product-wrapper {
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .trending-product-wrapper {
+    margin-top: 6rem;
+  }
 }

@@ -222,6 +222,132 @@ const countdownProductSection = new Swiper(".countdown-product-swiper", {
   slidesPerView: "auto",
   spaceBetween: 24,
   speed: 2000,
-  freeMode : true,
+  freeMode: true,
+});
 
+// =====================
+// BUNDLE PRODUCT SECTION START
+const bundleProductAcc = document.querySelectorAll(".bundle-product-acc");
+
+bundleProductAcc.forEach((item, index) => {
+  // CREATE ACC BUTTON
+  const button = document.createElement("button");
+  const bundleProductButtonWrapper = document.getElementById(
+    "bundleProductButtonWrapper"
+  );
+  bundleProductButtonWrapper.appendChild(button);
+  button.classList.add("bundle-toggler-button");
+  button.innerHTML = `<svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg><svg class="minus-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z"></path></svg>`;
+
+  const accHeader = item.querySelector(".bundle-product-header-wrapper");
+  const accBody = item.querySelector(".bundle-product-body-wrapper");
+
+  const accHeaderHeight = accHeader.firstElementChild.clientHeight;
+  const accBodyHeight = accBody.firstElementChild.clientHeight;
+
+  // STYLE ACC HEADER
+  accHeader.style.transition = ".4s ease-in-out all";
+  accHeader.style.overflow = "hidden";
+  accHeader.style.height = `${accHeaderHeight + 2}px`;
+  item.style.height = "fit-content";
+  item.style.overflow = "hidden";
+
+  // STYLE ACC BODY
+  accBody.style.transition = ".4s ease-in-out all";
+  accBody.style.overflow = "hidden";
+  accBody.style.height = `0px`;
+
+  // HANDLE ACTION
+  button.addEventListener("click", () => {
+    if (button.classList.contains("active")) {
+      // IS  ACTIVE ACC ITEM
+      accBody.style.height = `0`;
+      button.classList.remove("active");
+      item.classList.remove("active");
+      setTimeout(() => {
+        accHeader.style.height = `${accHeaderHeight + 4}px`;
+      }, 300);
+    } else {
+      // IS NOT ACTIVE ACC ITEM
+      accHeader.style.height = 0;
+      button.classList.add("active");
+      item.classList.add("active");
+      handleAutoScroll();
+
+      setTimeout(() => {
+        accBody.style.height = `${accBodyHeight + 4}px`;
+      }, 300);
+    }
+  });
+
+  // DEFAULT ACTIVE
+  if (item.classList.contains("active")) {
+    accHeader.style.height = 0;
+
+    button.classList.add("active");
+    setTimeout(() => {
+      accBody.style.height = `${accBodyHeight + 4}px`;
+    }, 300);
+  }
+
+  /* 
+  THIS FUNCTION WILL CONTROL IF WINDOW WIDTH < 1200PX THEN WINDOW 
+  WILL SCROLL TO TARGETED PRODUCT
+  */
+  const handleAutoScroll = () => {
+    if (document.body.clientWidth < 1200) {
+      const targetPosition = item.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      const duration = 1000;
+      const startTime = Date.now();
+
+      const interval = setInterval(() => {
+        const elapsedTime = Date.now() - startTime;
+        const progress = elapsedTime / duration;
+
+        if (progress >= 1) {
+          clearInterval(interval);
+          window.scrollTo(0, targetPosition);
+        } else {
+          const easeInOut =
+            progress < 0.5
+              ? 4 * progress * progress * progress
+              : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+          window.scrollTo(0, startPosition + easeInOut * distance);
+        }
+      }, 16);
+    }
+  };
+});
+
+// =====================
+// PRODUCT SECTION START
+const productController = document.querySelectorAll(
+  ".product-quantity-controller"
+);
+
+productController.forEach((controller) => {
+  let count = 1;
+  const decreaseButton = controller.querySelector(".decrease-quantity");
+  const increaseButton = controller.querySelector(".increase-quantity");
+  const productQuantity = controller.querySelector(".product-quantity"); // Assuming this is an input element
+
+  // Set the initial quantity
+  productQuantity.value = count;
+
+  // HANDLE INCREASE
+  increaseButton.addEventListener("click", () => {
+    count++;
+    productQuantity.value = count;
+  });
+
+  // HANDLE DECREASE
+  decreaseButton.addEventListener("click", () => {
+    if (count > 1) {
+      count--;
+      productQuantity.value = count;
+    }
+  });
 });

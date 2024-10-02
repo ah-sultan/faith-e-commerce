@@ -115,6 +115,55 @@
 }
 
 /* ========================
+ PRODUCT QUANTITY CONTROLLER
+  ======================== */
+.product-quantity-controller {
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  gap: 0.8rem;
+  width: fit-content;
+  border: 1px solid var(--color-border);
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  -moz-border-radius: 1.4rem;
+  -ms-border-radius: 1.4rem;
+  -o-border-radius: 1.4rem;
+}
+
+.product-quantity-controller button,
+.product-quantity-controller input {
+  color: var(--color-heading);
+  --quantity-controller-ratio: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--quantity-controller-ratio);
+  height: var(--quantity-controller-ratio);
+  background: #f1f4f9;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: var(--color-heading);
+  text-align: center;
+}
+
+.product-quantity-controller input,
+.product-quantity-controller input::placeholder {
+  background: transparent;
+  color: var(--color-heading);
+}
+
+/* ========================
  PRODUCT BUTTONS CSS
   ======================== */
 .product-rating-review {
@@ -156,7 +205,17 @@ PRODUCT SIZE VARIANT
   gap: var(--size-variant-gap);
 }
 
+.product-variant-caption {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: var(--color-foreground);
+  padding-bottom: 0.8rem;
+}
+
 .product-size-variant li {
+  --color-background: #fff;
+  background: var(--color-background);
   cursor: pointer;
   justify-content: center;
   align-items: center;
@@ -173,6 +232,11 @@ PRODUCT SIZE VARIANT
   line-height: 100%;
   color: var(--color-foreground);
   position: relative;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
 }
 
 .product-size-variant li input {
@@ -188,16 +252,18 @@ PRODUCT SIZE VARIANT
 .product-size-variant li.selected,
 .product-size-variant li:hover {
   --color-border: var(--color-heading);
-  background-color: var(--color-heading);
-  --color-foreground: var(--color-background);
+  --color-background: var(--color-heading);
+  --color-foreground: #fff;
 }
 /* ======================
 PRODUCT COLOR VARIANT 
 ======================== */
-.product-color-variant ul {
+.product-color-variant {
   --color-variant-gap: 1.8rem;
   --color-variant-ratio: 4rem;
   --color-radio-gap: 0.8rem;
+}
+.product-color-variant ul {
   display: flex;
   column-gap: calc(var(--color-variant-gap) - var(--color-radio-gap));
 }

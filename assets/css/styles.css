@@ -3563,7 +3563,7 @@ HOT DEALS SECTION START
 
 @media screen and (min-width: 1200px) {
   .features-section {
-    margin-top: 1rem;
+    margin-top: 11rem;
   }
 }
 
@@ -3647,8 +3647,6 @@ HOT DEALS SECTION START
   -webkit-text-stroke: 1px var(--color-heading);
 }
 
-
-
 .features-card .features-card-title {
   font-family: var(--font-heading);
   font-style: normal;
@@ -3660,8 +3658,8 @@ HOT DEALS SECTION START
 
 .features-card:hover .card-count {
   opacity: 1;
-  animation: featuresCardAnimation 1s .3s ease-in-out;
-  -webkit-animation: featuresCardAnimation 1s .3s ease-in-out;
+  animation: featuresCardAnimation 1s 0.3s ease-in-out;
+  -webkit-animation: featuresCardAnimation 1s 0.3s ease-in-out;
 }
 
 .features-card:hover .features-card-title {
@@ -3700,4 +3698,134 @@ HOT DEALS SECTION START
     -o-transform: translateY(5rem);
     opacity: 0;
   }
+}
+
+/* ============================
+ COMPARISON SECTION START
+============================ */
+.comparison-section {
+  --slide-button-height: 6rem;
+  --slide-button-width: 4rem;
+  position: relative;
+  
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 575px) {
+  .comparison-section {
+    --slide-button-height: 8rem;
+    --slide-button-width: 6rem;
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .comparison-section {
+    --slide-button-height: 13rem;
+    --slide-button-width: 10rem;
+    margin-top: 6rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .comparison-section {
+    margin-top: 11rem;
+  }
+}
+
+.comparison-heading {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+}
+
+.comparison-heading h6 {
+  --color-heading: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-heading);
+  margin: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .comparison-heading h6 {
+    font-size: 4rem;
+  }
+  .comparison-heading {
+    padding: 2.4;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .comparison-heading h6 {
+    font-size: 6rem;
+  }
+  .comparison-heading {
+    padding: 4rem;
+  }
+}
+
+.comparison-section img {
+  width: 100vw;
+  height: auto;
+  max-width: none;
+  object-fit: cover;
+}
+
+.comparison-section .image-before {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  inset: 0;
+  z-index: 20;
+  border-right: 2px solid rgba(255, 255, 255, 0.9);
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+}
+
+.comparison-slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 80;
+  width: var(--slide-button-width);
+  height: var(--slide-button-height);
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  cursor: grab;
+}
+
+.comparison-slider-button > img {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.comparison-range-slider {
+  width: 100%;
+  height: var(--slide-button-height);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  cursor: grab;
+  opacity: 0;
+}
+input.comparison-range-slider[type="range"]::-moz-range-thumb {
+  border-radius: 0;
+  width: var(--slide-button-width);
+  height: var(--slide-button-height);
 }

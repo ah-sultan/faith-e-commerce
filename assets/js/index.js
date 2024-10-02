@@ -342,6 +342,33 @@ bundleProductAcc.forEach((item, index) => {
     cmpImgWrapper.style.width = `${imgWidth}%`;
   });
 })();
+
+// =====================
+// PRODUCT DETAILS
+
+const productDetailsThumb = new Swiper(".product-details-thumb-swiper", {
+  spaceBetween: 12,
+  slidesPerView: 5,
+  freeMode: true,
+  watchSlidesProgress: true,
+  speed: 900,
+});
+
+const productDetail = new Swiper(".product-details-swiper", {
+  spaceBetween: 10,
+  slidesPerView: 1.5,
+  centeredSlides: true,
+  loop : true,
+  speed: 900,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: productDetailsThumb,
+  },
+});
+
 // =================================================================================
 // =================================================================================
 // =================================================================================

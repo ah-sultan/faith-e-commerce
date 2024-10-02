@@ -3707,7 +3707,7 @@ HOT DEALS SECTION START
   --slide-button-height: 6rem;
   --slide-button-width: 4rem;
   position: relative;
-  
+
   height: 100%;
   overflow: hidden;
 }
@@ -3829,3 +3829,4 @@ input.comparison-range-slider[type="range"]::-moz-range-thumb {
   width: var(--slide-button-width);
   height: var(--slide-button-height);
 }
+

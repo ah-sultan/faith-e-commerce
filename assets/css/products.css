@@ -557,7 +557,13 @@ PRODUCT COLOR VARIANT
 COUNTDOWN PRODUCT SECTION START
 =================== */
 .countdown-product-section {
-  margin-top: 11rem;
+  margin-top: 0rem;
+}
+
+@media screen and (min-width: 992px) {
+  .countdown-product-section {
+    margin-top: 11rem;
+  }
 }
 
 .countdown-product-section .swiper-slide {
@@ -565,11 +571,11 @@ COUNTDOWN PRODUCT SECTION START
 }
 .countdown-product-card {
   --color-background: #fff;
-  width: 88rem;
+  width: 36rem;
   display: grid;
-  gap: 4rem;
-  grid-template-columns: 41.2rem 1fr;
-  padding: 20px;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  padding: 2rem;
   background: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: 2.4rem;
@@ -580,21 +586,58 @@ COUNTDOWN PRODUCT SECTION START
   align-items: center;
 }
 
+@media screen and (min-width: 575px) {
+  .countdown-product-card {
+    gap: 1.6rem;
+    width: 57.5rem;
+    grid-template-columns: 24rem 1fr;
+    padding: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .countdown-product-card {
+    width: 88rem;
+    grid-template-columns: 41.2rem 1fr;
+    padding: 2rem;
+    gap: 4rem;
+  }
+}
+
 .countdown-product-card .card-body {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 3.2rem;
+  gap: 1.6rem;
   height: 100%;
 }
+
+@media screen and (min-width: 992px) {
+  .countdown-product-card .card-body {
+    gap: 3.2rem;
+  }
+}
+
 .countdown-product-card .product-price {
-  font-size: 18px;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .countdown-product-card .product-price {
+    font-size: 1.8rem;
+  }
 }
 
 .countdown-product-card-title {
-  font-size: 3.6rem;
-  padding: 1rem 0;
+  font-size: 2rem;
+  padding: 0.4rem 0;
+}
+
+@media screen and (min-width: 992px) {
+  .countdown-product-card-title {
+    font-size: 3.6rem;
+  }
 }
 
 .countdown-product-card .product-size-variant {
@@ -606,6 +649,21 @@ COUNTDOWN PRODUCT SECTION START
   --color-variant-gap: 1.2rem;
   --color-variant-ratio: 3.2rem;
   --color-radio-gap: 0.8rem;
+}
+
+@media screen and (max-width: 992px) {
+  .product-size-variant {
+    --size-variant-gap: 1.8rem;
+    --size-variant-px: 1.2rem;
+    --size-variant-py: 0.4rem;
+    --size-variant-font-size: 1.6rem;
+  }
+
+  .product-color-variant ul {
+    --color-variant-gap: 1.2rem;
+    --color-variant-ratio: 2.4rem;
+    --color-radio-gap: 0.2rem;
+  }
 }
 
 .countdown-product-card-timer-title {
@@ -620,7 +678,7 @@ COUNTDOWN PRODUCT SECTION START
 
 .countdown-product-card-timer-item {
   font-weight: 600;
-  font-size: 30px;
+  font-size: 2rem;
   line-height: 150%;
   color: var(--color-heading);
   display: flex;
@@ -636,4 +694,30 @@ COUNTDOWN PRODUCT SECTION START
 
 .countdown-product-card-timer-item:last-child:after {
   display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .countdown-product-card-timer-item {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 150%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .countdown-product-card .product-button-wrapper {
+    gap: 0.8rem;
+  }
+  .countdown-product-card .product-add-cart-button {
+    padding: 1rem 1.6rem;
+    font-size: 1.4rem;
+  }
+  .countdown-product-card .product-outline-button {
+    --button-ratio: 4.4rem;
+  }
+
+  .countdown-product-card .product-outline-button > svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
 }

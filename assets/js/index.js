@@ -221,8 +221,7 @@ const countdownSection = new Swiper(".countdown-swiper", {
 const countdownProductSection = new Swiper(".countdown-product-swiper", {
   slidesPerView: "auto",
   spaceBetween: 24,
-  speed: 1200,
-  mousewheel: true,
-  eventsTarget : ".countdown-product-section",
-  invert : true,
+  speed: 2000,
+  freeMode : true,
+
 });

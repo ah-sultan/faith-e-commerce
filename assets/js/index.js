@@ -353,18 +353,18 @@ const productDetailsThumb = new Swiper(".product-details-thumb-swiper", {
   watchSlidesProgress: true,
   speed: 900,
   slidesPerView: 4,
-  breakpoints : {
-    1200:{
+  breakpoints: {
+    1200: {
       slidesPerView: 5,
-    }
-  }
+    },
+  },
 });
 
 const productDetail = new Swiper(".product-details-swiper", {
   spaceBetween: 10,
   slidesPerView: 1.3,
   centeredSlides: true,
-  loop : true,
+  loop: true,
   speed: 900,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -374,17 +374,64 @@ const productDetail = new Swiper(".product-details-swiper", {
     swiper: productDetailsThumb,
   },
 
-  breakpoints : {
-
-    992:{
+  breakpoints: {
+    992: {
       slidesPerView: 1,
     },
-    1400:{
+    1400: {
       slidesPerView: 1.3,
-    }
-  }
-
+    },
+  },
 });
+
+// =====================
+// RECENT ADDED SECTION START
+const recentAddedSwiper = document.querySelectorAll(".recent-added-swiper");
+
+recentAddedSwiper.forEach((item, index) => {
+  const swiper = new Swiper(item, {
+    direction: "horizontal",
+    speed: 5000,
+    autoplay: {
+      delay: 5,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+      reverseDirection: index === 0,
+    },
+    loop: true,
+    slidesPerView: "auto",
+    watchSlidesProgress: true,
+    spaceBetween: 24,
+    grabCursor: true,
+
+    breakpoints: {
+      1200: {
+        direction: "vertical",
+      },
+    },
+  });
+});
+
+// =====================
+// STYLISH SECTION START
+
+const stylishProducts = new Swiper(".stylish-product-swiper", {
+  spaceBetween: 10,
+  slidesPerView: "auto",
+  slidePerGroup: 1,
+  centeredSlides: true,
+  loop: true,
+  speed: 900,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  initialSlide: 1,
+  freeMode: true,
+  autoHeight: true,
+});
+
 
 // =================================================================================
 // =================================================================================

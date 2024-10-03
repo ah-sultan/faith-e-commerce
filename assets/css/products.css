@@ -4,7 +4,8 @@
 .product-button-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 2rem 1.2rem;
+  flex-wrap: wrap;
 }
 
 .product-add-cart-button {
@@ -38,6 +39,12 @@
   opacity: 1;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 576px) { 
+  .product-add-cart-button{
+    order: 1;
+  }
 }
 
 .product-outline-button {
@@ -114,6 +121,12 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 576px) { 
+  .product-outline-button{
+    order: 4;
+  }
+}
+
 /* ========================
  PRODUCT QUANTITY CONTROLLER
   ======================== */
@@ -163,6 +176,12 @@
   color: var(--color-heading);
 }
 
+@media screen and (max-width: 576px) { 
+  .product-quantity-controller{
+    order: 2;
+  }
+}
+
 /* ========================
  PRODUCT BUTTONS CSS
   ======================== */
@@ -193,10 +212,19 @@
 PRODUCT SIZE VARIANT 
 ======================== */
 .product-size-variant {
-  --size-variant-gap: 1.8rem;
-  --size-variant-px: 1.6rem;
-  --size-variant-py: 0.8rem;
-  --size-variant-font-size: 1.6rem;
+  --size-variant-gap: .6rem;
+  --size-variant-px: 1.2rem;
+  --size-variant-py: 0.6rem;
+  --size-variant-font-size: 1.4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .product-size-variant {
+    --size-variant-gap: 1.8rem;
+    --size-variant-px: 1.6rem;
+    --size-variant-py: 0.8rem;
+    --size-variant-font-size: 1.6rem;
+  }
 }
 
 .product-size-variant-list {
@@ -718,14 +746,14 @@ COUNTDOWN PRODUCT SECTION START
 }
 
 @media screen and (max-width: 992px) {
-  .product-size-variant {
+  .countdown-product-card .product-size-variant {
     --size-variant-gap: 1.8rem;
     --size-variant-px: 1.2rem;
     --size-variant-py: 0.4rem;
     --size-variant-font-size: 1.6rem;
   }
 
-  .product-color-variant ul {
+  .countdown-product-card .product-color-variant ul {
     --color-variant-gap: 1.2rem;
     --color-variant-ratio: 2.4rem;
     --color-radio-gap: 0.2rem;
@@ -792,31 +820,57 @@ COUNTDOWN PRODUCT SECTION START
 PRODUCT DETAILS SECTION START
 =================== */
 .product-details {
-  margin-top: 11rem;
+  margin-top: 6rem;
+}
+@media screen and (min-width: 1200px) {
+  .product-details {
+    margin-top: 11rem;
+  }
 }
 
 .product-details-wrapper {
   display: grid;
-  top: 0px;
-  grid-template-columns: 65.4rem 1fr;
+  grid-template-columns: 100%;
   background: #fff;
-  gap: 4.8rem;
   border: 1px solid var(--color-border);
-  border-radius: 4rem;
-  -webkit-border-radius: 4rem;
-  -moz-border-radius: 4rem;
-  -ms-border-radius: 4rem;
-  -o-border-radius: 4rem;
-  padding: 6.4rem;
+  border-radius: 2.4rem;
+  -webkit-border-radius: 2.4rem;
+  -moz-border-radius: 2.4rem;
+  -ms-border-radius: 2.4rem;
+  -o-border-radius: 2.4rem;
   align-items: start;
+  padding: 1.6rem;
+  row-gap: 4rem;
 }
 
-.product-details-image-block image {
+@media screen and (min-width: 992px) {
+  .product-details-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .product-details-wrapper {
+    grid-template-columns: 65.4rem 1fr;
+    gap: 4.8rem;
+    padding: 6.4rem;
+    border-radius: 4rem;
+    -webkit-border-radius: 4rem;
+    -moz-border-radius: 4rem;
+    -ms-border-radius: 4rem;
+    -o-border-radius: 4rem;
+  }
+}
+
+.product-details-image-block {
   border-radius: 1.6rem;
   -webkit-border-radius: 1.6rem;
   -moz-border-radius: 1.6rem;
   -ms-border-radius: 1.6rem;
   -o-border-radius: 1.6rem;
+  overflow: hidden;
 }
 
 .product-details-image-wrapper img {
@@ -864,21 +918,45 @@ PRODUCT DETAILS SECTION START
   border: 0;
   background: var(--color-accent);
   color: var(--color-heading);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
-.product-details-price .product-price {
-  font-size: 2.4rem;
+@media screen and (min-width: 1200px) {
+  .product-details-price .sale {
+    font-size: 1.4rem;
+  }
 }
-.product-details-price .product-price del {
-  font-size: 2rem;
+
+@media screen and (min-width: 1400px) {
+  .product-details-price .product-price {
+    font-size: 2.4rem;
+  }
+  .product-details-price .product-price del {
+    font-size: 2rem;
+  }
 }
 
 .product-details-title {
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 1.5;
   padding: 0.8rem 0;
+}
+
+@media screen and (min-width: 1400px) {
+  .product-details-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .product-details-title {
+    font-size: 4rem;
+  }
+}
+
+.product-details-desc {
+  max-width: 100%;
 }
 
 .product-rating-review {
@@ -899,10 +977,17 @@ PRODUCT DETAILS SECTION START
 }
 
 .product-details-variant-wrapper {
-  margin: 3.2rem 0 4.6rem;
+  margin: 2.4rem 0 4rem;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 2.4rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .product-details-variant-wrapper {
+    margin: 3.2rem 0 4.6rem;
+    gap: 3.2rem;
+  }
 }
 
 .product-details-meta-wrapper {
@@ -912,6 +997,7 @@ PRODUCT DETAILS SECTION START
   padding: 2.4rem 2rem;
   gap: 1.67rem;
   width: 47rem;
+  max-width: 100%;
   border: 1px solid var(--color-border);
   border-radius: 2rem;
   -webkit-border-radius: 2rem;
@@ -925,6 +1011,8 @@ PRODUCT DETAILS SECTION START
   justify-content: space-between;
   width: 100%;
   padding-bottom: 1.6rem;
+  flex-wrap: wrap;
+  gap: 1.6rem;
   border-bottom: 1px solid var(--color-border);
 }
 .product-details-meta-list {
@@ -937,6 +1025,7 @@ PRODUCT DETAILS SECTION START
   font-weight: 500;
   color: var(--color-heading);
   fill: var(--color-heading);
+  line-height: 1;
 }
 
 .product-details-meta-list svg {
@@ -952,6 +1041,7 @@ PRODUCT DETAILS SECTION START
   font-size: 1.6rem;
   line-height: 100%;
   color: var(--color-heading);
+  text-decoration: underline;
 }
 
 .product-details-meta-wrapper .shipping-area-check h6 {
@@ -975,15 +1065,14 @@ PRODUCT DETAILS SECTION START
 .product-details-meta-wrapper .meta-box-features {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.6rem 2rem;
+  flex-wrap: wrap;
 }
 
 .product-details-meta-wrapper .meta-box-features li {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding: 1rem;
-
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 120%;

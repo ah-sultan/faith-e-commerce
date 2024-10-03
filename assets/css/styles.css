@@ -3460,7 +3460,7 @@ HOT DEALS SECTION START
 .bundle-product-header {
   box-sizing: border-box;
   display: grid;
-  padding: 1.6rem 2.6rem;
+  padding: 1.6rem;
   grid-template-columns: 1fr;
   gap: 8px;
   border: 1px solid var(--color-border);
@@ -3474,7 +3474,13 @@ HOT DEALS SECTION START
 @media screen and (min-width: 576px) {
   .bundle-product-header {
     grid-template-columns: 14rem 1fr;
+    padding: 1.6rem 2.6rem;
   }
+}
+
+.bundle-product  .product-rating-review{
+  border: 0;
+  margin-top: 0;
 }
 
 .bundle-product-body {
@@ -3496,7 +3502,7 @@ HOT DEALS SECTION START
 @media screen and (min-width: 576px) {
   .bundle-product-body {
     padding: 2.4rem;
-    gap: 5rem;
+    gap: 4rem;
   }
 }
 
@@ -3536,7 +3542,7 @@ HOT DEALS SECTION START
 }
 
 @media screen and (max-width: 576px) {
-  .product-button-wrapper {
+  .bundle-product-body .product-button-wrapper {
     flex-wrap: wrap;
   }
 
@@ -3703,11 +3709,12 @@ HOT DEALS SECTION START
 /* ============================
  COMPARISON SECTION START
 ============================ */
+
 .comparison-section {
   --slide-button-height: 6rem;
   --slide-button-width: 4rem;
   position: relative;
-
+  margin-top: 4rem;
   height: 100%;
   overflow: hidden;
 }
@@ -3716,7 +3723,7 @@ HOT DEALS SECTION START
   .comparison-section {
     --slide-button-height: 8rem;
     --slide-button-width: 6rem;
-    margin-top: 4rem;
+   
   }
 }
 

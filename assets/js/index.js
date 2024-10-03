@@ -352,11 +352,17 @@ const productDetailsThumb = new Swiper(".product-details-thumb-swiper", {
   freeMode: true,
   watchSlidesProgress: true,
   speed: 900,
+  slidesPerView: 4,
+  breakpoints : {
+    1200:{
+      slidesPerView: 5,
+    }
+  }
 });
 
 const productDetail = new Swiper(".product-details-swiper", {
   spaceBetween: 10,
-  slidesPerView: 1.5,
+  slidesPerView: 1.3,
   centeredSlides: true,
   loop : true,
   speed: 900,
@@ -367,6 +373,17 @@ const productDetail = new Swiper(".product-details-swiper", {
   thumbs: {
     swiper: productDetailsThumb,
   },
+
+  breakpoints : {
+
+    992:{
+      slidesPerView: 1,
+    },
+    1400:{
+      slidesPerView: 1.3,
+    }
+  }
+
 });
 
 // =================================================================================

@@ -427,11 +427,42 @@ const stylishProducts = new Swiper(".stylish-product-swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  initialSlide: 1,
+  initialSlide: 2,
   freeMode: true,
   autoHeight: true,
 });
 
+/* CLONE STYLISH PRODUCT WRAPPER AND 
+APPEND IT ON STYLISH PRODUCT CARD ELEMENT */
+const stylishProductCard = document.querySelectorAll(".stylish-product-card");
+
+stylishProductCard.forEach((item) => {
+  const productWrapper = item?.firstElementChild?.cloneNode(true);
+  item.appendChild(productWrapper);
+});
+
+// =====================
+// STYLISH SECTION START
+
+const testimonialCard = new Swiper(".testimonial-swiper", {
+  spaceBetween: 20,
+  slidesPerView: "auto",
+  initialSlide: 1,
+  centeredSlides: true,
+  loop: true,
+  speed: 900,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  breakpoints : {
+    992:{
+      spaceBetween: 48,
+    }
+  }
+});
 
 // =================================================================================
 // =================================================================================

@@ -464,6 +464,52 @@ const testimonialCard = new Swiper(".testimonial-swiper", {
   }
 });
 
+
+
+// =====================
+// FOOTER SECTION  START
+if(document.body.clientWidth < 992){
+  const footerMenuWrapper = document.querySelectorAll(".footer-menu-wrapper")
+
+footerMenuWrapper.forEach((item) => {
+
+  // Initially hide the menu list
+  gsap.set(item.querySelector(".footer-menu-acc"), {
+    overflow: "hidden",
+    height: 0,
+  })
+
+  const header = item.querySelector(".footer-menu-heading")
+
+  header.addEventListener("click", () => {
+    const menuList = item.querySelector(".footer-menu-acc")
+
+    if (header.classList.contains("active")) {
+      // Collapse the menu
+      gsap.to(menuList, {
+        height: 0,
+        duration: 0.3,
+        ease: "power1.inOut" // Using GSAP easing
+      })
+
+      header.classList.remove("active")
+
+    } else {
+      // Expand the menu
+      gsap.to(menuList, {
+        height: "auto", // You might need to calculate the height dynamically if using auto
+        duration: 0.3,
+        ease: "power1.inOut" // Using GSAP easing
+      })
+
+      header.classList.add("active")
+    }
+  })
+})
+
+}
+
+
 // =================================================================================
 // =================================================================================
 // =================================================================================

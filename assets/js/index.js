@@ -72,30 +72,137 @@ const handleOverlay = (show) => {
 // =====================
 // SEARCH DRAWER
 
+
 (function () {
-  const searchDrawer = document.getElementById("searchDrawer");
-  const searchDrawerCloseBtn = document.getElementById("searchDrawerCloseBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileMenuCloseButton = document.getElementById("mobileMenuCloseBtn");
+  const mobileMenuOpenButton = document.getElementById("mobileMenuOpenButton");
 
-  // HANDLE SEARCH DRAWER OPEN
-  const searchDrawerOpenButton = document.querySelectorAll(
-    ".search-drawer-open-button"
-  );
+  // Set initial state of mobile menu off-screen
+  gsap.set(mobileMenu, {
+    xPercent: -110,
+  });
 
-  searchDrawerOpenButton.forEach((item) => {
-    item.addEventListener("click", () => {
-      document.body.style.overflowY = "hidden";
-      searchDrawer.classList.add("active");
-      handleOverlay(true);
+  // Open Menu
+  mobileMenuOpenButton.addEventListener("click", () => {
+    handleOverlay(true);
+
+    // GSAP Open Timeline
+    const tl = gsap.timeline();
+
+    tl.to(mobileMenu, {
+      display: "block",
+      delay: 0.2,
+    });
+
+    tl.to(mobileMenu, {
+      xPercent: 0,
+      duration: 0.3,
+      ease: "power4.out",
+    });
+
+    tl.from(mobileMenu.querySelector(".header-mobile-menu"), {
+      y: -100,
+      duration: .5,
+      opacity: 0,
+      ease: "back.out(1.7)",
+    });
+
+    tl.from(mobileMenu.querySelectorAll(".mobile-menu-wrapper-list li"), {
+      x: -100,
+      duration: .4,
+      ease: "back.out(1.7)",
+      opacity: 0,
+      stagger: 0.2, // Stagger for sequential effect
+    });
+
+    tl.from(mobileMenu.querySelector(".mobile-menu-footer"), {
+      y: 100,
+      duration: 0.3,
+      ease: "back.out(1.7)",
+      opacity: 0,
     });
   });
 
-  // HANDLE SEARCH DRAWER CLOSE
-  searchDrawerCloseBtn.addEventListener("click", () => {
-    document.body.style.overflowY = "visible";
-    searchDrawer.classList.remove("active");
-    handleOverlay(false);
+  // Close Menu
+  mobileMenuCloseButton.addEventListener("click", () => {
+    // GSAP Close Timeline
+    const tlClose = gsap.timeline({
+      onComplete: () => {
+        handleOverlay(false); // Optional: Handle overlay close
+      },
+    });
+
+    // Animate out the footer first
+    tlClose.to(mobileMenu.querySelector(".mobile-menu-footer"), {
+      y: 100,
+      duration: 0.3,
+      ease: "back.in(1.7)", // Reversing the easing for close
+      opacity: 0,
+    });
+
+    // Animate out the list items
+    tlClose.to(mobileMenu.querySelectorAll(".mobile-menu-wrapper-list li"), {
+      x: 100, // Moving it down instead of up
+      duration: .4,
+      ease: "back.in(1.7)",
+      opacity: 0,
+      stagger: 0.1, // Sequentially reverse
+    });
+
+    // Animate out the header
+    tlClose.to(mobileMenu.querySelector(".header-mobile-menu"), {
+      y: -100,
+      duration: 0.2,
+      opacity: 0,
+      ease: "back.in(1.7)",
+    });
+
+    // Slide the menu off-screen
+    tlClose.to(mobileMenu, {
+      xPercent: -110,
+      duration: 0.7,
+      ease: "power4.in",
+    });
+
+    // Hide the menu
+    tlClose.set(mobileMenu, {
+      display: "none",
+    });
   });
 })();
+
+
+  // =====================
+  // SEARCH DRAWER
+(
+  function () {
+    const searchDrawer = document.getElementById("searchDrawer");
+    const searchDrawerCloseBtn = document.getElementById(
+      "searchDrawerCloseBtn"
+    );
+
+    // HANDLE SEARCH DRAWER OPEN
+    const searchDrawerOpenButton = document.querySelectorAll(
+      ".search-drawer-open-button"
+    );
+
+    searchDrawerOpenButton.forEach((item) => {
+      item.addEventListener("click", () => {
+        document.body.style.overflowY = "hidden";
+        searchDrawer.classList.add("active");
+        handleOverlay(true);
+      });
+    });
+
+    // HANDLE SEARCH DRAWER CLOSE
+    searchDrawerCloseBtn.addEventListener("click", () => {
+      document.body.style.overflowY = "visible";
+      searchDrawer.classList.remove("active");
+      handleOverlay(false);
+    });
+  }
+)();
 
 // =====================
 // PRODUCT QUICK VIEW POPUP SECTION START
@@ -151,43 +258,42 @@ const productQuickViewDetails = new Swiper(".product-quick-view-swiper", {
 // =====================
 // CART DRAWER SECTION START
 (function () {
-
-  // HANDLE CART DRAWER VISIBILITY 
-  const cartDrawer = document.getElementById("cartDrawer")
-  const cartDrawerCloseButton = document.getElementById("cartDrawerCloseButton")
-  const cartDrawerOpenButton = document.getElementById("cartDrawerOpenButton")
+  // HANDLE CART DRAWER VISIBILITY
+  const cartDrawer = document.getElementById("cartDrawer");
+  const cartDrawerCloseButton = document.getElementById(
+    "cartDrawerCloseButton"
+  );
+  const cartDrawerOpenButton = document.getElementById("cartDrawerOpenButton");
 
   cartDrawerOpenButton.addEventListener("click", () => {
-    cartDrawer.classList.add("active")
-    handleOverlay(true)
-  const tl  = gsap.timeline()
+    cartDrawer.classList.add("active");
+    handleOverlay(true);
+    const tl = gsap.timeline();
 
     tl.from(cartDrawer.querySelector(".cart-drawer-header"), {
-      y : 100,
-      opacity : 0,
-      duration : .4,
+      y: 100,
+      opacity: 0,
+      duration: 0.4,
       ease: "power1.inOut",
-    })
+    });
     tl.from(cartDrawer.querySelector(".cart-drawer-wrapper"), {
-      y : 100,
-      opacity : 0,
-      duration : .4,
+      y: 100,
+      opacity: 0,
+      duration: 0.4,
       ease: "power1.inOut",
-    })
+    });
     tl.from(cartDrawer.querySelector(".cart-drawer-footer"), {
-      y : 100,
-      opacity : 0,
-      duration : .4,
+      y: 100,
+      opacity: 0,
+      duration: 0.4,
       ease: "power1.inOut",
-    })
-
-  })
+    });
+  });
 
   cartDrawerCloseButton.addEventListener("click", () => {
-    cartDrawer.classList.remove("active")
-    handleOverlay(false)
-  })
-
+    cartDrawer.classList.remove("active");
+    handleOverlay(false);
+  });
 
   // RANG SLIDE
   const inputRange = document.getElementById("cart-drawer-deals-input-range");
@@ -248,18 +354,13 @@ const productQuickViewDetails = new Swiper(".product-quick-view-swiper", {
   const swiperCart = new Swiper(".cart-drawer-suggest-products-wrapper", {
     loop: true,
     speed: 700,
-    slidesPerView :1,
+    slidesPerView: 1,
     pagination: {
-      el : ".cart-drawer-suggest-products-pagination",
-      clickable : true,
+      el: ".cart-drawer-suggest-products-pagination",
+      clickable: true,
     },
   });
-  
- 
-
-
 })();
-
 
 // =====================
 // ANNOUNCEMENT BAR

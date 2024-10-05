@@ -202,6 +202,7 @@
  PRODUCT QUANTITY CONTROLLER
   ======================== */
 .product-quantity-controller {
+  --quantity-controller-ratio: 3.2rem;
   display: flex;
   align-items: center;
   display: flex;
@@ -220,7 +221,7 @@
 .product-quantity-controller button,
 .product-quantity-controller input {
   color: var(--color-heading);
-  --quantity-controller-ratio: 3.2rem;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,6 +253,8 @@
     order: 2;
   }
 }
+
+
 
 /* ========================
  PRODUCT BUTTONS CSS

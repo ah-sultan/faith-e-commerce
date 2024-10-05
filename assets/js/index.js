@@ -96,6 +96,10 @@ const handleOverlay = (show) => {
     handleOverlay(false);
   });
 })();
+
+
+
+
 // =====================
 // PRODUCT QUICK VIEW POPUP SECTION START
 (function () {
@@ -146,6 +150,28 @@ const productQuickViewDetails = new Swiper(".product-quick-view-swiper", {
     swiper: productQuickViewThumb,
   },
 });
+
+
+// =====================
+// CART DRAWER SECTION START
+(function() {
+  const inputRange = document.getElementById("cart-drawer-deals-input-range");
+  const rangeSlide = document.getElementById("cart-drawer-deals-range");
+
+  
+  rangeSlide.style.width = `${inputRange.value}%`;
+
+  
+  inputRange.addEventListener("input", () => {
+    rangeSlide.style.width = `${inputRange.value}%`;
+  });
+})();
+
+
+
+
+
+
 // =====================
 // ANNOUNCEMENT BAR
 

@@ -1,6 +1,5 @@
 // =====================
 // MARQUE SLIDER SECTION START
-
 const marqueSlider = document.querySelectorAll(".marquee-slider");
 
 marqueSlider.forEach((slide) => {
@@ -12,30 +11,165 @@ marqueSlider.forEach((slide) => {
 });
 
 // =====================
-// ANNOUNCE BAR
+// POPUP SECTION START
+
+// OVERLAY
+const handleOverlay = (show) => {
+  const overlay = document.querySelector(".overlay");
+  if (show) {
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  } else {
+    overlay.classList.remove("active");
+    document.body.style.overflow = "unset";
+  }
+};
+
+// POPUP CLOSE
+(function () {
+  const popup = document.querySelectorAll(".popup");
+
+  popup.forEach((item) => {
+    const popUpButton = item.querySelector(".close-button");
+    const popupClose = document.createElement("div");
+    popupClose.classList.add("overlay-closer");
+    item.firstElementChild.appendChild(popupClose);
+
+    const handleClose = () => {
+      item.classList.remove("active");
+      handleOverlay(false);
+      console.log("clicked");
+    };
+
+    popupClose.addEventListener("click", () => {
+      handleClose();
+    });
+
+    popUpButton.addEventListener("click", () => {
+      handleClose();
+    });
+  });
+})();
+
+// COUNT DOWN POPUP
+(function () {
+  // SELECT THE COUNTDOWN POPUP ELEMENT
+  const countDownPopup = document.getElementById("countDownPopup");
+
+  // WAIT UNTIL THE DOM CONTENT IS FULLY LOADED
+  window.addEventListener("DOMContentLoaded", () => {
+    // CHECK YOUR CONDITION HERE (CURRENTLY SET TO 'TRUE' AS A PLACEHOLDER)
+    if (false) {
+      // ADD "ACTIVE" CLASS TO THE POPUP AFTER 800 MILLISECONDS
+      setTimeout(() => {
+        countDownPopup.classList.add("active");
+        handleOverlay(true);
+      }, 2000);
+    }
+  });
+})();
+
+// =====================
+// SEARCH DRAWER
+
+(function () {
+  const searchDrawer = document.getElementById("searchDrawer");
+  const searchDrawerCloseBtn = document.getElementById("searchDrawerCloseBtn");
+
+  // HANDLE SEARCH DRAWER OPEN
+  const searchDrawerOpenButton = document.querySelectorAll(
+    ".search-drawer-open-button"
+  );
+
+  searchDrawerOpenButton.forEach((item) => {
+    item.addEventListener("click", () => {
+      document.body.style.overflowY = "hidden";
+      searchDrawer.classList.add("active");
+      handleOverlay(true);
+    });
+  });
+
+  // HANDLE SEARCH DRAWER CLOSE
+  searchDrawerCloseBtn.addEventListener("click", () => {
+    document.body.style.overflowY = "visible";
+    searchDrawer.classList.remove("active");
+    handleOverlay(false);
+  });
+})();
+// =====================
+// PRODUCT QUICK VIEW POPUP SECTION START
+(function () {
+  const productQuickOpenButtons = document.querySelectorAll(
+    ".product-quickview-button"
+  );
+  const productQuickCloseButton = document.getElementById(
+    "productQuickCloseButton"
+  );
+  const productQuickView = document.getElementById("productQuickView");
+
+  // HANDLE OPEN QUICK VIEW
+  productQuickOpenButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      handleOverlay(true);
+      productQuickView.classList.add("active");
+    });
+  });
+
+  // HANDLE CLOSE QUICK VIEW
+  productQuickCloseButton.addEventListener("click", () => {
+    handleOverlay(false);
+    productQuickView.classList.remove("active");
+  });
+})();
+
+// Initialize Swiper for product quick view thumbnails
+const productQuickViewThumb = new Swiper(".product-quick-view-thumb-swiper", {
+  spaceBetween: 12,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+  speed: 900,
+});
+
+// Initialize Swiper for product quick view details
+const productQuickViewDetails = new Swiper(".product-quick-view-swiper", {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  centeredSlides: true,
+  loop: true,
+  speed: 900,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: productQuickViewThumb,
+  },
+});
+// =====================
+// ANNOUNCEMENT BAR
 
 const announcementBar = document.getElementById("announcement-bar");
-const announcementBarToggler = document.getElementById(
-  "announcement-bar-toggler"
-);
-const announcementBarDrawer = document.getElementById(
-  "announcement-bar-drawer"
-);
+const announcementBarToggler = document.getElementById("announcement-bar-toggler");
+const announcementBarDrawer = document.getElementById("announcement-bar-drawer");
 
-// Default Style announcement Bar Drawer
+// Default Style for Announcement Bar Drawer
 announcementBarDrawer.style.display = "none";
 announcementBarDrawer.style.transform = "translateY(-100%)";
 
 console.log(announcementBarDrawer.clientHeight);
 
+// Toggle Announcement Bar Drawer
 announcementBarToggler.addEventListener("click", () => {
   if (announcementBarToggler.classList.contains("show")) {
+    // Hide Announcement Bar Drawer
     announcementBarToggler.classList.remove("show");
     announcementBarDrawer.style.transform = "translateY(-100%)";
     setTimeout(() => {
       announcementBarDrawer.style.display = "none";
     }, 700);
   } else {
+    // Show Announcement Bar Drawer
     announcementBarDrawer.style.display = "block";
     announcementBarToggler.classList.add("show");
     setTimeout(() => {
@@ -44,21 +178,21 @@ announcementBarToggler.addEventListener("click", () => {
   }
 });
 
+// Initialize Swiper for Announcement Bar
 const announceBarSwiper = new Swiper(".announce-bar-swipper", {
   loop: true,
-
   speed: 700,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
   breakpoints: {
     992: {
       direction: "vertical",
     },
   },
 });
+
 
 // =====================
 // HEADER SECTION START
@@ -100,6 +234,19 @@ const slideshowSwiper = new Swiper(".slideshow-swipper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// =====================
+// PROMO SECTION
+
+(function () {
+  const button = document.getElementById("promoVideoPopupButton");
+  const videoPopup = document.getElementById("videoPopup");
+
+  button.addEventListener("click", () => {
+    videoPopup.classList.add("active");
+    handleOverlay(true);
+  });
+})();
 
 // =====================
 // TABS SECTION START
@@ -457,58 +604,52 @@ const testimonialCard = new Swiper(".testimonial-swiper", {
     clickable: true,
   },
 
-  breakpoints : {
-    992:{
+  breakpoints: {
+    992: {
       spaceBetween: 48,
-    }
-  }
+    },
+  },
 });
-
-
 
 // =====================
 // FOOTER SECTION  START
-if(document.body.clientWidth < 992){
-  const footerMenuWrapper = document.querySelectorAll(".footer-menu-wrapper")
+if (document.body.clientWidth < 992) {
+  const footerMenuWrapper = document.querySelectorAll(".footer-menu-wrapper");
 
-footerMenuWrapper.forEach((item) => {
+  footerMenuWrapper.forEach((item) => {
+    // Initially hide the menu list
+    gsap.set(item.querySelector(".footer-menu-acc"), {
+      overflow: "hidden",
+      height: 0,
+    });
 
-  // Initially hide the menu list
-  gsap.set(item.querySelector(".footer-menu-acc"), {
-    overflow: "hidden",
-    height: 0,
-  })
+    const header = item.querySelector(".footer-menu-heading");
 
-  const header = item.querySelector(".footer-menu-heading")
+    header.addEventListener("click", () => {
+      const menuList = item.querySelector(".footer-menu-acc");
 
-  header.addEventListener("click", () => {
-    const menuList = item.querySelector(".footer-menu-acc")
+      if (header.classList.contains("active")) {
+        // Collapse the menu
+        gsap.to(menuList, {
+          height: 0,
+          duration: 0.3,
+          ease: "power1.inOut", // Using GSAP easing
+        });
 
-    if (header.classList.contains("active")) {
-      // Collapse the menu
-      gsap.to(menuList, {
-        height: 0,
-        duration: 0.3,
-        ease: "power1.inOut" // Using GSAP easing
-      })
+        header.classList.remove("active");
+      } else {
+        // Expand the menu
+        gsap.to(menuList, {
+          height: "auto", // You might need to calculate the height dynamically if using auto
+          duration: 0.3,
+          ease: "power1.inOut", // Using GSAP easing
+        });
 
-      header.classList.remove("active")
-
-    } else {
-      // Expand the menu
-      gsap.to(menuList, {
-        height: "auto", // You might need to calculate the height dynamically if using auto
-        duration: 0.3,
-        ease: "power1.inOut" // Using GSAP easing
-      })
-
-      header.classList.add("active")
-    }
-  })
-})
-
+        header.classList.add("active");
+      }
+    });
+  });
 }
-
 
 // =================================================================================
 // =================================================================================

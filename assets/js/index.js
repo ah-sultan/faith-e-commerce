@@ -97,9 +97,6 @@ const handleOverlay = (show) => {
   });
 })();
 
-
-
-
 // =====================
 // PRODUCT QUICK VIEW POPUP SECTION START
 (function () {
@@ -151,33 +148,129 @@ const productQuickViewDetails = new Swiper(".product-quick-view-swiper", {
   },
 });
 
-
 // =====================
 // CART DRAWER SECTION START
-(function() {
+(function () {
+
+  // HANDLE CART DRAWER VISIBILITY 
+  const cartDrawer = document.getElementById("cartDrawer")
+  const cartDrawerCloseButton = document.getElementById("cartDrawerCloseButton")
+  const cartDrawerOpenButton = document.getElementById("cartDrawerOpenButton")
+
+  cartDrawerOpenButton.addEventListener("click", () => {
+    cartDrawer.classList.add("active")
+    handleOverlay(true)
+  const tl  = gsap.timeline()
+
+    tl.from(cartDrawer.querySelector(".cart-drawer-header"), {
+      y : 100,
+      opacity : 0,
+      duration : .4,
+      ease: "power1.inOut",
+    })
+    tl.from(cartDrawer.querySelector(".cart-drawer-wrapper"), {
+      y : 100,
+      opacity : 0,
+      duration : .4,
+      ease: "power1.inOut",
+    })
+    tl.from(cartDrawer.querySelector(".cart-drawer-footer"), {
+      y : 100,
+      opacity : 0,
+      duration : .4,
+      ease: "power1.inOut",
+    })
+
+  })
+
+  cartDrawerCloseButton.addEventListener("click", () => {
+    cartDrawer.classList.remove("active")
+    handleOverlay(false)
+  })
+
+
+  // RANG SLIDE
   const inputRange = document.getElementById("cart-drawer-deals-input-range");
   const rangeSlide = document.getElementById("cart-drawer-deals-range");
-
-  
   rangeSlide.style.width = `${inputRange.value}%`;
-
-  
   inputRange.addEventListener("input", () => {
     rangeSlide.style.width = `${inputRange.value}%`;
   });
+
+  // CARD DRAWER DEALS
+  const cardDrawerDeals = document.getElementById("cardDrawerDeals");
+
+  gsap.set(cardDrawerDeals.querySelector(".cart-drawer-deals-rang-wrapper"), {
+    height: 0,
+    duration: 0.4,
+    overflow: "hidden",
+    opacity: 0,
+  });
+
+  if (cardDrawerDeals.classList.contains("active")) {
+    gsap.set(cardDrawerDeals.querySelector(".cart-drawer-deals-rang-wrapper"), {
+      height: "auto",
+      duration: 0.4,
+      opacity: 1,
+    });
+  }
+
+  // CART DRAWER
+  cardDrawerDeals.addEventListener("click", () => {
+    if (cardDrawerDeals.classList.contains("active")) {
+      gsap.to(
+        cardDrawerDeals.querySelector(".cart-drawer-deals-rang-wrapper"),
+        {
+          height: 0,
+          duration: 0.4,
+          opacity: 1,
+          ease: "power1.inOut",
+        }
+      );
+
+      cardDrawerDeals.classList.remove("active");
+    } else {
+      cardDrawerDeals.classList.add("active");
+
+      gsap.to(
+        cardDrawerDeals.querySelector(".cart-drawer-deals-rang-wrapper"),
+        {
+          height: "auto",
+          ease: "power1.inOut",
+          duration: 0.4,
+          opacity: 1,
+        }
+      );
+    }
+  });
+
+  // CART DRAWER SUGGEST PRODUCTS SWIPER
+  const swiperCart = new Swiper(".cart-drawer-suggest-products-wrapper", {
+    loop: true,
+    speed: 700,
+    slidesPerView :1,
+    pagination: {
+      el : ".cart-drawer-suggest-products-pagination",
+      clickable : true,
+    },
+  });
+  
+ 
+
+
 })();
-
-
-
-
 
 
 // =====================
 // ANNOUNCEMENT BAR
 
 const announcementBar = document.getElementById("announcement-bar");
-const announcementBarToggler = document.getElementById("announcement-bar-toggler");
-const announcementBarDrawer = document.getElementById("announcement-bar-drawer");
+const announcementBarToggler = document.getElementById(
+  "announcement-bar-toggler"
+);
+const announcementBarDrawer = document.getElementById(
+  "announcement-bar-drawer"
+);
 
 // Default Style for Announcement Bar Drawer
 announcementBarDrawer.style.display = "none";
@@ -218,7 +311,6 @@ const announceBarSwiper = new Swiper(".announce-bar-swipper", {
     },
   },
 });
-
 
 // =====================
 // HEADER SECTION START

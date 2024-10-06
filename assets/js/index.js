@@ -108,13 +108,18 @@ const handleOverlay = (show) => {
       ease: "back.out(1.7)",
     });
 
-    tl.from(mobileMenu.querySelectorAll(".mobile-menu-wrapper-list li"), {
-      x: -100,
-      duration: .4,
-      ease: "back.out(1.7)",
-      opacity: 0,
-      stagger: 0.2, // Stagger for sequential effect
+  
+    tl.fromTo(mobileMenu.querySelectorAll(".mobile-menu-list > li"), {
+      xPercent: -100,
+      opacity: 0
+    }, {
+      duration: .6,
+      opacity: 1,
+      xPercent: 0,
+      stagger: 0.1,
+      ease: "power4.out"
     });
+
 
     tl.from(mobileMenu.querySelector(".mobile-menu-footer"), {
       y: 100,
@@ -133,31 +138,6 @@ const handleOverlay = (show) => {
       },
     });
 
-    // Animate out the footer first
-    tlClose.to(mobileMenu.querySelector(".mobile-menu-footer"), {
-      y: 100,
-      duration: 0.3,
-      ease: "back.in(1.7)", // Reversing the easing for close
-      opacity: 0,
-    });
-
-    // Animate out the list items
-    tlClose.to(mobileMenu.querySelectorAll(".mobile-menu-wrapper-list li"), {
-      x: 100, // Moving it down instead of up
-      duration: .4,
-      ease: "back.in(1.7)",
-      opacity: 0,
-      stagger: 0.1, // Sequentially reverse
-    });
-
-    // Animate out the header
-    tlClose.to(mobileMenu.querySelector(".header-mobile-menu"), {
-      y: -100,
-      duration: 0.2,
-      opacity: 0,
-      ease: "back.in(1.7)",
-    });
-
     // Slide the menu off-screen
     tlClose.to(mobileMenu, {
       xPercent: -110,
@@ -170,6 +150,44 @@ const handleOverlay = (show) => {
       display: "none",
     });
   });
+
+
+ 
+
+  const mobileMenuItem = mobileMenu.querySelectorAll(".mobile-menu-items")
+  const mobileSubMenu = document.getElementById("mobileSubmenu")
+
+  mobileMenuItem.forEach((item) => {
+    item.addEventListener("click", () => {
+      const tl = gsap.timeline()
+
+      tl.to("#mobileSubmenu", {
+        display : "block"
+      })
+
+      tl.fromTo("#mobileSubmenu", {
+        xPercent : -110,
+        opacity : 1,
+      }, {
+        xPercent : 0,
+        opacity : 1,
+        duration : .7,
+      })
+    })
+  })
+
+  mobileSubMenu.querySelector(".mobile-submenu-back-button").addEventListener("click", () => {
+    const tl = gsap.timeline();
+    tl.to("#mobileSubmenu", {
+      xPercent: -110,
+      duration: 0.7,
+    });
+  });
+  
+
+
+
+
 })();
 
 

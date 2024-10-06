@@ -68,7 +68,7 @@ body {
   font-family: var(--font-body);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  /* overflow-x: hidden !important; */
+  overflow-x: hidden !important;
 }
 
 ul,
@@ -445,7 +445,7 @@ h6,
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.2 !important;
+  opacity: 0.1 !important;
   z-index: 3;
   transition: all ease-in-out .5s;
   border-radius: 3rem;
@@ -842,11 +842,11 @@ POPUP SECTION BAR START
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  transform: translateY(4rem);
-  -webkit-transform: translateY(4rem);
-  -moz-transform: translateY(4rem);
-  -ms-transform: translateY(4rem);
-  -o-transform: translateY(4rem);
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
 }
 
 .overlay.active {
@@ -3127,11 +3127,11 @@ SLIDESHOW SECTION START
   -moz-transform: translate(40%, 20%);
   -ms-transform: translate(40%, 20%);
   -o-transform: translate(40%, 20%);
-  transition: all ease-in-out 0.7s;
-  -webkit-transition: all ease-in-out 0.7s;
-  -moz-transition: all ease-in-out 0.7s;
-  -ms-transition: all ease-in-out 0.7s;
-  -o-transition: all ease-in-out 0.7s;
+  transition: all ease-in-out 1s;
+  -webkit-transition: all ease-in-out 1s;
+  -moz-transition: all ease-in-out 1s;
+  -ms-transition: all ease-in-out 1s;
+  -o-transition: all ease-in-out 1s;
 }
 
 .slideshow-section .swiper-slide-active .slideshow-heading,
@@ -3573,10 +3573,10 @@ PROMO SECTION START
 }
 
 /* ====================
-SECTION START
+CATEGORY SECTION START
 =================== */
 
-.category {
+.category-section {
   --color-background: var(--color-accent);
   background-color: var(--color-background);
   margin-top: 6rem;
@@ -3584,7 +3584,7 @@ SECTION START
 }
 
 @media screen and (min-width: 992px) {
-  .category {
+  .category-section {
     margin-top: 11rem;
   }
 }
@@ -3635,7 +3635,7 @@ SECTION START
   color: var(--color-heading);
 }
 
-.category .category-list-wrapper {
+.category-section .category-list-wrapper {
   padding: 4.8rem 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -3643,27 +3643,32 @@ SECTION START
 }
 
 @media screen and (min-width: 992px) {
-  .category .category-list-wrapper {
+  .category-section .category-list-wrapper {
     padding: 6rem 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .category .category-list-wrapper {
+  .category-section .category-list-wrapper {
     padding: 9.6rem 0;
   }
 }
 
-.category .category-list {
+.category-section .category-list {
   display: flex;
   align-items: center;
+  
 }
 
-.category .category-list:last-child {
+.category-section .category-list:last-child {
   margin-bottom: 0;
 }
 
 .category-list .category-list-item {
+  flex-shrink: 0;
+}
+
+.category-list .category-list-item a{
   --color-background: #fff;
   --color-border: var(--color-heading);
   display: flex;
@@ -3679,10 +3684,12 @@ SECTION START
   -ms-border-radius: 10rem;
   -o-border-radius: 10rem;
   margin: 0 1rem;
+
 }
 
+
 @media screen and (min-width: 992px) {
-  .category-list .category-list-item {
+  .category-list .category-list-item a{
     padding: 0.8rem 4rem 0.8rem 0.8rem;
     gap: 1.6rem;
     margin: 0 1.2rem;
@@ -3733,7 +3740,7 @@ SECTION START
 }
 
 .category-list-item .category-list-item-content span {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 150%;
@@ -3741,7 +3748,7 @@ SECTION START
 }
 
 .category-list-item .category-list-item-content h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 150%;
@@ -5362,7 +5369,7 @@ input.comparison-range-slider[type="range"]::-moz-range-thumb {
 
 .newsletter-desc {
   max-width: 64.5rem;
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-weight: 400;
 
   line-height: 150%;
@@ -5657,7 +5664,7 @@ PRODUCT DETAILS SECTION START
 
 .recently-added-content p {
   width: 603px;
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
@@ -6858,6 +6865,12 @@ FOOTERS SECTION START
 .footer-logo {
   margin: 3.2rem;
 }
+
+.footer-logo svg,
+.footer-logo path{
+  fill: none;
+}
+
 
 @media screen and (min-width: 768px) {
   .footer-logo {

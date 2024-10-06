@@ -122,10 +122,10 @@ const handleOverlay = (show) => {
   const overlay = document.querySelector(".overlay");
   if (show) {
     overlay.classList.add("active");
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
   } else {
     overlay.classList.remove("active");
-    document.body.style.overflow = "unset";
+    document.body.style.overflowY = "unset";
   }
 };
 
@@ -331,6 +331,28 @@ const handleOverlay = (show) => {
       document.body.style.overflowY = "hidden";
       searchDrawer.classList.add("active");
       handleOverlay(true);
+      const tl = gsap.timeline();
+
+      tl.from(".search-drawer-panel", {
+        yPercent: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      tl.from(".searched-products", {
+        yPercent: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      tl.from(".suggested-products", {
+        yPercent: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
     });
   });
 
@@ -602,6 +624,20 @@ const slideshowSwiper = new Swiper(".slideshow-swipper", {
     videoPopup.classList.add("active");
     handleOverlay(true);
   });
+
+  // GSAP ANIMATION
+
+  gsap.from(".promo-fade-up", {
+    scrollTrigger: {
+      trigger: ".promo-section",
+      start: "top 90%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    ease: "power2.out",
+    stagger: 0.2,
+  });
 })();
 
 // =====================
@@ -680,6 +716,18 @@ const trendingSwiper = new Swiper(".trending-swiper", {
   },
 });
 
+gsap.from(".trending-section .product-card", {
+  scrollTrigger: {
+    trigger: ".trending-section",
+    start: "top 70%",
+  },
+  opacity: 0,
+  y: 200,
+  scale: 0.6,
+  duration: 2,
+  ease: "power2.out",
+});
+
 // =====================
 // COLLAGE SECTION START
 
@@ -724,6 +772,33 @@ const countdownProductSection = new Swiper(".countdown-product-swiper", {
   spaceBetween: 24,
   speed: 2000,
   freeMode: true,
+});
+
+gsap.from(".countdown-product-section", {
+  scrollTrigger: {
+    trigger: ".countdown-product-section",
+    start: "top 70%",
+  },
+  opacity: 0,
+  xPercent: -100,
+  scale: 0.6,
+  duration: 2,
+  ease: "power2.out",
+});
+
+// =====================
+// HOT DEALS SECTION START
+gsap.from(".hot-deals-section", {
+  scrollTrigger: {
+    trigger: ".hot-deals-section",
+    start: "top 70%",
+  },
+  opacity: 0,
+  xPercent: 100,
+  yPercent: 50,
+  scale: 0.6,
+  duration: 2,
+  ease: "power2.out",
 });
 
 // BUNDLE PRODUCT SECTION START
@@ -825,6 +900,20 @@ bundleProductAcc.forEach((item, index) => {
 });
 
 // =====================
+// FEATURES SECTION START
+gsap.from(".features-section .features-card", {
+  scrollTrigger: {
+    trigger: ".features-section",
+    start: "top 90%",
+  },
+  opacity: 0,
+  xPercent: -50,
+
+  duration: 1,
+  ease: "power2.out",
+});
+
+// =====================
 // BEFORE AFTER SECTION
 (function () {
   const cmpImgWrapper = document.getElementById("comparison-image-wrapper");
@@ -912,6 +1001,19 @@ recentAddedSwiper.forEach((item, index) => {
       },
     },
   });
+});
+
+//
+gsap.from(".recent-added-card-wrapper ", {
+  scrollTrigger: {
+    trigger: ".recent-added-section",
+    start: "top 70%",
+  },
+  opacity: 0,
+  xPercent: 50,
+  scale: 0.6,
+  duration: 2,
+  ease: "power2.out",
 });
 
 // =====================
@@ -1057,60 +1159,55 @@ scrollToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-
-
 // ========================
 // SCROLL TO TOP BY GSAP
 
 const countDown = document.querySelectorAll(".count-down");
 
 countDown.forEach((item) => {
-  
-  const targetDate = item.getAttribute("data-target-count")
+  const targetDate = item.getAttribute("data-target-count");
   const countDownDate = new Date(targetDate).getTime();
 
   // COUNT DOWN EL
-  const daysEl = item.querySelector(".count-down-day")
-  const hrsEl = item.querySelector(".count-down-hrs")
-  const minsEl = item.querySelector(".count-down-mins")
-  const secsEl = item.querySelector(".count-down-secs")
-  const exMessage = item.querySelectorAll("expired")
+  const daysEl = item.querySelector(".count-down-day");
+  const hrsEl = item.querySelector(".count-down-hrs");
+  const minsEl = item.querySelector(".count-down-mins");
+  const secsEl = item.querySelector(".count-down-secs");
+  const exMessage = item.querySelectorAll("expired");
 
   const countInterval = setInterval(() => {
-
     const currentDate = new Date().getTime();
     const distance = countDownDate - currentDate;
 
     // TIME CALCULATIONS
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hrs = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
     const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const secs = Math.floor((distance % (1000 * 60)) / 1000);
 
     // INSERT DATE ON DOM
-    if(distance < 0){
-      daysEl.innerText = "00"
-    hrsEl.innerText = "00"
-    minsEl.innerText = "00"
-    secsEl.innerText = "00"
-    }else{
-      daysEl.innerText = days
-      hrsEl.innerText = hrs
-      minsEl.innerText = mins
-      secsEl.innerText = secs
+    if (distance < 0) {
+      daysEl.innerText = "00";
+      hrsEl.innerText = "00";
+      minsEl.innerText = "00";
+      secsEl.innerText = "00";
+    } else {
+      daysEl.innerText = days;
+      hrsEl.innerText = hrs;
+      minsEl.innerText = mins;
+      secsEl.innerText = secs;
     }
 
-    if(distance < 0){
-      clearCount()
+    if (distance < 0) {
+      clearCount();
     }
-  }, 1000)
-
+  }, 1000);
 
   // CLEAR INTERVAL
   const clearCount = () => {
-    clearInterval(countInterval)
-    console.log("EXPIRED")
-  }
-
- 
+    clearInterval(countInterval);
+    console.log("EXPIRED");
+  };
 });

@@ -46,3 +46,15 @@ h6,
 .h6 {
 font-size: 20px;
 }
+
+gsap.from(".trending-section .product-card", {
+  scrollTrigger: {
+    trigger: ".trending-section",
+    start: "top 70%",
+  },
+  opacity: 0,
+  y: 200,
+  scale : .6,
+  duration: 2,
+  ease: "power2.out",
+});

@@ -1,20 +1,19 @@
-
 // =====================
 /// GSAP ANIMATION
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 // FADE UP ANIMATION
 const fadeUp = document.querySelectorAll(".fade-up");
 fadeUp.forEach((item) => {
   gsap.from(item, {
     scrollTrigger: {
-      trigger: item, 
-      start: "top 80%", 
+      trigger: item,
+      start: "top 90%",
     },
-    opacity: 0,                   
-    y: 200,              
-    duration: 2,                  
-    ease: "power2.out",           
+    opacity: 0,
+    y: 200,
+    duration: 2,
+    ease: "power2.out",
   });
 });
 
@@ -23,18 +22,15 @@ const fadeDown = document.querySelectorAll(".fade-down"); // CHANGED TO .fade-do
 fadeDown.forEach((item) => {
   gsap.from(item, {
     scrollTrigger: {
-      trigger: item, 
-      start: "top 80%", 
+      trigger: item,
+      start: "top 90%",
     },
-    opacity: 0,                   
-    y: -200,            
-    duration: 2,                  
-    ease: "power2.out",           
+    opacity: 0,
+    y: -200,
+    duration: 2,
+    ease: "power2.out",
   });
 });
-
-
-
 
 const scrabLeftElements = document.querySelectorAll(".scrabLeft");
 const scrabRightElements = document.querySelectorAll(".scrabRight");
@@ -65,13 +61,9 @@ scrabRightElements.forEach((item) => {
   });
 });
 
-
-
-
 // IMAGE ANIMATIONS
 const imageAnimation = document.querySelectorAll(".image-animation");
 imageAnimation.forEach((item) => {
-
   // ITEM STYLING
   item.style.position = "relative";
   item.style.overflow = "hidden";
@@ -109,7 +101,6 @@ imageAnimation.forEach((item) => {
     visibility: "hidden",
   });
 });
-
 
 // =====================
 // MARQUE SLIDER SECTION START
@@ -182,11 +173,12 @@ const handleOverlay = (show) => {
   });
 })();
 
-
 // =====================
 // PRIMARY & SECONDARY BUTTON
-(function() {
-  const buttons = document.querySelectorAll(".primary-button, .secondary-button");
+(function () {
+  const buttons = document.querySelectorAll(
+    ".primary-button, .secondary-button"
+  );
 
   buttons.forEach((item) => {
     const div = document.createElement("div");
@@ -201,10 +193,7 @@ const handleOverlay = (show) => {
     div.appendChild(span);
     item.appendChild(div);
   });
-
 })();
-
-
 
 // =====================
 // SEARCH DRAWER
@@ -239,23 +228,25 @@ const handleOverlay = (show) => {
 
     tl.from(mobileMenu.querySelector(".header-mobile-menu"), {
       y: -100,
-      duration: .5,
+      duration: 0.5,
       opacity: 0,
       ease: "back.out(1.7)",
     });
 
-  
-    tl.fromTo(mobileMenu.querySelectorAll(".mobile-menu-list > li"), {
-      xPercent: -100,
-      opacity: 0
-    }, {
-      duration: .6,
-      opacity: 1,
-      xPercent: 0,
-      stagger: 0.1,
-      ease: "power4.out"
-    });
-
+    tl.fromTo(
+      mobileMenu.querySelectorAll(".mobile-menu-list > li"),
+      {
+        xPercent: -100,
+        opacity: 0,
+      },
+      {
+        duration: 0.6,
+        opacity: 1,
+        xPercent: 0,
+        stagger: 0.1,
+        ease: "power4.out",
+      }
+    );
 
     tl.from(mobileMenu.querySelector(".mobile-menu-footer"), {
       y: 100,
@@ -287,71 +278,69 @@ const handleOverlay = (show) => {
     });
   });
 
-
-
-  const mobileMenuItem = mobileMenu.querySelectorAll(".mobile-menu-items")
-  const mobileSubMenu = document.getElementById("mobileSubmenu")
+  const mobileMenuItem = mobileMenu.querySelectorAll(".mobile-menu-items");
+  const mobileSubMenu = document.getElementById("mobileSubmenu");
 
   mobileMenuItem.forEach((item) => {
     item.addEventListener("click", () => {
-      const tl = gsap.timeline()
+      const tl = gsap.timeline();
 
       tl.to("#mobileSubmenu", {
-        display : "block"
-      })
+        display: "block",
+      });
 
-      tl.fromTo("#mobileSubmenu", {
-        xPercent : -110,
-        opacity : 1,
-      }, {
-        xPercent : 0,
-        opacity : 1,
-        duration : .7,
-      })
-    })
-  })
-
-  mobileSubMenu.querySelector(".mobile-submenu-back-button").addEventListener("click", () => {
-    const tl = gsap.timeline();
-    tl.to("#mobileSubmenu", {
-      xPercent: -110,
-      duration: 0.7,
+      tl.fromTo(
+        "#mobileSubmenu",
+        {
+          xPercent: -110,
+          opacity: 1,
+        },
+        {
+          xPercent: 0,
+          opacity: 1,
+          duration: 0.7,
+        }
+      );
     });
   });
-  
-})();
 
-
-  // =====================
-  // SEARCH DRAWER
-(
-  function () {
-    const searchDrawer = document.getElementById("searchDrawer");
-    const searchDrawerCloseBtn = document.getElementById(
-      "searchDrawerCloseBtn"
-    );
-
-    // HANDLE SEARCH DRAWER OPEN
-    const searchDrawerOpenButton = document.querySelectorAll(
-      ".search-drawer-open-button"
-    );
-
-    searchDrawerOpenButton.forEach((item) => {
-      item.addEventListener("click", () => {
-        document.body.style.overflowY = "hidden";
-        searchDrawer.classList.add("active");
-        handleOverlay(true);
+  mobileSubMenu
+    .querySelector(".mobile-submenu-back-button")
+    .addEventListener("click", () => {
+      const tl = gsap.timeline();
+      tl.to("#mobileSubmenu", {
+        xPercent: -110,
+        duration: 0.7,
       });
     });
+})();
 
-    // HANDLE SEARCH DRAWER CLOSE
-    searchDrawerCloseBtn.addEventListener("click", () => {
-      document.body.style.overflowY = "visible";
-      searchDrawer.classList.remove("active");
-      handleOverlay(false);
+// =====================
+// SEARCH DRAWER
+(function () {
+  const searchDrawer = document.getElementById("searchDrawer");
+  const searchDrawerCloseBtn = document.getElementById("searchDrawerCloseBtn");
+
+  // HANDLE SEARCH DRAWER OPEN
+  const searchDrawerOpenButton = document.querySelectorAll(
+    ".search-drawer-open-button"
+  );
+
+  searchDrawerOpenButton.forEach((item) => {
+    item.addEventListener("click", () => {
+      document.body.style.overflowY = "hidden";
+      searchDrawer.classList.add("active");
+      handleOverlay(true);
     });
-  }
-)();
+  });
+
+  // HANDLE SEARCH DRAWER CLOSE
+  searchDrawerCloseBtn.addEventListener("click", () => {
+    document.body.style.overflowY = "visible";
+    searchDrawer.classList.remove("active");
+    handleOverlay(false);
+  });
+})();
 
 // =====================
 // PRODUCT QUICK VIEW POPUP SECTION START
@@ -613,9 +602,7 @@ const slideshowSwiper = new Swiper(".slideshow-swipper", {
     videoPopup.classList.add("active");
     handleOverlay(true);
   });
-
 })();
-
 
 // =====================
 // TABS SECTION START
@@ -1019,7 +1006,6 @@ if (document.body.clientWidth < 992) {
   });
 }
 
-
 // ========================
 // PRODUCT SECTION START
 const productController = document.querySelectorAll(
@@ -1050,21 +1036,81 @@ productController.forEach((controller) => {
   });
 });
 
-
 // ========================
 // SCROLL TO TOP BY GSAP
-const scrollToTopButton = document.getElementById('scrollToTop');
+const scrollToTopButton = document.getElementById("scrollToTop");
 
 // Show button when scrolled down
-window.addEventListener('scroll', () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollToTopButton.classList.add('active');
-    } else {
-        scrollToTopButton.classList.remove('active');
-    }
+window.addEventListener("scroll", () => {
+  if (
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
+  ) {
+    scrollToTopButton.classList.add("active");
+  } else {
+    scrollToTopButton.classList.remove("active");
+  }
 });
 
 // Scroll to top animation
-scrollToTopButton.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+scrollToTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+
+// ========================
+// SCROLL TO TOP BY GSAP
+
+const countDown = document.querySelectorAll(".count-down");
+
+countDown.forEach((item) => {
+  
+  const targetDate = item.getAttribute("data-target-count")
+  const countDownDate = new Date(targetDate).getTime();
+
+  // COUNT DOWN EL
+  const daysEl = item.querySelector(".count-down-day")
+  const hrsEl = item.querySelector(".count-down-hrs")
+  const minsEl = item.querySelector(".count-down-mins")
+  const secsEl = item.querySelector(".count-down-secs")
+  const exMessage = item.querySelectorAll("expired")
+
+  const countInterval = setInterval(() => {
+
+    const currentDate = new Date().getTime();
+    const distance = countDownDate - currentDate;
+
+    // TIME CALCULATIONS
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // INSERT DATE ON DOM
+    if(distance < 0){
+      daysEl.innerText = "00"
+    hrsEl.innerText = "00"
+    minsEl.innerText = "00"
+    secsEl.innerText = "00"
+    }else{
+      daysEl.innerText = days
+      hrsEl.innerText = hrs
+      minsEl.innerText = mins
+      secsEl.innerText = secs
+    }
+
+    if(distance < 0){
+      clearCount()
+    }
+  }, 1000)
+
+
+  // CLEAR INTERVAL
+  const clearCount = () => {
+    clearInterval(countInterval)
+    console.log("EXPIRED")
+  }
+
+ 
 });

@@ -12,6 +12,7 @@
 
   <script src="./assets/js/swiper-bundle.min.js" defer="defer"></script>
   <script src="./assets/js/gsap.min.js" defer="defer"></script>
+  <script src="./assets/js/ScrollTrigger.min.js" defer="defer"></script>
 
   <script src="./assets/js/index.js" defer="defer"></script>
 
@@ -2236,7 +2237,7 @@
     <!-- =======================
      PROMO SECTION START
      =========================== -->
-    <section class="promo-section">
+    <section class="promo-section fade-up">
       <div class="promo-wrapper">
         <ul role="list" class="promo-left">
           <li>
@@ -2312,12 +2313,12 @@
     <!-- =======================
     FEATURES PRODUCTS SECTION START
      =========================== -->
-    <section class="features-products-section tabs-wrapper">
+    <section class="features-products-section tabs-wrapper fade-up">
       <div class="container">
-        <div class="features-products-header">
+        <div class="features-products-header ">
           <!-- SECTION CAPTION -->
-          <div class="section-caption">
-            <h2 class="section-heading hxl">
+          <div class="section-caption ">
+            <h2 class="section-heading hxl scrabLeft">
               Features <span>Products</span>
             </h2>
           </div>
@@ -3917,9 +3918,9 @@
     <!-- =======================
     CATEGORY SECTION START
      =========================== -->
-    <section class="category">
+    <section class="category fade-up">
       <div class="category-wrapper">
-        <div class="category-header marquee-slider">
+        <div class="category-header marquee-slider fade-up">
           <ul role="list" class="marquee-slide" style="--slide-speed: 40s">
             <li>EXPLORE OUR CATEGORY</li>
             <li>EXPLORE OUR CATEGORY</li>
@@ -3928,7 +3929,7 @@
             <li>EXPLORE OUR CATEGORY</li>
           </ul>
         </div>
-        <div class="category-list-wrapper">
+        <div class="category-list-wrapper fade-down">
           <!-- MARQUEE SLIDER -->
           <div class="marquee-slider">
             <ul class="category-list marquee-slide" style="--slide-speed: 40s; --slide-direction: reverse">
@@ -4069,14 +4070,14 @@
     <section class="new-arrival-section">
       <div class="container">
         <div class="section-caption">
-          <h2 class="new-arrival-section-heading">
+          <h2 class="new-arrival-section-heading fade-up">
             NEW <span>ARRIVAL</span>
           </h2>
         </div>
         <div class="new-arrival-card-wrapper">
           <!-- NEW ARRIVAL CARD -->
           <div class="new-arrival-card">
-            <div class="new-arrival-card-image-wrapper">
+            <div class="new-arrival-card-image-wrapper image-animation">
               <img src="./assets/images/new-arrival/casual-wear.jpg" alt="Casual Wear" />
             </div>
             <div class="new-arrival-card-body">
@@ -4100,7 +4101,7 @@
           </div>
           <!-- NEW ARRIVAL CARD CENTER-->
           <div class="new-arrival-card-center new-arrival-card">
-            <div class="new-arrival-card-image-wrapper">
+            <div class="new-arrival-card-image-wrapper image-animation">
               <img src="./assets/images/new-arrival/jackets-and-coats.jpg" alt="Casual Wear" />
             </div>
             <div class="new-arrival-card-body">
@@ -4124,7 +4125,7 @@
           </div>
           <!-- NEW ARRIVAL CARD -->
           <div class="new-arrival-card">
-            <div class="new-arrival-card-image-wrapper">
+            <div class="new-arrival-card-image-wrapper image-animation">
               <img src="./assets/images/new-arrival/casual-wear.jpg" alt="Casual Wear" />
             </div>
             <div class="new-arrival-card-body">
@@ -4157,7 +4158,7 @@
       <div class="container">
         <div class="trending-header">
           <!-- SECTION CAPTION -->
-          <div class="section-caption">
+          <div class="section-caption scrabRight">
             <h2 class="section-heading hxl">Today <span>Trending</span></h2>
           </div>
           <!-- Swiper Navigation Wrapper -->
@@ -4805,7 +4806,7 @@
       <div class="container">
         <div class="collage-gallery-wrapper">
           <!--  GALLERY MEDIA VIDEO -->
-          <div class="collage-gallery-media-wrapper collage-gallery-video">
+          <div class="collage-gallery-media-wrapper image-animation collage-gallery-video">
             <!-- VIDEO CONTROL -->
             <button class="collage-gallery-video-control pause" role="button">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"
@@ -4830,7 +4831,7 @@
             </video>
           </div>
           <!--  GALLERY MEDIA -->
-          <div class="collage-gallery-media-wrapper">
+          <div class="collage-gallery-media-wrapper image-animation">
             <a href="#">
               <img src="./assets/images/collage-gallery/collage-gallery-image.jpg"
                 alt="collage-gallery-video-image.jpg" />
@@ -4841,7 +4842,7 @@
             </a>
           </div>
           <!--  GALLERY MEDIA -->
-          <div class="collage-gallery-media-wrapper">
+          <div class="collage-gallery-media-wrapper image-animation">
             <a href="#">
               <img src="./assets/images/collage-gallery/collage-gallery-image.jpg"
                 alt="collage-gallery-video-image.jpg" />
@@ -4852,7 +4853,7 @@
             </a>
           </div>
           <!--  GALLERY MEDIA -->
-          <div class="collage-gallery-media-wrapper">
+          <div class="collage-gallery-media-wrapper image-animation">
             <a href="#">
               <img src="./assets/images/collage-gallery/collage-gallery-image.jpg"
                 alt="collage-gallery-video-image.jpg" />
@@ -4863,7 +4864,7 @@
             </a>
           </div>
           <!--  GALLERY MEDIA -->
-          <div class="collage-gallery-media-wrapper">
+          <div class="collage-gallery-media-wrapper image-animation">
             <a href="#">
               <img src="./assets/images/collage-gallery/collage-gallery-image.jpg"
                 alt="collage-gallery-video-image.jpg" />
@@ -4875,7 +4876,7 @@
           </div>
 
           <!--  GALLERY MEDIA VIDEO -->
-          <div class="collage-gallery-media-wrapper collage-gallery-video">
+          <div class="collage-gallery-media-wrapper image-animation collage-gallery-video">
             <!-- VIDEO CONTROL -->
             <button class="collage-gallery-video-control pause" role="button">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"
@@ -4905,7 +4906,7 @@
     <!-- =======================
    COUNTDOWN BANNER
      =========================== -->
-    <section class="countdown-section">
+    <section class="countdown-section fade-up">
       <div class="container">
         <div class="swiper countdown-swiper">
           <div class="swiper-wrapper">
@@ -5075,7 +5076,186 @@
         <div class="swiper-wrapper">
           <!-- Swiper Slide -->
           <div class="swiper-slide">
-            <div class="countdown-product-card">
+            <div class="countdown-product-card fade-up image-animation">
+              <!-- Product Images -->
+              <div class="product-card-image-wrapper">
+                <div class="product-images">
+                  <img src="./assets/images/products/product-image-01.jpg" alt="Product Image 01">
+                  <img src="./assets/images/products/product-image-02.jpg" alt="Product Image 02">
+                </div>
+              </div>
+              <!-- Card Body -->
+              <div class="card-body">
+                <div class="card-header">
+                  <p class="product-card-price product-price">
+                    $120.00 <del>$20.00</del>
+                  </p>
+                  <h4 class=".h2 countdown-product-card-title">Floral Maxi Gown</h4>
+                  <!-- Product Rating -->
+                  <div class="product-rating-review">
+                    <div class="rating-star">
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
+                          </path>
+                        </svg>
+                      </span>
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
+                          </path>
+                        </svg>
+                      </span>
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
+                          </path>
+                        </svg>
+                      </span>
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z">
+                          </path>
+                        </svg>
+                      </span>
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z">
+                          </path>
+                        </svg>
+                      </span>
+                    </div>
+                    <span class="product-review">24 Reviews</span>
+                  </div>
+                </div>
+                <!-- Size variant -->
+                <fieldset class="product-size-variant">
+                  <ul class="product-size-variant-list" role="list">
+                    <li role="button">
+                      S <input type="radio" name="size" id="size">
+                    </li>
+                    <li role="button">
+                      M <input type="radio" name="size" id="size">
+                    </li>
+                    <li role="button">
+                      L <input type="radio" name="size" id="size">
+                    </li>
+                    <li role="button">
+                      XL <input type="radio" name="size" id="size">
+                    </li>
+                    <li role="button">
+                      XXL <input type="radio" name="size" id="size">
+                    </li>
+                  </ul>
+                </fieldset>
+                <!-- Color Variant -->
+                <fieldset class="product-color-variant">
+                  <ul role="list" class="product-color-variant-list">
+                    <li role="button" style="--color-variant-color: #f6bd60">
+                      <input name="color" type="radio">
+                      <label for="color">Off White</label>
+                    </li>
+                    <li role="button" class="selected" style="--color-variant-color: #000">
+                      <input name="color" type="radio">
+                      <label for="color">Black</label>
+                    </li>
+                    <li role="button" style="--color-variant-color: #f28482">
+                      <input name="color" type="radio">
+                      <label for="color">Soft Pink</label>
+                    </li>
+                    <li role="button" style="--color-variant-color: #f5cac3">
+                      <input name="color" type="radio">
+                      <label for="color">Lime Yellow</label>
+                    </li>
+                  </ul>
+                </fieldset>
+                <!-- Product Card Timer -->
+                <div>
+                  <p class="countdown-product-card-timer-title">Hurry Up! Offer Ends</p>
+                  <ul class="countdown-product-card-timer">
+                    <li class="countdown-product-card-timer-item">
+                      <div>24</div>
+                    </li>
+                    <li class="countdown-product-card-timer-item">
+                      <div>24</div>
+                    </li>
+                    <li class="countdown-product-card-timer-item">
+                      <div>24</div>
+                    </li>
+                    <li class="countdown-product-card-timer-item">
+                      <div>24</div>
+                    </li>
+
+                  </ul>
+                </div>
+                <!-- Button Wrapper -->
+                <div class="product-button-wrapper">
+                  <button role="button" type="button" class="product-add-cart-button">
+                    <!-- Spinner -->
+                    <span class="spinner">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                        viewBox="0 0 256 256">
+                        <path
+                          d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z">
+                        </path>
+                      </svg>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                      <path
+                        d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm52-84a12,12,0,0,1-12,12H140v28a12,12,0,0,1-24,0V140H88a12,12,0,0,1,0-24h28V88a12,12,0,0,1,24,0v28h28A12,12,0,0,1,180,128Z">
+                      </path>
+                    </svg>
+                    Add To Cart
+                  </button>
+                  <button role="button" type="button" class="product-outline-button">
+                    <!-- Spinner -->
+                    <span class="spinner">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                        viewBox="0 0 256 256">
+                        <path
+                          d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z">
+                        </path>
+                      </svg>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
+                      <path
+                        d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z">
+                      </path>
+                    </svg>
+                  </button>
+                  <button role="button" type="button" class="product-outline-button">
+                    <!-- Spinner -->
+                    <span class="spinner">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                        viewBox="0 0 256 256">
+                        <path
+                          d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z">
+                        </path>
+                      </svg>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
+                      <path
+                        d="M228,48V96a12,12,0,0,1-12,12H168a12,12,0,0,1,0-24h19l-7.8-7.8a75.55,75.55,0,0,0-53.32-22.26h-.43A75.49,75.49,0,0,0,72.39,75.57,12,12,0,1,1,55.61,58.41a99.38,99.38,0,0,1,69.87-28.47H126A99.42,99.42,0,0,1,196.2,59.23L204,67V48a12,12,0,0,1,24,0ZM183.61,180.43a75.49,75.49,0,0,1-53.09,21.63h-.43A75.55,75.55,0,0,1,76.77,179.8L69,172H88a12,12,0,0,0,0-24H40a12,12,0,0,0-12,12v48a12,12,0,0,0,24,0V189l7.8,7.8A99.42,99.42,0,0,0,130,226.06h.56a99.38,99.38,0,0,0,69.87-28.47,12,12,0,0,0-16.78-17.16Z">
+                      </path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper Slide -->
+          <div class="swiper-slide">
+            <div class="countdown-product-card fade-up image-animation">
               <!-- Product Images -->
               <div class=" product-card-image-wrapper">
                 <div class="product-images">
@@ -5254,186 +5434,7 @@
           </div>
           <!-- Swiper Slide -->
           <div class="swiper-slide">
-            <div class="countdown-product-card">
-              <!-- Product Images -->
-              <div class=" product-card-image-wrapper">
-                <div class="product-images">
-                  <img src="./assets/images/products/product-image-01.jpg" alt="Product Image 01">
-                  <img src="./assets/images/products/product-image-02.jpg" alt="Product Image 02">
-                </div>
-              </div>
-              <!-- Card Body -->
-              <div class="card-body">
-                <div class="card-header">
-                  <p class="product-card-price product-price">
-                    $120.00 <del>$20.00</del>
-                  </p>
-                  <h4 class=".h2 countdown-product-card-title">Floral Maxi Gown</h4>
-                  <!-- Product Rating -->
-                  <div class="product-rating-review">
-                    <div class="rating-star">
-                      <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                          viewBox="0 0 256 256">
-                          <path
-                            d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
-                          </path>
-                        </svg>
-                      </span>
-                      <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                          viewBox="0 0 256 256">
-                          <path
-                            d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
-                          </path>
-                        </svg>
-                      </span>
-                      <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                          viewBox="0 0 256 256">
-                          <path
-                            d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
-                          </path>
-                        </svg>
-                      </span>
-                      <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                          viewBox="0 0 256 256">
-                          <path
-                            d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z">
-                          </path>
-                        </svg>
-                      </span>
-                      <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                          viewBox="0 0 256 256">
-                          <path
-                            d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z">
-                          </path>
-                        </svg>
-                      </span>
-                    </div>
-                    <span class="product-review">24 Reviews</span>
-                  </div>
-                </div>
-                <!-- Size variant -->
-                <fieldset class="product-size-variant">
-                  <ul class="product-size-variant-list" role="list">
-                    <li role="button">
-                      S <input type="radio" name="size" id="size">
-                    </li>
-                    <li role="button">
-                      M <input type="radio" name="size" id="size">
-                    </li>
-                    <li role="button">
-                      L <input type="radio" name="size" id="size">
-                    </li>
-                    <li role="button">
-                      XL <input type="radio" name="size" id="size">
-                    </li>
-                    <li role="button">
-                      XXL <input type="radio" name="size" id="size">
-                    </li>
-                  </ul>
-                </fieldset>
-                <!-- Color Variant -->
-                <fieldset class="product-color-variant">
-                  <ul role="list" class="product-color-variant-list">
-                    <li role="button" style="--color-variant-color: #f6bd60">
-                      <input name="color" type="radio">
-                      <label for="color">Off White</label>
-                    </li>
-                    <li role="button" class="selected" style="--color-variant-color: #000">
-                      <input name="color" type="radio">
-                      <label for="color">Black</label>
-                    </li>
-                    <li role="button" style="--color-variant-color: #f28482">
-                      <input name="color" type="radio">
-                      <label for="color">Soft Pink</label>
-                    </li>
-                    <li role="button" style="--color-variant-color: #f5cac3">
-                      <input name="color" type="radio">
-                      <label for="color">Lime Yellow</label>
-                    </li>
-                  </ul>
-                </fieldset>
-                <!-- Product Card Timer -->
-                <div>
-                  <p class="countdown-product-card-timer-title">Hurry Up! Offer Ends</p>
-                  <ul class="countdown-product-card-timer">
-                    <li class="countdown-product-card-timer-item">
-                      <div>24</div>
-                    </li>
-                    <li class="countdown-product-card-timer-item">
-                      <div>24</div>
-                    </li>
-                    <li class="countdown-product-card-timer-item">
-                      <div>24</div>
-                    </li>
-                    <li class="countdown-product-card-timer-item">
-                      <div>24</div>
-                    </li>
-
-                  </ul>
-                </div>
-                <!-- Button Wrapper -->
-                <div class="product-button-wrapper">
-                  <button role="button" type="button" class="product-add-cart-button">
-                    <!-- Spinner -->
-                    <span class="spinner">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                        viewBox="0 0 256 256">
-                        <path
-                          d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z">
-                        </path>
-                      </svg>
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
-                      <path
-                        d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm52-84a12,12,0,0,1-12,12H140v28a12,12,0,0,1-24,0V140H88a12,12,0,0,1,0-24h28V88a12,12,0,0,1,24,0v28h28A12,12,0,0,1,180,128Z">
-                      </path>
-                    </svg>
-                    Add To Cart
-                  </button>
-                  <button role="button" type="button" class="product-outline-button">
-                    <!-- Spinner -->
-                    <span class="spinner">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                        viewBox="0 0 256 256">
-                        <path
-                          d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z">
-                        </path>
-                      </svg>
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
-                      <path
-                        d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z">
-                      </path>
-                    </svg>
-                  </button>
-                  <button role="button" type="button" class="product-outline-button">
-                    <!-- Spinner -->
-                    <span class="spinner">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                        viewBox="0 0 256 256">
-                        <path
-                          d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z">
-                        </path>
-                      </svg>
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
-                      <path
-                        d="M228,48V96a12,12,0,0,1-12,12H168a12,12,0,0,1,0-24h19l-7.8-7.8a75.55,75.55,0,0,0-53.32-22.26h-.43A75.49,75.49,0,0,0,72.39,75.57,12,12,0,1,1,55.61,58.41a99.38,99.38,0,0,1,69.87-28.47H126A99.42,99.42,0,0,1,196.2,59.23L204,67V48a12,12,0,0,1,24,0ZM183.61,180.43a75.49,75.49,0,0,1-53.09,21.63h-.43A75.55,75.55,0,0,1,76.77,179.8L69,172H88a12,12,0,0,0,0-24H40a12,12,0,0,0-12,12v48a12,12,0,0,0,24,0V189l7.8,7.8A99.42,99.42,0,0,0,130,226.06h.56a99.38,99.38,0,0,0,69.87-28.47,12,12,0,0,0-16.78-17.16Z">
-                      </path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Swiper Slide -->
-          <div class="swiper-slide">
-            <div class="countdown-product-card">
+            <div class="countdown-product-card fade-up image-animation">
               <!-- Product Images -->
               <div class=" product-card-image-wrapper">
                 <div class="product-images">
@@ -5731,7 +5732,7 @@
       <div class="container">
         <div class="bundle-wrapper ">
           <!-- IMAGE WRAPPER -->
-          <div class="bundle-image-wrapper">
+          <div class="bundle-image-wrapper image-animation">
             <img src="./assets/images/bundle/bundle-image.jpg" alt="Banner Image">
             <div class="bundle-button-wrapper" id="bundleProductButtonWrapper">
               <!-- TOGGLER BUTTON -->
@@ -6477,7 +6478,7 @@
         <div class="section-caption">
           <h2 class="section-heading hxl">Support &<span>Features</span></h2>
         </div>
-        <div class="features-card-wrapper">
+        <div class="features-card-wrapper scrabLeft">
           <!-- FEATURES CARD -->
           <div class="features-card">
             <div class="card-icon">
@@ -6545,9 +6546,8 @@
     <!-- =======================
     COMPARISON SECTION START
      =========================== -->
-    <div class="comparison-section">
+    <div class="comparison-section fade-up">
       <div class="image-before comparison-image" id="comparison-image-wrapper">
-
         <img src="./assets/images/comparison/before-image.jpg" alt="Before Image">
       </div>
       <div class="image-after comparison-image">
@@ -6571,7 +6571,7 @@
       <div class="container">
         <div class="product-details-wrapper">
           <!-- IMAGE BLOCK  -->
-          <div class="product-details-image-block">
+          <div class="product-details-image-block fade-up">
             <div class="product-details-image-wrapper">
               <!-- PRODUCT DETAILS IMAGE WRAPPER -->
               <div class="swiper product-details-swiper">
@@ -6633,7 +6633,7 @@
             </div>
           </div>
           <!-- PRODUCT DETAILS INFO WRAPPER BLOCK  -->
-          <div class="product-details-info">
+          <div class="product-details-info fade-down">
             <div class="product-details-price">
               <p class="product-price">
                 $120.00 <del>$20.00</del>
@@ -6903,7 +6903,7 @@
     <!-- =======================
     NEWSLETTER SECTION START
      =========================== -->
-    <section class="newsletter-section">
+    <section class="newsletter-section fade-up">
       <div class="container">
         <div class="newsletter-wrapper">
           <div class="newsletter-content-wrapper">
@@ -6931,8 +6931,8 @@
               By subscribing you agree to the <a href="privacy-policy.html">Terms of use</a> &
               <a href="privacy-policy.html">Privacy Policy</a>
             </p>
-            <img src="./assets/images/newsletter/left-image.jpg" alt="Left Image" class="newsletter-image-left" />
-            <img src="./assets/images/newsletter/right-image.jpg" alt="Right Image" class="newsletter-image-right" />
+            <img src="./assets/images/newsletter/left-image.jpg" alt="Left Image" class="newsletter-image-left scrabLeft" />
+            <img src="./assets/images/newsletter/right-image.jpg" alt="Right Image" class="newsletter-image-right scrabRight" />
           </div>
         </div>
       </div>
@@ -6941,7 +6941,7 @@
     <!-- =======================
     RECENT ADDED SECTION START
      =========================== -->
-    <section class="recent-added-section">
+    <section class="recent-added-section fade-down">
       <!-- IMAGE -->
       <div class="recent-added-image-wrapper">
         <img src="./assets/images/recent-added/section-image.png" alt="GIrl With Sunglass">
@@ -6949,7 +6949,7 @@
       </div>
       <div class="recent-added-wrapper">
         <!-- CONTENT  SECTION -->
-        <div class="recent-added-content">
+        <div class="recent-added-content fade-up">
           <div class="section-caption">
             <h2 class="recent-added-heading hxl">recently <span>Added</span>
             </h2>
@@ -7721,7 +7721,7 @@
     <!-- =======================
     STYLISH PRODUCT  SECTION START
      =========================== -->
-    <section class="stylish-product-section">
+    <section class="stylish-product-section fade-up
       <div class="container">
         <div class="section-caption">
           <h2 class="section-heading hxl">STYLISH <span>PRODUCT</span>
@@ -7937,11 +7937,11 @@
     <!-- =======================
     TESTIMONIAL SECTION START
      =========================== -->
-    <section class="testimonial-section">
+    <section class="testimonial-section fade-down>
       <div class="container">
-        <div class="testimonial-header section-caption">
-          <h2 class="section-heading hxl">CUSTOMERS <span>REVIEW</span></h2>
-          <p class="section-desc">
+        <div class="testimonial-header section-caption ">
+          <h2 class="section-heading hxl scrabLeft">CUSTOMERS <span>REVIEW</span></h2>
+          <p class="section-desc scrabRight">
             Customer Review refers to feedback provided by a consumer who has
             purchased or used a product or service.
           </p>
@@ -8238,8 +8238,8 @@
     <section class="blog-section">
       <div class="container">
         <div class="section-caption blog-section-header">
-          <h2 class="section-heading hxl">INSIGHT & <span>INSPIRATION</span></h2>
-          <p class="section-desc">
+          <h2 class="section-heading hxl scrabLeft">INSIGHT & <span>INSPIRATION</span></h2>
+          <p class="section-desc scrabRight">
             Insight & Inspiration refers to the combination of valuable
             knowledge or understanding
           </p>
@@ -8248,7 +8248,7 @@
           <div class="blog-card-list-wrapper">
             <!-- BLOG CARD LIST -->
             <div class="blog-card-list ">
-              <div class="blog-card-image-wrapper">
+              <div class="blog-card-image-wrapper image-animation">
                 <img src="./assets/images/blog/blog-image-01.jpg" alt="blog" />
               </div>
               <div class="blog-card-body">
@@ -8270,7 +8270,7 @@
             <hr>
             <!-- BLOG CARD LIST -->
             <div class="blog-card-list ">
-              <div class="blog-card-image-wrapper">
+              <div class="blog-card-image-wrapper image-animation">
                 <img src="./assets/images/blog/blog-image-01.jpg" alt="blog" />
               </div>
               <div class="blog-card-body">
@@ -8292,7 +8292,7 @@
           </div>
           <div class="blog-card-grid-wrapper">
             <!-- BLOG CARD GRID -->
-            <div class="blog-card-grid ">
+            <div class="blog-card-grid ima">
               <div class="blog-card-image-wrapper">
                 <img src="./assets/images/blog/blog-image-big.jpg" alt="blog" />
               </div>
@@ -8330,7 +8330,7 @@
       </div>
       <div class="media-gallery-card-wrapper">
         <!-- MEDIA GALLERY CARD  -->
-        <div class="media-gallery-card">
+        <div class="media-gallery-card image-animation">
           <!-- IMAGE WRAPPER -->
           <div>
             <img src="./assets/images/media-gallery/media-gallery-01.jpg" alt="Galley Image 01">
@@ -8356,7 +8356,7 @@
           </div>
         </div>
         <!-- MEDIA GALLERY CARD  -->
-        <div class="media-gallery-card">
+        <div class="media-gallery-card image-animation">
           <!-- IMAGE WRAPPER -->
           <div>
             <img src="./assets/images/media-gallery/media-gallery-01.jpg" alt="Galley Image 01">
@@ -8382,7 +8382,7 @@
           </div>
         </div>
         <!-- MEDIA GALLERY CARD  -->
-        <div class="media-gallery-card">
+        <div class="media-gallery-card image-animation">
           <!-- IMAGE WRAPPER -->
           <div>
             <img src="./assets/images/media-gallery/media-gallery-01.jpg" alt="Galley Image 01">
@@ -8408,7 +8408,7 @@
           </div>
         </div>
         <!-- MEDIA GALLERY CARD  -->
-        <div class="media-gallery-card">
+        <div class="media-gallery-card image-animation">
           <!-- IMAGE WRAPPER -->
           <div>
             <img src="./assets/images/media-gallery/media-gallery-01.jpg" alt="Galley Image 01">
@@ -8434,7 +8434,7 @@
           </div>
         </div>
         <!-- MEDIA GALLERY CARD  -->
-        <div class="media-gallery-card">
+        <div class="media-gallery-card image-animation">
           <!-- IMAGE WRAPPER -->
           <div>
             <img src="./assets/images/media-gallery/media-gallery-01.jpg" alt="Galley Image 01">
@@ -8485,7 +8485,7 @@
       <!-- FOOTER MENU -->
       <div class="footer-menu">
         <!-- FOOTER MENU WRAPPER -->
-        <div class="footer-menu-wrapper">
+        <div class="footer-menu-wrapper fade-up">
           <div class="footer-nav">
             <h5 class="footer-menu-heading">Quick Links</h5>
             <ul class="footer-menu-list footer-menu-acc">
@@ -8508,7 +8508,7 @@
           </div>
         </div>
         <!-- FOOTER MENU WRAPPER -->
-        <div class="footer-menu-wrapper">
+        <div class="footer-menu-wrapper fade-down">
           <div class="footer-nav">
             <h5 class="footer-menu-heading">Quick Links</h5>
             <ul class="footer-menu-list footer-menu-acc">
@@ -8531,7 +8531,7 @@
           </div>
         </div>
         <!-- FOOTER MENU WRAPPER -->
-        <div class="footer-menu-wrapper">
+        <div class="footer-menu-wrapper fade-up">
           <div class="footer-nav">
             <h5 class="footer-menu-heading">Quick Links</h5>
             <ul class="footer-menu-list footer-menu-acc">
@@ -8554,7 +8554,7 @@
           </div>
         </div>
         <!-- FOOTER MENU WRAPPER -->
-        <div class="footer-menu-wrapper">
+        <div class="footer-menu-wrapper fade-down">
           <div class="footer-nav">
             <h5 class="footer-menu-heading footer-contact-heading">Quick Links</h5>
             <ul class="footer-contact-list footer-menu-acc">

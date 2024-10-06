@@ -1,3 +1,116 @@
+
+// =====================
+/// GSAP ANIMATION
+  gsap.registerPlugin(ScrollTrigger);
+
+// FADE UP ANIMATION
+const fadeUp = document.querySelectorAll(".fade-up");
+fadeUp.forEach((item) => {
+  gsap.from(item, {
+    scrollTrigger: {
+      trigger: item, 
+      start: "top 80%", 
+    },
+    opacity: 0,                   
+    y: 200,              
+    duration: 2,                  
+    ease: "power2.out",           
+  });
+});
+
+// FADE DOWN ANIMATION
+const fadeDown = document.querySelectorAll(".fade-down"); // CHANGED TO .fade-down
+fadeDown.forEach((item) => {
+  gsap.from(item, {
+    scrollTrigger: {
+      trigger: item, 
+      start: "top 80%", 
+    },
+    opacity: 0,                   
+    y: -200,            
+    duration: 2,                  
+    ease: "power2.out",           
+  });
+});
+
+
+
+
+const scrabLeftElements = document.querySelectorAll(".scrabLeft");
+const scrabRightElements = document.querySelectorAll(".scrabRight");
+
+scrabLeftElements.forEach((item) => {
+  gsap.from(item, {
+    xPercent: -30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: item,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+
+scrabRightElements.forEach((item) => {
+  gsap.from(item, {
+    xPercent: 30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: item,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+
+
+
+
+// IMAGE ANIMATIONS
+const imageAnimation = document.querySelectorAll(".image-animation");
+imageAnimation.forEach((item) => {
+
+  // ITEM STYLING
+  item.style.position = "relative";
+  item.style.overflow = "hidden";
+
+  // OVERLAY CREATION AND STYLING
+  const overlay = document.createElement("div");
+  item.appendChild(overlay);
+  gsap.set(overlay, {
+    position: "absolute",
+    inset: 0,
+    background: "transparent",
+    borderWidth: "400px",
+    borderColor: "var(--color-background)",
+    borderStyle: "solid",
+    zIndex: 99999999,
+  });
+
+  // TIMELINE ANIMATION FOR BORDER SHRINKING
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: item,
+      start: "top 80%",
+    },
+  });
+
+  // ANIMATE BORDER WIDTH SHRINKING
+  tl.to(overlay, {
+    borderWidth: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+
+  // MAKE OVERLAY INVISIBLE AFTER BORDER ANIMATION
+  tl.to(overlay, {
+    visibility: "hidden",
+  });
+});
+
+
 // =====================
 // MARQUE SLIDER SECTION START
 const marqueSlider = document.querySelectorAll(".marquee-slider");
@@ -59,7 +172,7 @@ const handleOverlay = (show) => {
   // WAIT UNTIL THE DOM CONTENT IS FULLY LOADED
   window.addEventListener("DOMContentLoaded", () => {
     // CHECK YOUR CONDITION HERE (CURRENTLY SET TO 'TRUE' AS A PLACEHOLDER)
-    if (false) {
+    if (true) {
       // ADD "ACTIVE" CLASS TO THE POPUP AFTER 800 MILLISECONDS
       setTimeout(() => {
         countDownPopup.classList.add("active");
@@ -69,9 +182,32 @@ const handleOverlay = (show) => {
   });
 })();
 
+
+// =====================
+// PRIMARY & SECONDARY BUTTON
+(function() {
+  const buttons = document.querySelectorAll(".primary-button, .secondary-button");
+
+  buttons.forEach((item) => {
+    const div = document.createElement("div");
+    const span = document.createElement("div");
+
+    // Clone all the child nodes of the button and append them to the new div
+    item.childNodes.forEach((child) => {
+      span.appendChild(child.cloneNode(true));
+    });
+
+    // Append the newly created div with the cloned children back into the button
+    div.appendChild(span);
+    item.appendChild(div);
+  });
+
+})();
+
+
+
 // =====================
 // SEARCH DRAWER
-
 
 (function () {
   const mobileMenu = document.getElementById("mobileMenu");
@@ -152,7 +288,6 @@ const handleOverlay = (show) => {
   });
 
 
- 
 
   const mobileMenuItem = mobileMenu.querySelectorAll(".mobile-menu-items")
   const mobileSubMenu = document.getElementById("mobileSubmenu")
@@ -184,10 +319,6 @@ const handleOverlay = (show) => {
     });
   });
   
-
-
-
-
 })();
 
 
@@ -474,7 +605,6 @@ const slideshowSwiper = new Swiper(".slideshow-swipper", {
 
 // =====================
 // PROMO SECTION
-
 (function () {
   const button = document.getElementById("promoVideoPopupButton");
   const videoPopup = document.getElementById("videoPopup");
@@ -483,11 +613,12 @@ const slideshowSwiper = new Swiper(".slideshow-swipper", {
     videoPopup.classList.add("active");
     handleOverlay(true);
   });
+
 })();
+
 
 // =====================
 // TABS SECTION START
-
 document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
   const buttons = wrapper.querySelectorAll(".tabs-button");
   const items = wrapper.querySelectorAll(".tabs-item");
@@ -869,7 +1000,7 @@ if (document.body.clientWidth < 992) {
         // Collapse the menu
         gsap.to(menuList, {
           height: 0,
-          duration: 0.3,
+          duration: 0.7,
           ease: "power1.inOut", // Using GSAP easing
         });
 
@@ -878,7 +1009,7 @@ if (document.body.clientWidth < 992) {
         // Expand the menu
         gsap.to(menuList, {
           height: "auto", // You might need to calculate the height dynamically if using auto
-          duration: 0.3,
+          duration: 0.7,
           ease: "power1.inOut", // Using GSAP easing
         });
 
@@ -888,10 +1019,8 @@ if (document.body.clientWidth < 992) {
   });
 }
 
-// =================================================================================
-// =================================================================================
-// =================================================================================
-// =================================================================================
+
+// ========================
 // PRODUCT SECTION START
 const productController = document.querySelectorAll(
   ".product-quantity-controller"

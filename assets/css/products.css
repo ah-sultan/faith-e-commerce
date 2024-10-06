@@ -731,6 +731,10 @@ COUNTDOWN PRODUCT SECTION START
 =================== */
 .countdown-product-section {
   margin-top: 0rem;
+  overflow: hidden;
+  display: none;
+  
+
 }
 
 @media screen and (min-width: 992px) {

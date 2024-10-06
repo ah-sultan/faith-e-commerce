@@ -122,10 +122,10 @@ const handleOverlay = (show) => {
   const overlay = document.querySelector(".overlay");
   if (show) {
     overlay.classList.add("active");
-    document.body.style.overflowY = "hidden";
+    // document.body.style.overflow = "hidden";
   } else {
     overlay.classList.remove("active");
-    document.body.style.overflowY = "unset";
+    document.body.style.overflowY = "visible";
     document.body.style.overflowX = "hidden";
   }
 };
@@ -1083,26 +1083,16 @@ if (document.body.clientWidth < 992) {
     gsap.set(item, {
       overflow: "hidden",
       height: header + 4,
+      transition: "all ease-in-out .4s"
     });
 
     item.addEventListener("click", () => {
       if (item.classList.contains("active")) {
         // Collapse the menu
-        gsap.to(item, {
-          height: header + 4,
-          duration: 0.7,
-          ease: "power1.inOut", 
-        });
-
+        item.style.height = `${header + 4}px`
         item.classList.remove("active");
       } else {
-        // Expand the menu
-        gsap.to(item, {
-          height: (menuList + header + 40), 
-          duration: 0.7,
-          ease: "power1.inOut",
-        });
-
+ item.style.height = `${menuList + header + 40}px`
         item.classList.add("active");
       }
     });

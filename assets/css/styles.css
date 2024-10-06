@@ -56,11 +56,13 @@ html {
   box-sizing: border-box;
   font-size: calc(var(--font-body-scale) * 62.5%);
   height: 100%;
+  overflow-x: hidden !important;
 }
 
 body {
   background: var(--color-background);
   min-height: 100%;
+  width: 100%;
   margin: 0;
   font-size: 1.6rem;
   letter-spacing: 0;
@@ -916,6 +918,7 @@ MOBILE MENU START
   left: 0;
   display: none;
   overflow: hidden;
+  height: 100vh;
 }
 
 .header-mobile-menu {
@@ -3277,8 +3280,8 @@ PROMO SECTION START
 }
 
 .promo-video-play-button span {
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   background: white;
   fill: #000;
   display: flex;
@@ -3335,35 +3338,35 @@ PROMO SECTION START
 }
 
 .promo-list {
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(1, 1fr);
+  flex-wrap: wrap;
   padding-right: 0;
   --color-foreground: var(--color-heading);
-  gap: 16px;
-}
-
-.promo-list li {
-  width: 200px;
+  gap: 1.6rem;
 }
 
 @media screen and (min-width: 575px) {
-  .promo-list li {
-    width: 100%;
-  }
   .promo-list {
-    display: flex;
+    flex-wrap: nowrap;
   }
 }
 
-@media screen and (min-width: 1400px) {
-  .promo-list {
-    padding-right: 40px;
-    gap: 24px;
-  }
-
+.promo-list li {
+  width: fit-content;
 }
+
+.promo-list li img{
+  width: 16rem;
+  height: auto;
+}
+
+.promo-list li.big-image img{
+  width: 28rem;
+  height: auto;
+}
+
 
 .promo-list li {
   text-align: center;
@@ -3684,8 +3687,17 @@ CATEGORY SECTION START
   -ms-border-radius: 10rem;
   -o-border-radius: 10rem;
   margin: 0 1rem;
-
 }
+
+
+.category-list .category-list-item:hover a{
+  --color-background: #020714;
+  --color-border: #fff;
+  --color-foreground: #fff;
+  --color-heading: #fff;
+  --color-border: #fff;
+}
+
 
 
 @media screen and (min-width: 992px) {
@@ -3694,14 +3706,6 @@ CATEGORY SECTION START
     gap: 1.6rem;
     margin: 0 1.2rem;
   }
-}
-
-.category-list .category-list-item:hover {
-  --color-background: #020714;
-  --color-border: #fff;
-  --color-foreground: #fff;
-  --color-heading: #fff;
-  --color-border: #fff;
 }
 
 .category-list .category-list-item,
@@ -4424,7 +4428,7 @@ COUNTDOWN SECTION START
 HOT DEALS SECTION START
 =================== */
 
-.hot-deals-section {
+.hot-deals-section-wrapper {
   --hot-deals-card-banner-width: 100%;
   --hot-deals-card-height: 35rem;
   --hot-deals-card-gap: 1rem;
@@ -4436,19 +4440,19 @@ HOT DEALS SECTION START
 }
 
 @media screen and (min-width: 575px) {
-  .hot-deals-section {
+  .hot-deals-section-wrapper {
     --hot-deals-card-height: 45rem;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .hot-deals-section {
+  .hot-deals-section-wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .hot-deals-section {
+  .hot-deals-section-wrapper {
     --hot-deals-card-banner-width: 30rem;
     --hot-deals-card-height: 45rem;
     --hot-deals-card-gap: 0.2rem;
@@ -4459,7 +4463,7 @@ HOT DEALS SECTION START
 }
 
 @media screen and (min-width: 1400px) {
-  .hot-deals-section {
+  .hot-deals-section-wrapper {
     --hot-deals-card-banner-width: 45rem;
     --hot-deals-card-height: 55rem;
   }
@@ -6660,6 +6664,7 @@ FOOTERS SECTION START
   margin-top: 1.6rem;
   text-align: center;
   text-transform: uppercase;
+  position: unset;
 }
 
 .footer-newsletter-button > div {

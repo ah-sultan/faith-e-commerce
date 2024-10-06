@@ -78,21 +78,21 @@ imageAnimation.forEach((item) => {
     borderWidth: "400px",
     borderColor: "var(--color-background)",
     borderStyle: "solid",
-    zIndex: 99999999,
+    zIndex: 9999,
   });
 
   // TIMELINE ANIMATION FOR BORDER SHRINKING
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: item,
-      start: "top 80%",
+      start: "top 70%",
     },
   });
 
   // ANIMATE BORDER WIDTH SHRINKING
   tl.to(overlay, {
     borderWidth: 0,
-    duration: 2,
+    duration: 1,
     ease: "power2.out",
   });
 
@@ -126,6 +126,7 @@ const handleOverlay = (show) => {
   } else {
     overlay.classList.remove("active");
     document.body.style.overflowY = "unset";
+    document.body.style.overflowX = "hidden";
   }
 };
 
@@ -774,10 +775,10 @@ const countdownProductSection = new Swiper(".countdown-product-swiper", {
   freeMode: true,
 });
 
-gsap.from(".countdown-product-section", {
+gsap.from(".countdown-product-swiper", {
   scrollTrigger: {
     trigger: ".countdown-product-section",
-    start: "top 70%",
+    start: "top 90%",
   },
   opacity: 0,
   xPercent: -100,
@@ -788,10 +789,10 @@ gsap.from(".countdown-product-section", {
 
 // =====================
 // HOT DEALS SECTION START
-gsap.from(".hot-deals-section", {
+gsap.from(".hot-deals-section-wrapper", {
   scrollTrigger: {
     trigger: ".hot-deals-section",
-    start: "top 70%",
+    start: "top 90%",
   },
   opacity: 0,
   xPercent: 100,

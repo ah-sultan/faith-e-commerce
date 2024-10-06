@@ -497,6 +497,11 @@ PRODUCT COLOR VARIANT
   width: 100%;
   max-width: 100%;
   background: var(--color-background);
+  transition: all .6s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  -moz-transition: all .6s ease-in-out;
+  -ms-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
 }
 
 @media screen and (min-width: 992px) {

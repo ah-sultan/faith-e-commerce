@@ -190,7 +190,7 @@ const handleOverlay = (show) => {
 
   buttons.forEach((item) => {
     const div = document.createElement("div");
-    const span = document.createElement("div");
+    const span = document.createElement("span");
 
     // Clone all the child nodes of the button and append them to the new div
     item.childNodes.forEach((child) => {
@@ -1048,4 +1048,23 @@ productController.forEach((controller) => {
       productQuantity.value = count;
     }
   });
+});
+
+
+// ========================
+// SCROLL TO TOP BY GSAP
+const scrollToTopButton = document.getElementById('scrollToTop');
+
+// Show button when scrolled down
+window.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollToTopButton.classList.add('active');
+    } else {
+        scrollToTopButton.classList.remove('active');
+    }
+});
+
+// Scroll to top animation
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });

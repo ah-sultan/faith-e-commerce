@@ -92,7 +92,7 @@ imageAnimation.forEach((item) => {
   // ANIMATE BORDER WIDTH SHRINKING
   tl.to(overlay, {
     borderWidth: 0,
-    duration: 1,
+    duration: 1.5,
     ease: "power2.out",
   });
 
@@ -1075,35 +1075,35 @@ if (document.body.clientWidth < 992) {
   const footerMenuWrapper = document.querySelectorAll(".footer-menu-wrapper");
 
   footerMenuWrapper.forEach((item) => {
+
+    const header = item.querySelector(".footer-menu-heading").clientHeight;
+    const menuList = item.querySelector(".footer-menu-acc").clientHeight
+
     // Initially hide the menu list
-    gsap.set(item.querySelector(".footer-menu-acc"), {
+    gsap.set(item, {
       overflow: "hidden",
-      height: 0,
+      height: header + 4,
     });
 
-    const header = item.querySelector(".footer-menu-heading");
-
-    header.addEventListener("click", () => {
-      const menuList = item.querySelector(".footer-menu-acc");
-
-      if (header.classList.contains("active")) {
+    item.addEventListener("click", () => {
+      if (item.classList.contains("active")) {
         // Collapse the menu
-        gsap.to(menuList, {
-          height: 0,
+        gsap.to(item, {
+          height: header + 4,
           duration: 0.7,
-          ease: "power1.inOut", // Using GSAP easing
+          ease: "power1.inOut", 
         });
 
-        header.classList.remove("active");
+        item.classList.remove("active");
       } else {
         // Expand the menu
-        gsap.to(menuList, {
-          height: "auto", // You might need to calculate the height dynamically if using auto
+        gsap.to(item, {
+          height: (menuList + header + 40), 
           duration: 0.7,
-          ease: "power1.inOut", // Using GSAP easing
+          ease: "power1.inOut",
         });
 
-        header.classList.add("active");
+        item.classList.add("active");
       }
     });
   });

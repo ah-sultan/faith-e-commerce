@@ -618,7 +618,14 @@ h6,
 
 .section-caption .section-heading span {
   color: #bffd3b;
-  -webkit-text-stroke: 2px var(--color-heading);
+  -webkit-text-stroke: 1px var(--color-heading);
+}
+
+@media screen and (min-width: 992px) {
+  .section-caption .section-heading span {
+    -webkit-text-stroke: 2px var(--color-heading);
+  }
+  
 }
 .section-caption .section-desc {
   padding-top: 2rem;

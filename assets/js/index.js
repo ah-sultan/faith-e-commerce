@@ -122,7 +122,7 @@ const handleOverlay = (show) => {
   const overlay = document.querySelector(".overlay");
   if (show) {
     overlay.classList.add("active");
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   } else {
     overlay.classList.remove("active");
     document.body.style.overflowY = "visible";
@@ -143,7 +143,6 @@ const handleOverlay = (show) => {
     const handleClose = () => {
       item.classList.remove("active");
       handleOverlay(false);
-      console.log("clicked");
     };
 
     popupClose.addEventListener("click", () => {
@@ -538,7 +537,6 @@ const announcementBarDrawer = document.getElementById(
 announcementBarDrawer.style.display = "none";
 announcementBarDrawer.style.transform = "translateY(-100%)";
 
-console.log(announcementBarDrawer.clientHeight);
 
 // Toggle Announcement Bar Drawer
 announcementBarToggler.addEventListener("click", () => {
@@ -1199,6 +1197,6 @@ countDown.forEach((item) => {
   // CLEAR INTERVAL
   const clearCount = () => {
     clearInterval(countInterval);
-    console.log("EXPIRED");
   };
 });
+

@@ -133,6 +133,7 @@ fieldset {
   display: inline-block;
 }
 
+
 /* ========================
 UTILITIES SECTION START
 ======================== */
@@ -2201,7 +2202,7 @@ PRODUCT QUICK VIEW START
 ANNOUNCE BAR START
 ======================== */
 .announcement-bar {
-  z-index: 999;
+  z-index: 99999;
   position: relative;
   top: 0;
   width: 100%;
@@ -5036,7 +5037,7 @@ HOT DEALS SECTION START
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2.4rem;
-  overflow: scroll;
+  overflow-x: scroll;
   padding-bottom: 2rem;
   margin-top: 4rem;
   scroll-behavior: smooth;

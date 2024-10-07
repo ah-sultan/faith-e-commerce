@@ -727,37 +727,20 @@ gsap.from(".countdown-product-swiper", {
 
 // =====================
 // HOT DEALS SECTION START
-function getResponsiveValues() {
-  const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
-
-  return {
-    xPercent: isSmallScreen ? 0 : 100,
-    yPercent: isSmallScreen ? 20 : 50,
-    scale: isSmallScreen ? 0.8 : 0.6,
-  };
-}
-
-function animateHotDeals() {
-  const responsiveValues = getResponsiveValues();
-
+if(document.body.clientWidth > 1200){
   gsap.from(".hot-deals-section-wrapper", {
     scrollTrigger: {
       trigger: ".hot-deals-section",
       start: "top 90%",
     },
     opacity: 0,
-    ...responsiveValues,
+    xPercent: 100,
+    yPercent: 50,
+    scale: 0.6,
     duration: 2,
     ease: "power2.out",
   });
 }
-
-// Initialize the animation
-animateHotDeals();
-
-// Re-animate on resize
-window.addEventListener('resize', animateHotDeals);
-
 
 // BUNDLE PRODUCT SECTION START
 // =====================

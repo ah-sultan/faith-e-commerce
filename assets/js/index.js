@@ -945,21 +945,22 @@ recentAddedSwiper.forEach((item, index) => {
 });
 
 //
-gsap.from(".recent-added-card-wrapper ", {
-  scrollTrigger: {
-    trigger: ".recent-added-section",
-    start: "top 70%",
-  },
-  opacity: 0,
-  xPercent: 50,
-  scale: 0.6,
-  duration: 2,
-  ease: "power2.out",
-});
+if(document.body.clientWidth > 1200){
+  gsap.from(".recent-added-card-wrapper ", {
+    scrollTrigger: {
+      trigger: ".recent-added-section",
+      start: "top 70%",
+    },
+    opacity: 0,
+    xPercent: 50,
+    scale: 0.6,
+    duration: 2,
+    ease: "power2.out",
+  });
+}
 
 // =====================
 // STYLISH SECTION START
-
 const stylishProducts = new Swiper(".stylish-product-swiper", {
   spaceBetween: 10,
   slidesPerView: "auto",

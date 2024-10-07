@@ -1025,7 +1025,7 @@ if (document.body.clientWidth < 992) {
     // SET INITIAL STYLES FOR THE MENU
     item.style.overflow = "hidden";
     item.style.height = `${headerHeight + 4}px`; 
-    item.style.transition = "all ease-in-out .4s"; 
+    item.style.transition = "all ease-in-out .1s"; 
 
   
     item.addEventListener("click", () => {
@@ -1148,8 +1148,6 @@ countDown.forEach((item) => {
     clearInterval(countInterval);
   };
 });
-
-
 
 // =====================
 /// GSAP ANIMATION

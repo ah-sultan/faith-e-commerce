@@ -1,106 +1,8 @@
-// =====================
-/// GSAP ANIMATION
+window.addEventListener("DOMContentLoaded", () => {
+  
 gsap.registerPlugin(ScrollTrigger);
 
-// FADE UP ANIMATION
-const fadeUp = document.querySelectorAll(".fade-up");
-fadeUp.forEach((item) => {
-  gsap.from(item, {
-    scrollTrigger: {
-      trigger: item,
-      start: "top 90%",
-    },
-    opacity: 0,
-    y: 200,
-    duration: 2,
-    ease: "power2.out",
-  });
-});
 
-// FADE DOWN ANIMATION
-const fadeDown = document.querySelectorAll(".fade-down"); // CHANGED TO .fade-down
-fadeDown.forEach((item) => {
-  gsap.from(item, {
-    scrollTrigger: {
-      trigger: item,
-      start: "top 90%",
-    },
-    opacity: 0,
-    y: -200,
-    duration: 2,
-    ease: "power2.out",
-  });
-});
-
-const scrabLeftElements = document.querySelectorAll(".scrabLeft");
-const scrabRightElements = document.querySelectorAll(".scrabRight");
-
-scrabLeftElements.forEach((item) => {
-  gsap.from(item, {
-    xPercent: -30,
-    ease: "none",
-    scrollTrigger: {
-      trigger: item,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-});
-
-scrabRightElements.forEach((item) => {
-  gsap.from(item, {
-    xPercent: 30,
-    ease: "none",
-    scrollTrigger: {
-      trigger: item,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-});
-
-// IMAGE ANIMATIONS
-const imageAnimation = document.querySelectorAll(".image-animation");
-imageAnimation.forEach((item) => {
-  // ITEM STYLING
-  item.style.position = "relative";
-  item.style.overflow = "hidden";
-
-  // OVERLAY CREATION AND STYLING
-  const overlay = document.createElement("div");
-  item.appendChild(overlay);
-  gsap.set(overlay, {
-    position: "absolute",
-    inset: 0,
-    background: "transparent",
-    borderWidth: "400px",
-    borderColor: "var(--color-background)",
-    borderStyle: "solid",
-    zIndex: 9999,
-  });
-
-  // TIMELINE ANIMATION FOR BORDER SHRINKING
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: item,
-      start: "top 70%",
-    },
-  });
-
-  // ANIMATE BORDER WIDTH SHRINKING
-  tl.to(overlay, {
-    borderWidth: 0,
-    duration: 1.5,
-    ease: "power2.out",
-  });
-
-  // MAKE OVERLAY INVISIBLE AFTER BORDER ANIMATION
-  tl.to(overlay, {
-    visibility: "hidden",
-  });
-});
 
 // =====================
 // MARQUE SLIDER SECTION START
@@ -675,6 +577,44 @@ document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
   });
 });
 
+
+// =====================
+// CATEGORY SECTION START
+
+gsap.fromTo(".category-section .category-list-top", 
+  {
+    xPercent: 50,
+  }, 
+  { 
+    scrollTrigger: {
+      trigger: ".category-section",
+      start: "top 80%",
+      end: "bottom 0%",
+      scrub: 1, 
+    },
+    xPercent: -100,
+    duration: 2.5, 
+    ease: "power2.inOut"
+  }
+);
+
+gsap.fromTo(".category-section .category-list-bottom", 
+  { 
+    xPercent: -100,
+  }, 
+  { 
+    scrollTrigger: {
+      trigger: ".category-section",
+      start: "top 80%",
+      end: "bottom 0%",
+      scrub: 1, 
+    },
+    xPercent: 50,
+    duration: 2.5, 
+    ease: "power2.inOut"
+  }
+);
+
 // =====================
 // TRENDING SECTION START
 
@@ -1069,33 +1009,39 @@ const testimonialCard = new Swiper(".testimonial-swiper", {
 
 // =====================
 // FOOTER SECTION  START
+
+// CHECK IF THE VIEWPORT WIDTH IS LESS THAN 992 PIXELS
 if (document.body.clientWidth < 992) {
-  const footerMenuWrapper = document.querySelectorAll(".footer-menu-wrapper");
+  const footerMenuWrappers = document.querySelectorAll(".footer-menu-wrapper");
 
-  footerMenuWrapper.forEach((item) => {
+  footerMenuWrappers.forEach((item) => {
+    // GET THE HEIGHT OF THE HEADER AND THE MENU LIST
+    const headerHeight = item.querySelector(".footer-menu-heading").clientHeight;
+    const menuListHeight = item.querySelector(".footer-menu-acc").clientHeight;
 
-    const header = item.querySelector(".footer-menu-heading").clientHeight;
-    const menuList = item.querySelector(".footer-menu-acc").clientHeight
+    // SET INITIAL STYLES FOR THE MENU
+    item.style.overflow = "hidden";
+    item.style.height = `${headerHeight + 4}px`; 
+    item.style.transition = "all ease-in-out .4s"; 
 
-    // Initially hide the menu list
-    gsap.set(item, {
-      overflow: "hidden",
-      height: header + 4,
-      transition: "all ease-in-out .4s"
-    });
-
+  
     item.addEventListener("click", () => {
+  
       if (item.classList.contains("active")) {
-        // Collapse the menu
-        item.style.height = `${header + 4}px`
+      
+        item.style.height = `${headerHeight + 4}px`; 
         item.classList.remove("active");
+
+
       } else {
- item.style.height = `${menuList + header + 40}px`
+        // EXPAND THE MENU
+        item.style.height = `${menuListHeight + headerHeight + 40}px`; // EXPANDED HEIGHT
         item.classList.add("active");
       }
     });
   });
 }
+
 
 // ========================
 // PRODUCT SECTION START
@@ -1200,3 +1146,124 @@ countDown.forEach((item) => {
   };
 });
 
+
+
+// =====================
+/// GSAP ANIMATION
+
+
+// FADE UP ANIMATION
+const fadeUp = document.querySelectorAll(".fade-up");
+fadeUp.forEach((item) => {
+  gsap.fromTo(
+    item,
+    { // Starting values
+      opacity: 0,
+      y: 100,
+    },
+    { // Ending values
+      scrollTrigger: {
+        trigger: item,
+        start: "top 90%",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 2,
+      ease: "power2.out",
+    }
+  );
+});
+
+
+// FADE DOWN ANIMATION
+const fadeDown = document.querySelectorAll(".fade-down"); 
+fadeDown.forEach((item) => {
+  gsap.fromTo(
+    item,
+    { 
+      opacity: 0,
+      y: -100,
+    },
+    { 
+      scrollTrigger: {
+        trigger: item,
+        start: "top 90%",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 2,
+      ease: "power2.out",
+    }
+  );
+});
+
+const scrabLeftElements = document.querySelectorAll(".scrabLeft");
+const scrabRightElements = document.querySelectorAll(".scrabRight");
+
+scrabLeftElements.forEach((item) => {
+  gsap.from(item, {
+    xPercent: -30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: item,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+
+scrabRightElements.forEach((item) => {
+  gsap.from(item, {
+    xPercent: 30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: item,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+
+// IMAGE ANIMATIONS
+const imageAnimation = document.querySelectorAll(".image-animation");
+imageAnimation.forEach((item) => {
+  // ITEM STYLING
+  item.style.position = "relative";
+  item.style.overflow = "hidden";
+
+  // OVERLAY CREATION AND STYLING
+  const overlay = document.createElement("div");
+  item.appendChild(overlay);
+  gsap.set(overlay, {
+    position: "absolute",
+    inset: 0,
+    background: "transparent",
+    borderWidth: "400px",
+    borderColor: "var(--color-background)",
+    borderStyle: "solid",
+    zIndex: 9999,
+  });
+
+  // TIMELINE ANIMATION FOR BORDER SHRINKING
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: item,
+      start: "top 70%",
+    },
+  });
+
+  // ANIMATE BORDER WIDTH SHRINKING
+  tl.to(overlay, {
+    borderWidth: 0,
+    duration: 1.5,
+    ease: "power2.out",
+  });
+
+  // MAKE OVERLAY INVISIBLE AFTER BORDER ANIMATION
+  tl.to(overlay, {
+    visibility: "hidden",
+  });
+});
+})

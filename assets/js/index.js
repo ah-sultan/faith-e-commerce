@@ -61,18 +61,14 @@ const handleOverlay = (show) => {
 (function () {
   // SELECT THE COUNTDOWN POPUP ELEMENT
   const countDownPopup = document.getElementById("countDownPopup");
-
-  // WAIT UNTIL THE DOM CONTENT IS FULLY LOADED
-  window.addEventListener("DOMContentLoaded", () => {
-    // CHECK YOUR CONDITION HERE (CURRENTLY SET TO 'TRUE' AS A PLACEHOLDER)
-    if (true) {
-      // ADD "ACTIVE" CLASS TO THE POPUP AFTER 800 MILLISECONDS
-      setTimeout(() => {
-        countDownPopup.classList.add("active");
-        handleOverlay(true);
-      }, 2000);
-    }
-  });
+// CHECK YOUR CONDITION HERE (CURRENTLY SET TO 'TRUE' AS A PLACEHOLDER)
+if (true) {
+  // ADD "ACTIVE" CLASS TO THE POPUP AFTER 800 MILLISECONDS
+  setTimeout(() => {
+    countDownPopup.classList.add("active");
+    handleOverlay(true);
+  }, 2000);
+}
 })();
 
 // =====================
@@ -840,19 +836,6 @@ bundleProductAcc.forEach((item, index) => {
   };
 });
 
-// =====================
-// FEATURES SECTION START
-gsap.from(".features-section .features-card", {
-  scrollTrigger: {
-    trigger: ".features-section",
-    start: "top 90%",
-  },
-  opacity: 0,
-  xPercent: -50,
-
-  duration: 1,
-  ease: "power2.out",
-});
 
 // =====================
 // BEFORE AFTER SECTION

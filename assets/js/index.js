@@ -544,61 +544,39 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // ANNOUNCEMENT BAR
   // =====================
-  // ANNOUNCEMENT BAR SECTION
+
   (function () {
-    const announcementBar = document.getElementById("announcement-bar");
-    const announcementBarToggler = document.getElementById(
+    const ancBarDrawer = document.getElementById("announcement-bar-drawer");
+    const ancBarDrawerToggle = document.getElementById(
       "announcement-bar-toggler"
     );
-    const announcementBarDrawer = document.getElementById(
-      "announcement-bar-drawer"
-    );
 
-    // Default Style for Announcement Bar Drawer
-    function initializeAnnouncementBarDrawer() {
-      announcementBarDrawer.style.display = "none";
-      announcementBarDrawer.style.transform = "translateY(-100%)";
-    }
+    // DEFAULT STYLE ON DRAWER
+    ancBarDrawer.style.display = "none";
+    ancBarDrawer.style.transform = "translateY(-110%)";
 
-    // Function to toggle the Announcement Bar Drawer
-    function toggleAnnouncementBarDrawer() {
-      if (announcementBarToggler.classList.contains("show")) {
-        hideAnnouncementBarDrawer();
+    // HANDLE ACTIONS
+    ancBarDrawerToggle.addEventListener("click", () => {
+      if (ancBarDrawerToggle.classList.contains("show")) {
+        ancBarDrawer.classList.remove("active");
+        ancBarDrawer.style.transform = "translateY(-110%)";
+        ancBarDrawerToggle.classList.remove("show");
+
+        setTimeout(() => {
+          handleOverlay(false);
+          ancBarDrawer.style.display = "none";
+        }, 100);
       } else {
-        showAnnouncementBarDrawer();
+        ancBarDrawer.style.display = "block";
+
+        setTimeout(() => {
+          handleOverlay(true);
+          ancBarDrawer.style.transform = "translateY(0)";
+          ancBarDrawer.classList.add("active");
+          ancBarDrawerToggle.classList.add("show");
+        }, 100);
       }
-    }
-
-    // Function to hide the Announcement Bar Drawer
-    function hideAnnouncementBarDrawer() {
-      announcementBarToggler.classList.remove("show");
-      announcementBarDrawer.style.transform = "translateY(-100%)";
-
-      // Delay to ensure the transition completes before hiding the display
-      setTimeout(() => {
-        announcementBarDrawer.style.display = "none";
-      }, 700);
-    }
-
-    // Function to show the Announcement Bar Drawer
-    function showAnnouncementBarDrawer() {
-      announcementBarDrawer.style.display = "block";
-      announcementBarToggler.classList.add("show");
-
-      // Delay to allow the display to set before the transition
-      setTimeout(() => {
-        announcementBarDrawer.style.transform = "translateY(0%)";
-      }, 100);
-    }
-
-    // Initialize the Announcement Bar Drawer on page load
-    initializeAnnouncementBarDrawer();
-
-    // Event Listener for Toggling Announcement Bar Drawer
-    announcementBarToggler.addEventListener(
-      "click",
-      toggleAnnouncementBarDrawer
-    );
+    });
 
     // Initialize Swiper for Announcement Bar
     const announceBarSwiper = new Swiper(".announce-bar-swipper", {
@@ -1224,7 +1202,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Scroll to top animation
     scrollToTopButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth", duration : 3000, });
+      window.scrollTo({ top: 0, behavior: "smooth", duration: 3000 });
     });
   })();
 

@@ -841,10 +841,11 @@ POPUP SECTION BAR START
 ======================== */
 
 .overlay {
+  --overlay-z-index : 99998;
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 99998;
+  z-index: var(--overlay-z-index);
   background: rgba(2, 7, 20, 0.6);
   backdrop-filter: blur(5px);
   inset: 0;
@@ -870,7 +871,7 @@ POPUP SECTION BAR START
   position: fixed;
   width: 100vw;
   height: 100%;
-  z-index: 99999;
+  z-index: 9999999;
   inset: 0;
   visibility: hidden;
   opacity: 0;
@@ -2428,13 +2429,24 @@ HEADER SECTION START
 .header {
   --color-foreground: var(--color-heading);
   --color-border: rgb(255, 255, 255, 0.2);
-  padding: 16px 0px;
+  padding: 1.6rem 0;
   border-bottom: 1px solid var(--color-border);
   position: none;
   width: 100%;
-  top: 60px;
+  top: 6rem;
   z-index: 9999;
   background: var(--color-background);
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+
+
+header:hover {
+  background: #fff;
 }
 
 @media screen and (min-width: 1200px) {
@@ -2472,38 +2484,31 @@ HEADER SECTION START
   }
 }
 
-.header-warpper {
-  position: relative;
-}
 
 @media screen and (min-width: 1200px) {
   .header {
     --color-foreground: #fff;
-
-    padding: 0px 0px;
+    padding: 0;
     background: transparent;
   }
 }
 
-.header,
-.header > * {
-  transition: all ease-in-out 0.3s;
-  -webkit-transition: all ease-in-out 0.3s;
-  -moz-transition: all ease-in-out 0.3s;
-  -ms-transition: all ease-in-out 0.3s;
-  -o-transition: all ease-in-out 0.3s;
-}
 
-header:hover {
-  --color-foreground: var(--color-heading);
-  --color-border: #e3e3e3;
-  background: var(--color-background);
-  fill: var(#000);
+.header-warpper {
+  position: relative;
 }
 
 .header-logo {
   color: var(--color-foreground);
-  fill: var(--color-foreground);
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+}
+
+.header:hover .header-logo {
+  color: var(--color-heading);
 }
 
 .header-nav {
@@ -2519,31 +2524,20 @@ header:hover {
 }
 
 .header-mobile-nav-toggler {
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-foreground);
   color: var(--color-foreground);
-  border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
 }
 
-.header-mobile-nav-toggler:hover {
-  border: 1px solid var(--color-primary-button);
-  color: var(--color-primary-button-hover-text);
-  background: var(--color-primary-button);
-  border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
-  rotate: 360deg;
-}
 
 @media screen and (min-width: 1200px) {
   .header-mobile-nav-toggler {
@@ -2559,33 +2553,53 @@ header:hover {
 
 .header-menu li > a {
   color: var(--color-foreground);
-  font-size: 16px;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: .4rem;
   font-family: var(--font-heading);
-  padding: 34px 0;
+  padding: 3.4rem 0;
+  transition: all .4s linear;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -ms-transition: all .4s linear;
+  -o-transition: all .4s linear;
+}
+ 
+.header:hover
+.header-menu li > a {
+  --color-foreground : var(--color-heading);
+color: var(--color-foreground);
+
 }
 
 .header-button-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1.2rem;
 }
 
 @media screen and (min-width: 768px) {
   .header-button-wrapper {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 2.4rem;
   }
 }
 
 .header-button-wrapper svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--color-foreground);
+  width: 2.4rem;
+  height: 2.4rem;
   color: var(--color-foreground);
+  transition: all .4s linear;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -ms-transition: all .4s linear;
+  -o-transition: all .4s linear;
+}
+
+.header:hover .header-button-wrapper svg {
+color: var(--color-heading);
 }
 
 .header-cart-button {
@@ -2598,16 +2612,16 @@ header:hover {
   background: var(--color-badge-background);
   border: 1px solid var(--color-badge-border);
   color: var(--color-badge-foreground);
-  padding: 4px;
-  font-size: 16px;
+  padding: .4rem;
+  font-size: 1.6rem;
   border-radius: 100%;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
-  top: -10px;
-  right: -10px;
-  font-size: 12px;
+  top: -1rem;
+  right: -1rem;
+  font-size: 1.2rem;
   font-family: var(--font-heading);
   line-height: 100%;
 }
@@ -2631,7 +2645,7 @@ SUBMENU MENU SECTION START
 }
 
 .header-submenu {
-  --drop-menu-width: 220px;
+  --drop-menu-width: 22rem;
   --color-background: #fff;
   --color-foreground: var(--color-heading);
   --color-shadow: rgba(0, 0, 0, 0.1);
@@ -2642,37 +2656,37 @@ SUBMENU MENU SECTION START
 
 .header-submenu-wrapper {
   position: relative;
-  margin-top: 16px;
+  margin-top: 1.6rem;
   background-color: var(--color-background);
   color: var(--color-foreground);
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  border-radius: .8rem;
+  -webkit-border-radius: .8rem;
+  -moz-border-radius: .8rem;
+  -ms-border-radius: .8rem;
+  -o-border-radius: .8rem;
   width: 100%;
-  padding: 8px;
+  padding: .8rem;
   box-shadow: 0px 0px 20px var(--color-shadow);
 }
 
 .header-submenu-wrapper::after {
   content: url('data:image/svg+xml,<svg width="41" height="14" viewBox="0 0 41 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.2852 -6.61068e-07L16.902 3.93394C15.0693 6.06509 12.9887 7.96992 10.7046 9.60803C8.31688 11.3204 5.55741 12.4426 2.65231 12.8826L0.00097625 13.2842H40.5693L37.918 12.8826C35.0129 12.4426 32.2534 11.3204 29.8657 9.60803C27.5816 7.96992 25.501 6.06509 23.6683 3.93394L20.2852 -6.61068e-07Z" fill="white"/></svg>');
   position: absolute;
-  left: 25px;
-  top: -14px;
+  left: 2.5rem;
+  top: -1.4rem;
 }
 
 .header-submenu-wrapper li > a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 18px;
-  gap: 10px;
-  border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
+  padding: 1.6rem 1.8rem;
+  gap: 1rem;
+  border-radius: 4rem;
+  -webkit-border-radius: 4rem;
+  -moz-border-radius: 4rem;
+  -ms-border-radius: 4rem;
+  -o-border-radius: 4rem;
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 14px;
@@ -2681,16 +2695,18 @@ SUBMENU MENU SECTION START
   background: var(--color-background);
 }
 
+.header
 .header-submenu-wrapper li:hover > a {
   --color-background: var(--color-heading);
   --color-foreground: #fff;
+  color: var(--color-foreground) !important;
   background: var(--color-background);
 }
 
 .header-submenu li > .header-submenu {
   top: 0;
   left: 100%;
-  padding-left: 20px;
+  padding-left: 2rem;
 }
 
 .header-submenu li > .header-submenu .header-submenu-wrapper {
@@ -2710,9 +2726,11 @@ SUBMENU MENU SECTION START
 .header-submenu {
   overflow: hidden;
   visibility: hidden;
+  
 }
 .header-submenu:hover {
   overflow: visible;
+
 }
 
 .header .has-submenu:hover .header-submenu {
@@ -2720,17 +2738,16 @@ SUBMENU MENU SECTION START
 }
 
 .header .has-submenu .header-submenu-wrapper {
-  transform: translateY(-150%);
-  -webkit-transform: translateY(-150%);
-  -moz-transform: translateY(-150%);
-  -ms-transform: translateY(-150%);
-  -o-transform: translateY(-150%);
-  transition-delay: 0.2s;
-  transition: all 0.7s ease-in-out;
-  -webkit-transition: all 0.7s ease-in-out;
-  -moz-transition: all 0.7s ease-in-out;
-  -ms-transition: all 0.7s ease-in-out;
-  -o-transition: all 0.7s ease-in-out;
+  transform: translateY(-110%);
+  -webkit-transform: translateY(-110%);
+  -moz-transform: translateY(-110%);
+  -ms-transform: translateY(-110%);
+  -o-transform: translateY(-110%);
+  transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
 }
 
 .header .has-submenu:hover > .header-submenu > .header-submenu-wrapper {

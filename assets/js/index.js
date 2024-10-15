@@ -133,17 +133,36 @@ window.addEventListener("DOMContentLoaded", () => {
   // POPUP SECTION START
 
   // Function to handle the overlay visibility
-  const handleOverlay = (show) => {
+  const handleOverlay = (prams = { show: false, action: () => {} }) => {
     const overlay = document.querySelector(".overlay");
 
-    if (show) {
-      overlay.classList.add("active");
-      document.body.style.overflow = "hidden";
-    } else {
+    // HANDLE CLOSE OVERLAY
+    const handleClose = () => {
       overlay.classList.remove("active");
+      overlay.style.zIndex = "var(--overlay-z-index)";
       document.body.style.overflowY = "visible";
       document.body.style.overflowX = "hidden";
+      prams.action();
+    };
+
+    // HANDLE OPEN
+    const handleOpen = () => {
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    };
+
+    // CONDITION
+    if (prams.show) {
+      handleOpen();
+    } else {
+      handleClose();
     }
+
+    overlay.addEventListener("click", () => {
+      if (prams.show) {
+        handleClose()
+      }
+    });
   };
 
   // =====================
@@ -164,7 +183,7 @@ window.addEventListener("DOMContentLoaded", () => {
       // Function to handle closing of the popup and overlay
       const handleClose = () => {
         popup.classList.remove("active");
-        handleOverlay(false);
+        handleOverlay({ show: false });
       };
 
       // Attach event listeners for closing the popup
@@ -178,10 +197,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   (function () {
     const countDownPopup = document.getElementById("countDownPopup");
+    const overlay = document.querySelector(".overlay");
     if (true) {
       setTimeout(() => {
+        overlay.style.zIndex = "999999";
         countDownPopup.classList.add("active");
-        handleOverlay(true);
+        handleOverlay({ show: true });
       }, 2000);
     }
   })();
@@ -222,7 +243,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Open Menu Function
     function openMobileMenu() {
-      handleOverlay(true);
+      handleOverlay({ show: true });
 
       // GSAP Open Timeline
       const tl = gsap.timeline();
@@ -264,7 +285,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function closeMobileMenu() {
       // GSAP Close Timeline
       const tlClose = gsap.timeline({
-        onComplete: () => handleOverlay(false), // Optional: Handle overlay close
+        onComplete: () => handleOverlay({ show: false }), // Optional: Handle overlay close
       });
 
       // Slide the menu off-screen
@@ -335,7 +356,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function openSearchDrawer() {
       document.body.style.overflowY = "hidden";
       searchDrawer.classList.add("active");
-      handleOverlay(true);
+      handleOverlay({ show: false });
 
       const tl = gsap.timeline();
       tl.from(".search-drawer-panel", {
@@ -362,7 +383,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function closeSearchDrawer() {
       document.body.style.overflowY = "visible";
       searchDrawer.classList.remove("active");
-      handleOverlay(false);
+      handleOverlay({ show: false });
     }
 
     // Event Listeners for Opening Search Drawer
@@ -387,13 +408,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Function to open the quick view
     function openQuickView() {
-      handleOverlay(true);
+      handleOverlay({ show: false });
       productQuickView.classList.add("active");
     }
 
     // Function to close the quick view
     function closeQuickView() {
-      handleOverlay(false);
+      handleOverlay({ show: false });
       productQuickView.classList.remove("active");
     }
 
@@ -448,7 +469,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Function to open the cart drawer
     function openCartDrawer() {
       cartDrawer.classList.add("active");
-      handleOverlay(true);
+      handleOverlay({ show: false });
 
       const tl = gsap.timeline();
       tl.from(cartDrawer.querySelector(".cart-drawer-header"), {
@@ -474,7 +495,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Function to close the cart drawer
     function closeCartDrawer() {
       cartDrawer.classList.remove("active");
-      handleOverlay(false);
+      handleOverlay({ show: false });
     }
 
     // Function to update range slide width
@@ -555,26 +576,35 @@ window.addEventListener("DOMContentLoaded", () => {
     ancBarDrawer.style.display = "none";
     ancBarDrawer.style.transform = "translateY(-110%)";
 
+    // HANDLE CLOSE DRAWER
+    const handleCloseDrawer = () => {
+      ancBarDrawer.classList.remove("active");
+      ancBarDrawer.style.transform = "translateY(-110%)";
+      ancBarDrawerToggle.classList.remove("show");
+
+      setTimeout(() => {
+        handleOverlay({ show: false });
+        ancBarDrawer.style.display = "none";
+      }, 100);
+    };
+
+    // HANDLE OPEN  DRAWER
+    const handleOpenDrawer = () => {
+      ancBarDrawer.style.display = "block";
+      setTimeout(() => {
+        handleOverlay({ show: true, action: handleCloseDrawer });
+        ancBarDrawer.style.transform = "translateY(0)";
+        ancBarDrawer.classList.add("active");
+        ancBarDrawerToggle.classList.add("show");
+      }, 100);
+    };
+
     // HANDLE ACTIONS
     ancBarDrawerToggle.addEventListener("click", () => {
       if (ancBarDrawerToggle.classList.contains("show")) {
-        ancBarDrawer.classList.remove("active");
-        ancBarDrawer.style.transform = "translateY(-110%)";
-        ancBarDrawerToggle.classList.remove("show");
-
-        setTimeout(() => {
-          handleOverlay(false);
-          ancBarDrawer.style.display = "none";
-        }, 100);
+        handleCloseDrawer();
       } else {
-        ancBarDrawer.style.display = "block";
-
-        setTimeout(() => {
-          handleOverlay(true);
-          ancBarDrawer.style.transform = "translateY(0)";
-          ancBarDrawer.classList.add("active");
-          ancBarDrawerToggle.classList.add("show");
-        }, 100);
+        handleOpenDrawer();
       }
     });
 
@@ -648,7 +678,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Function to show the video popup
     function showVideoPopup() {
       videoPopup.classList.add("active");
-      handleOverlay(true);
+      handleOverlay({ show: true });
     }
 
     // Attach event listener to the button for showing the video popup

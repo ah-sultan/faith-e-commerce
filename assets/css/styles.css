@@ -119,6 +119,24 @@ button path {
   -o-transition:inherit;
 }
 
+.link-animation{
+  background: linear-gradient(90deg, currentColor, currentColor 100%) !important;
+  background-size: 0% 1px !important; 
+  background-repeat: no-repeat !important; 
+  background-position: right bottom !important; 
+  transition: background-size .5s cubic-bezier(.3, 1, .3, 1) !important;
+}
+
+
+.link-animation:hover{
+  background-size: 100% 1px !important; 
+  background-position: left bottom !important; 
+} 
+ 
+
+
+
+
 img,
 video,
 iframe {
@@ -662,6 +680,7 @@ h6,
 
 .swiper-button-prev,
 .swiper-button-next {
+  overflow: hidden;
   position: static;
   display: flex;
   justify-content: center;
@@ -702,7 +721,81 @@ h6,
   border-color: var(--color-primary-button-outline-hover);
   background: var(--color-primary-button-hover);
   color: var(--color-primary-button-hover-text);
+ 
 }
+
+.swiper-button-prev:hover svg {
+  animation: swiperPaginationPrev .3s linear;
+}
+
+@keyframes swiperPaginationPrev {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translate(-100%, -100%);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-100%, -100%);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translate(100%, 100%);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translate(100%, 100%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.swiper-button-next:hover svg {
+  animation: swiperPaginationNext .3s linear;
+}
+
+@keyframes swiperPaginationNext {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translate(100%, -100%);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(100%, -100%);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translate(-100%, 100%);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translate(-100%, 100%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
 
 .swiper-pagination {
   display: flex;
@@ -711,38 +804,40 @@ h6,
   position: static;
 }
 
+
 .swiper-pagination span {
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid transparent;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--color-primary-button);
+  border-radius: 100%;
   opacity: 1;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
 }
 
 .swiper-pagination span::after {
   content: "";
-  display: block;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
-  background: var(--color-primary-button);
+  border: 1rem solid transparent;
+  
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  
 }
 
-.swiper-pagination .swiper-pagination-bullet-active {
-  border: 1px solid var(--color-primary-button);
-}
+.swiper-pagination .swiper-pagination-bullet-active::after {
+  transform: translate(-50%, -50%) scale(1);
+  width: 2.4rem;
+  height: 2.4rem;
+  opacity: 1;
+  border: .1rem solid var(--color-primary-button);
+ 
+} 
 
 /* ========================
 TAB BUTTON SECTION START
@@ -1463,7 +1558,7 @@ SEARCHBAR START
   display: flex;
   align-items: center;
   gap: 2.4rem;
-  overflow: scroll;
+  overflow-x: auto;
 }
 
 .search-drawer-product-list li img {
@@ -1675,7 +1770,7 @@ CART DRAWER START
 
 .cart-drawer-deals-rang-wrapper {
   position: relative;
-  margin-top: 1.2rem;
+
 }
 
 .cart-drawer-deals-rang {
@@ -1683,7 +1778,7 @@ CART DRAWER START
   left: 0;
   right: 0;
   width: 100%;
-  top: 0.8rem;
+  top: 1.6rem;
   -webkit-appearance: none;
   width: 100%;
   height: 0.8rem;
@@ -1695,7 +1790,7 @@ CART DRAWER START
 
 @media screen and (min-width: 768px) {
   .cart-drawer-deals-rang {
-    top: 1.3rem;
+    top: 2.5rem;
   }
 }
 
@@ -1721,6 +1816,7 @@ CART DRAWER START
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 1.2rem;
 }
 
 .cart-drawer-deals-rang-list li {
@@ -1920,11 +2016,6 @@ CART DRAWER START
   margin: 0;
 }
 
-@media screen and (min-width: 576px) {
-  .cart-drawer-suggest-products-pagination {
-    gap: 1.2rem;
-  }
-}
 
 .cart-drawer-suggest-products-pagination span {
   width: 0.8rem !important;
@@ -2463,24 +2554,27 @@ header:hover {
   position: fixed;
   top: 0;
   box-shadow: 0px 2px 20px rgba(57, 57, 57, 0.1);
-  animation: stickyHeader 0.3s ease-in;
-  -webkit-animation: stickyHeader 0.3s ease-in-out;
+  animation: stickyHeader 0.7s ease-in-out;
+  -webkit-animation: stickyHeader 0.8s ease-in-out;
+  
 }
 
 @keyframes stickyHeader {
   0% {
     transform: translateY(-120%);
-    -webkit-transform: translateY(-120%px);
-    -moz-transform: translateY(-120%px);
-    -ms-transform: translateY(-120%px);
-    -o-transform: translateY(-120%px);
-  }
+    -webkit-transform: translateY(-120%);
+    -moz-transform: translateY(-120%);
+    -ms-transform: translateY(-120%);
+    -o-transform: translateY(-120%);
+    opacity: 0;
+}
   100% {
     transform: translateY(0);
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -2551,6 +2645,7 @@ header:hover {
   }
 }
 
+.header-menu > li  {  padding: 3.4rem 0;}
 .header-menu li > a {
   color: var(--color-foreground);
   font-size: 1.6rem;
@@ -2558,7 +2653,7 @@ header:hover {
   align-items: center;
   gap: .4rem;
   font-family: var(--font-heading);
-  padding: 3.4rem 0;
+
   transition: all .4s linear;
   -webkit-transition: all .4s linear;
   -moz-transition: all .4s linear;
@@ -2814,6 +2909,7 @@ MEGA MENU SECTION
 }
 
 .header-megamenu-list {
+  --color-border : rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
   border-left: 1px solid var(--color-border);
   padding-left: 14px;
@@ -2851,13 +2947,11 @@ MEGA MENU SECTION
   text-transform: capitalize;
 }
 
+.header
 .header-megamenu-list ul li:hover a {
+  --color-foreground :var( --color-heading);
   background: transparent;
-}
-.header-megamenu-list ul li a:hover {
-  text-decoration: underline;
-  color: var(--color-heading);
-  background: transparent;
+  
 }
 
 .header-megamenu-list ul li .badge {
@@ -2917,22 +3011,19 @@ MEGA MENU SECTION
 
 .megamenu-collection-image-wrapper img:last-child {
   position: absolute;
-  height: 100%;
-  top: 100%;
-  right: 100%;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .megamenu-collection:hover img:first-child {
-  transform: translate(100%, -100%);
-  -webkit-transform: translate(100%, -100%);
-  -moz-transform: translate(100%, -100%);
-  -ms-transform: translate(100%, -100%);
-  -o-transform: translate(100%, -100%);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .megamenu-collection:hover img:last-child {
-  top: 0;
-  right: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .megamenu-collection h6 {
@@ -2970,6 +3061,7 @@ MEGA MENU SECTION
   line-height: 150%;
   margin: 8px 0;
   display: block;
+  width: fit-content;
 }
 
 .megamenu-collection-product-list .product-price {
@@ -3199,8 +3291,7 @@ DISCOUNT MARQUEE SECTION START
 
 .discount-marquee-slider li a {
   font-weight: 600;
-  text-decoration: underline;
-  margin-left: 8px;
+  margin-left: .8rem;
 }
 
 /* ========================
@@ -4353,6 +4444,7 @@ COUNTDOWN SECTION START
   line-height: 100%;
   color: var(--color-heading);
   margin-bottom: 0.8rem;
+  border: 1px solid var(--color-border);
 }
 
 @media screen and (min-width: 576px) {

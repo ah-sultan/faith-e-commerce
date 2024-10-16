@@ -469,7 +469,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Function to open the cart drawer
     function openCartDrawer() {
       cartDrawer.classList.add("active");
-      handleOverlay({ show: false });
+      handleOverlay({ show: true, action : closeCartDrawer });
 
       const tl = gsap.timeline();
       tl.from(cartDrawer.querySelector(".cart-drawer-header"), {
@@ -498,6 +498,7 @@ window.addEventListener("DOMContentLoaded", () => {
       handleOverlay({ show: false });
     }
 
+
     // Function to update range slide width
     function updateRangeSlide() {
       rangeSlide.style.width = `${inputRange.value}%`;
@@ -515,6 +516,7 @@ window.addEventListener("DOMContentLoaded", () => {
           duration: 0.4,
           opacity: 1,
           ease: "power1.inOut",
+          overflow : "hidden"
         });
         cardDrawerDeals.classList.remove("active");
       } else {
@@ -1242,7 +1244,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const countDown = document.querySelectorAll(".count-down");
 
   const startCountDown = async (item) => {
+     // data-target-count="Dec 5, 2024 15:37:25"
     const targetDate = item.getAttribute("data-target-count");
+   
     const countDownDate = new Date(targetDate).getTime();
 
     // COUNT DOWN EL

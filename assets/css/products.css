@@ -31,8 +31,8 @@
 .rating-star {
   display: flex;
   gap: 4px;
-  color: #d9651d;
-  fill: #d9651d;
+  color: #d9651d !important;
+  fill: #d9651d !important;
 }
 .rating-star-sm,
 .rating-star span {
@@ -50,6 +50,14 @@
   width: 12px;
   height: 12px;
   font-size: 12px;
+}
+
+.rating-star-sm svg,
+.rating-star-sm path,
+.rating-star svg,
+.rating-star svg path {
+  color: inherit;
+  fill: inherit;
 }
 
 /* PRODUCT PRICE */
@@ -221,7 +229,7 @@
 .product-quantity-controller button,
 .product-quantity-controller input {
   color: var(--color-heading);
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -253,8 +261,6 @@
     order: 2;
   }
 }
-
-
 
 /* ========================
  PRODUCT BUTTONS CSS
@@ -473,6 +479,36 @@ PRODUCT COLOR VARIANT
 /* ========================
  Products Card
   ======================== */
+.product .product-image {
+  position: relative;
+}
+.product .product-image img {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.product .product-image img:last-child {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.product:hover .product-image img:last-child {
+  opacity: 1;
+  visibility: visible;
+}
+
+.product:hover .product-image img:first-child {
+opacity: 0;
+visibility: hidden;
+}
+
+/* ========================
+ Products Card
+  ======================== */
 
 .product-card * {
   transition: all 0.3s ease-in-out;
@@ -497,11 +533,11 @@ PRODUCT COLOR VARIANT
   width: 100%;
   max-width: 100%;
   background: var(--color-background);
-  transition: all .6s ease-in-out;
-  -webkit-transition: all .6s ease-in-out;
-  -moz-transition: all .6s ease-in-out;
-  -ms-transition: all .6s ease-in-out;
-  -o-transition: all .6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
 }
 
 @media screen and (min-width: 992px) {
@@ -732,7 +768,6 @@ COUNTDOWN PRODUCT SECTION START
 .countdown-product-section {
   margin-top: 0rem;
   overflow: hidden;
-
 }
 
 @media screen and (min-width: 992px) {

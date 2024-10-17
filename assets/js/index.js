@@ -734,13 +734,12 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // CATEGORY SECTION START
   (function () {
-
     gsap.set(".category-section .category-list-top", {
-      width : `${document.body.clientWidth * 1.5}px`
-    })
+      width: `${document.body.clientWidth * 1.5}px`,
+    });
     gsap.set(".category-section .category-list-bottom", {
-      width : `${document.body.clientWidth * 1.5}px`
-    })
+      width: `${document.body.clientWidth * 1.5}px`,
+    });
 
     // Function to animate the top category list
     function animateCategoryListTop() {
@@ -784,6 +783,47 @@ window.addEventListener("DOMContentLoaded", () => {
     animateCategoryListTop();
     animateCategoryListBottom();
   })();
+
+  /* -------------------
+  NEW ARRIVAL SECTIONS
+  --------------------*/
+
+  (function(){
+
+    // const newArrivalCard = document.querySelectorAll(".new-arrival-card")
+
+    // newArrivalCard.forEach((item) => {
+
+    //   const imageWrapper = item.querySelector('.new-arrival-card-image-wrapper')
+    //   const cardBody = item.querySelector('.new-arrival-card-body')
+
+    //   item.style = `--new-arrival-card-body-height: ${cardBody.clientHeight + 24}px`
+    //   // item.style = `--new-arrival-card-image-height: -${imageWrapper.clientHeight}px`
+
+    // })
+
+    const newArrivalSwiper = new Swiper(".new-arrival-swiper", {
+      spaceBetween: 24,
+      slidesPerView : 1,
+      loop : true,
+      speed :1000,
+      autoplay : {
+        delay : 3000,
+      },
+      breakpoints : {
+        768 : {
+          slidesPerView : 2,
+        },
+        1200 : {
+          initialSlide : 1,
+
+          slidesPerView : 3,
+        centeredSlides : true,
+        }
+      }
+    })
+
+  })()
 
   // =====================
   // TRENDING SECTION START
@@ -1297,22 +1337,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
   (function () {
     const marquees = document.querySelectorAll(".marquee-slider");
-  
+
     if (marquees.length > 0) {
       marquees.forEach((item) => {
-  
         const swiperWrap = item.querySelector(".swiper-wrapper");
         const swiperWrapClone = swiperWrap.cloneNode(true);
-  
+
         // Append cloned children to the swiper wrapper
         Array.from(swiperWrapClone.children).forEach((child) => {
           swiperWrap.appendChild(child);
         });
-  
+
         const speed = item.getAttribute("data-speed") || 5000;
         const direction = item.getAttribute("data-direction") || "forward";
         const isReverse = direction === "reverse";
-  
+
         const swiper = new Swiper(item, {
           speed: parseInt(speed, 10),
           autoplay: {
@@ -1330,5 +1369,4 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
   })();
-  
 });

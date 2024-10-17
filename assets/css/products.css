@@ -472,6 +472,7 @@ PRODUCT COLOR VARIANT
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  width: 100%;
 }
 .product .product-image img:last-child {
   position: absolute;

@@ -12,19 +12,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Ensure fade-up elements exist and are a NodeList
     if (fadeUpElements.length > 0) {
-      fadeUpElements.forEach((fadeUpElement) => {
+      fadeUpElements.forEach((fadeUpElement, index) => {
         gsap.fromTo(
           fadeUpElement,
           {
-            // Starting values
             opacity: 0,
             y: 100,
+            scale: 0.8, // Add a slight scaling effect
           },
           {
             // Ending values
             opacity: 1,
             y: 0,
-            duration: 2,
+            scale: 1, // Return to normal scale
+            duration: 1.5, // Shorter duration for quicker animations
             ease: "power2.out",
             scrollTrigger: {
               trigger: item,
@@ -33,37 +34,12 @@ window.addEventListener("DOMContentLoaded", () => {
             },
           }
         );
+
+        // Optional: Staggering effect for each element
+        gsap.to(fadeUpElement, {
+          delay: index * 0.1, // Delay each element's animation
+        });
       });
-    }
-  });
-
-  // FADE UP ANIMATION
-  const fadeDown = document.querySelectorAll("section, footer");
-
-  fadeDown.forEach((item) => {
-    const fadeUpElement = item.querySelector(".fade-down");
-
-    // Check if the fade-up element exists
-    if (fadeUpElement) {
-      gsap.fromTo(
-        fadeUpElement,
-        {
-          // Starting values
-          opacity: 0,
-          y: -100,
-        },
-        {
-          // Ending values
-          opacity: 1,
-          y: 0,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: item,
-            start: "top center",
-          },
-        }
-      );
     }
   });
 
@@ -113,27 +89,10 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // =====================
-  // MARQUEE SLIDER SECTION START
-
-  const marqueSlider = document.querySelectorAll(".marquee-slider");
-
-  marqueSlider.forEach((slide) => {
-    // Get the duration for the slide from the attribute
-    const slideDuration = slide.getAttribute("marquee-duration");
-
-    // Set the custom property for slide speed
-    slide.style.setProperty("--slide-speed", `${slideDuration}`);
-
-    // Clone the first slide item and append it to the slider
-    const slideItem = slide.firstElementChild.cloneNode(true);
-    slide.appendChild(slideItem);
-  });
-
-  // =====================
   // POPUP SECTION START
 
   // Function to handle the overlay visibility
-  const handleOverlay = (prams = { show: false, action: () => {} }) => {
+  const handleOverlay = ({ show = false, action = () => {} }) => {
     const overlay = document.querySelector(".overlay");
 
     // HANDLE CLOSE OVERLAY
@@ -142,7 +101,7 @@ window.addEventListener("DOMContentLoaded", () => {
       overlay.style.zIndex = "var(--overlay-z-index)";
       document.body.style.overflowY = "visible";
       document.body.style.overflowX = "hidden";
-      prams.action();
+      action();
     };
 
     // HANDLE OPEN
@@ -152,15 +111,15 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     // CONDITION
-    if (prams.show) {
+    if (show) {
       handleOpen();
     } else {
       handleClose();
     }
 
     overlay.addEventListener("click", () => {
-      if (prams.show) {
-        handleClose()
+      if (show) {
+        handleClose();
       }
     });
   };
@@ -469,7 +428,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Function to open the cart drawer
     function openCartDrawer() {
       cartDrawer.classList.add("active");
-      handleOverlay({ show: true, action : closeCartDrawer });
+      handleOverlay({ show: true, action: closeCartDrawer });
 
       const tl = gsap.timeline();
       tl.from(cartDrawer.querySelector(".cart-drawer-header"), {
@@ -498,7 +457,6 @@ window.addEventListener("DOMContentLoaded", () => {
       handleOverlay({ show: false });
     }
 
-
     // Function to update range slide width
     function updateRangeSlide() {
       rangeSlide.style.width = `${inputRange.value}%`;
@@ -516,7 +474,7 @@ window.addEventListener("DOMContentLoaded", () => {
           duration: 0.4,
           opacity: 1,
           ease: "power1.inOut",
-          overflow : "hidden"
+          overflow: "hidden",
         });
         cardDrawerDeals.classList.remove("active");
       } else {
@@ -659,22 +617,22 @@ window.addEventListener("DOMContentLoaded", () => {
   (function () {
     const slideshowSwiper = new Swiper(".slideshow-swipper", {
       loop: true, // Enable loop mode
-    effect: 'fade', // Enable fade effect
-    fadeEffect: {
-      crossFade: true // Enables cross fade between slides
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-      delay: 10000, // Adjust the delay between transitions
-      disableOnInteraction: false, // Prevents autoplay from stopping on interaction
-    },
+      effect: "fade", // Enable fade effect
+      fadeEffect: {
+        crossFade: true, // Enables cross fade between slides
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 7000, // Adjust the delay between transitions
+        disableOnInteraction: false, // Prevents autoplay from stopping on interaction
+      },
     });
   })();
 
@@ -710,35 +668,65 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // TABS SECTION START
   document.querySelectorAll(".tabs-wrapper").forEach((wrapper) => {
+    const buttonWrapper = wrapper.querySelector(".tabs-button-list");
     const buttons = wrapper.querySelectorAll(".tabs-button");
     const items = wrapper.querySelectorAll(".tabs-item");
 
-    // CHECK FOR BUTTON HAS ACTIVE CLASS BY DEFAULT
-    const activeButton = Array.from(buttons).find((button) =>
-      button.classList.contains("active")
-    );
+    // Create the active element indicator for tabs
+    const tabActiveEl = document.createElement("div");
+    tabActiveEl.classList.add("tabs-button-active-shape");
+    buttonWrapper.appendChild(tabActiveEl);
 
-    if (activeButton) {
-      const tabId = activeButton.getAttribute("data-tab-item");
-      wrapper.querySelector(`.${tabId}`).classList.add("active");
-    } else {
-      // IF ANY BUTTON NOT ACTIVE FIRST BUTTON WILL ACTIVE
-      if (buttons.length > 0) {
+    // Function to handle the positioning and size of the active indicator
+    const handleActiveEl = ({ left = 0, width = 0 }) => {
+      tabActiveEl.style.left = `${left}px`;
+      tabActiveEl.style.width = `${width}px`;
+    };
+
+    // Function to set the default active tab
+    const handleDefaultActive = () => {
+      const activeButton = Array.from(buttons).find((button) =>
+        button.classList.contains("active")
+      );
+
+      if (activeButton) {
+        const tabId = activeButton.getAttribute("data-tab-item");
+        wrapper.querySelector(`.${tabId}`).classList.add("active");
+        handleActiveEl({
+          left: activeButton.offsetLeft,
+          width: activeButton.clientWidth,
+        });
+      } else if (buttons.length > 0) {
+        // If no button is active, activate the first button
         buttons[0].classList.add("active");
         items[0].classList.add("active");
+        handleActiveEl({
+          left: buttons[0].offsetLeft,
+          width: buttons[0].clientWidth,
+        });
       }
-    }
+    };
 
+    // Initialize default active tab
+    handleDefaultActive();
+
+    // Add click event listeners for tab buttons
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        // REMOVE ACTIVE CLASS FROM ALL BUTTON
+        // Remove active class from all buttons and items
         buttons.forEach((btn) => btn.classList.remove("active"));
         items.forEach((item) => item.classList.remove("active"));
 
-        // ADD ACTIVE CLASS TO CLICKED BUTTON
+        // Add active class to clicked button
         button.classList.add("active");
         const tabId = button.getAttribute("data-tab-item");
         wrapper.querySelector(`.${tabId}`).classList.add("active");
+
+        // Update the active element's position and size
+        handleActiveEl({
+          left: button.offsetLeft,
+          width: button.clientWidth,
+        });
       });
     });
   });
@@ -746,11 +734,19 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // CATEGORY SECTION START
   (function () {
+
+    gsap.set(".category-section .category-list-top", {
+      width : `${document.body.clientWidth * 1.5}px`
+    })
+    gsap.set(".category-section .category-list-bottom", {
+      width : `${document.body.clientWidth * 1.5}px`
+    })
+
     // Function to animate the top category list
     function animateCategoryListTop() {
       gsap.fromTo(
-        ".category-section .category-list-top",
-        { xPercent: 50 },
+        ".category-section .category-list-bottom",
+        { xPercent: 0 },
         {
           scrollTrigger: {
             trigger: ".category-section",
@@ -758,7 +754,7 @@ window.addEventListener("DOMContentLoaded", () => {
             end: "bottom 0%",
             scrub: 1,
           },
-          xPercent: -100,
+          xPercent: -20,
           duration: 2.5,
           ease: "power2.inOut",
         }
@@ -768,8 +764,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // Function to animate the bottom category list
     function animateCategoryListBottom() {
       gsap.fromTo(
-        ".category-section .category-list-bottom",
-        { xPercent: -100 },
+        ".category-section .category-list-top",
+        { xPercent: -25 },
         {
           scrollTrigger: {
             trigger: ".category-section",
@@ -777,7 +773,7 @@ window.addEventListener("DOMContentLoaded", () => {
             end: "bottom 0%",
             scrub: 1,
           },
-          xPercent: 50,
+          xPercent: 0,
           duration: 2.5,
           ease: "power2.inOut",
         }
@@ -868,7 +864,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const countdownSection = new Swiper(".countdown-swiper", {
     direction: "vertical",
-
     speed: 700,
     crossFade: true,
     navigation: {
@@ -1251,9 +1246,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const countDown = document.querySelectorAll(".count-down");
 
   const startCountDown = async (item) => {
-     // data-target-count="Dec 5, 2024 15:37:25"
+    // data-target-count="Dec 5, 2024 15:37:25"
     const targetDate = item.getAttribute("data-target-count");
-   
+
     const countDownDate = new Date(targetDate).getTime();
 
     // COUNT DOWN EL
@@ -1296,4 +1291,44 @@ window.addEventListener("DOMContentLoaded", () => {
   countDown.forEach((item) => {
     startCountDown(item);
   });
+
+  // =============================
+  // MARQUEE SECTION START
+
+  (function () {
+    const marquees = document.querySelectorAll(".marquee-slider");
+  
+    if (marquees.length > 0) {
+      marquees.forEach((item) => {
+  
+        const swiperWrap = item.querySelector(".swiper-wrapper");
+        const swiperWrapClone = swiperWrap.cloneNode(true);
+  
+        // Append cloned children to the swiper wrapper
+        Array.from(swiperWrapClone.children).forEach((child) => {
+          swiperWrap.appendChild(child);
+        });
+  
+        const speed = item.getAttribute("data-speed") || 5000;
+        const direction = item.getAttribute("data-direction") || "forward";
+        const isReverse = direction === "reverse";
+  
+        const swiper = new Swiper(item, {
+          speed: parseInt(speed, 10),
+          autoplay: {
+            delay: 5,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            reverseDirection: isReverse,
+          },
+          loop: true,
+          slidesPerView: "auto",
+          watchSlidesProgress: true,
+          spaceBetween: 24,
+          grabCursor: true,
+        });
+      });
+    }
+  })();
+  
 });

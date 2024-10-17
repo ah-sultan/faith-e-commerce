@@ -658,16 +658,23 @@ window.addEventListener("DOMContentLoaded", () => {
   // SLIDE SHOW SECTION START
   (function () {
     const slideshowSwiper = new Swiper(".slideshow-swipper", {
-      loop: true,
-      speed: 700,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+      loop: true, // Enable loop mode
+    effect: 'fade', // Enable fade effect
+    fadeEffect: {
+      crossFade: true // Enables cross fade between slides
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 10000, // Adjust the delay between transitions
+      disableOnInteraction: false, // Prevents autoplay from stopping on interaction
+    },
     });
   })();
 

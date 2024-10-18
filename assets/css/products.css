@@ -487,8 +487,8 @@ PRODUCT COLOR VARIANT
 }
 
 .product:hover .product-image img:first-child {
-opacity: 0;
-visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* ========================
@@ -511,7 +511,6 @@ visibility: hidden;
   max-width: 100%;
   background: var(--color-background);
 }
-
 
 /* BADGE CSS */
 .product-card-image-wrapper .badge-list {
@@ -654,8 +653,7 @@ visibility: hidden;
   transition: all 0.7s ease;
 }
 
-.product-card:hover
-.product-card-countdown {
+.product-card:hover .product-card-countdown {
   bottom: 12rem;
 }
 
@@ -705,20 +703,15 @@ visibility: hidden;
 /* ====================
 COUNTDOWN PRODUCT SECTION START
 =================== */
-.countdown-product-section {
-  margin-top: 0rem;
-  overflow: hidden;
+
+.countdown-product-card-wrapper{
+  padding-top: 6rem;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  gap : 2.4rem
 }
 
-@media screen and (min-width: 992px) {
-  .countdown-product-section {
-    margin-top: 11rem;
-  }
-}
-
-.countdown-product-section .swiper-slide {
-  width: fit-content;
-}
 .countdown-product-card {
   --color-background: #fff;
   width: 36rem;
@@ -734,6 +727,8 @@ COUNTDOWN PRODUCT SECTION START
   -ms-border-radius: 2.4rem;
   -o-border-radius: 2.4rem;
   align-items: center;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 @media screen and (min-width: 575px) {
@@ -834,6 +829,20 @@ COUNTDOWN PRODUCT SECTION START
   display: flex;
   align-items: center;
   font-family: var(--font-heading);
+  position: relative;
+}
+
+.countdown-product-card-timer-item span {
+  color: var(--color-foreground);
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  width: 100%;
+  line-height: 1;
+  font-family: var(--font-heading);
+
 }
 
 .countdown-product-card-timer-item::after {

@@ -1,5 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
+  
   gsap.registerPlugin(ScrollTrigger);
+  
 
   // =====================
   /// GSAP ANIMATION
@@ -788,42 +790,28 @@ window.addEventListener("DOMContentLoaded", () => {
   NEW ARRIVAL SECTIONS
   --------------------*/
 
-  (function(){
-
-    // const newArrivalCard = document.querySelectorAll(".new-arrival-card")
-
-    // newArrivalCard.forEach((item) => {
-
-    //   const imageWrapper = item.querySelector('.new-arrival-card-image-wrapper')
-    //   const cardBody = item.querySelector('.new-arrival-card-body')
-
-    //   item.style = `--new-arrival-card-body-height: ${cardBody.clientHeight + 24}px`
-    //   // item.style = `--new-arrival-card-image-height: -${imageWrapper.clientHeight}px`
-
-    // })
-
+  (function () {
     const newArrivalSwiper = new Swiper(".new-arrival-swiper", {
       spaceBetween: 24,
-      slidesPerView : 1,
-      loop : true,
-      speed :1000,
-      autoplay : {
-        delay : 3000,
+      slidesPerView: 1,
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 3000,
       },
-      breakpoints : {
-        768 : {
-          slidesPerView : 2,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
         },
-        1200 : {
-          initialSlide : 1,
+        1200: {
+          initialSlide: 1,
 
-          slidesPerView : 3,
-        centeredSlides : true,
-        }
-      }
-    })
-
-  })()
+          slidesPerView: 3,
+          centeredSlides: true,
+        },
+      },
+    });
+  })();
 
   // =====================
   // TRENDING SECTION START
@@ -915,25 +903,23 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // COUNTDOWN PRODUCT SECTION START
 
-  const countdownProductSection = new Swiper(".countdown-product-swiper", {
-    slidesPerView: "auto",
-    spaceBetween: 24,
-    speed: 2000,
-    freeMode: true,
-  });
+  (function () {
+    const cards = gsap.utils.toArray(".countdown-product-card");
 
-  gsap.from(".countdown-product-swiper", {
-    scrollTrigger: {
-      trigger: ".countdown-product-section",
-      start: "top 90%",
-    },
-    opacity: 0,
-    xPercent: -100,
-    scale: 0.6,
-    duration: 2,
-    ease: "power2.out",
-  });
+    gsap.to(cards, {
+      xPercent: -100 * (cards.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".countdown-product-section",
+        pin: true,
+        scrub: 1,
+        snap: 1 / (cards.length - 1),
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=3500",
+      }
+    });
 
+  })();
   // BUNDLE PRODUCT SECTION START
   // =====================
 

@@ -898,26 +898,6 @@ window.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // =====================
-  // COUNTDOWN PRODUCT SECTION START
-
-  (function () {
-    const cards = gsap.utils.toArray(".countdown-product-card");
-
-    gsap.to(cards, {
-      xPercent: -100 * (cards.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".countdown-product-section",
-        pin: true,
-        scrub: 1,
-        snap: 1 / (cards.length - 1),
-        // base vertical scrolling on how wide the container is so it feels more natural.
-        end: "+=3500",
-      },
-    });
-  })();
-
   // BUNDLE PRODUCT SECTION START
   // =====================
 
@@ -1019,64 +999,85 @@ window.addEventListener("DOMContentLoaded", () => {
           }
         });
       } else {
+        const bundleProductWrapper = document.getElementById(
+          "bundleProductWrapper"
+        );
+        // Default Styling
+        bundleProductWrapper.style.visibility = "hidden";
+        bundleProductWrapper.style.transform = "translate(-50%, 100%)";
+        bundleProductWrapper.style.opacity = "0";
+        bundleProductWrapper.style.transition = ".5s ease all";
 
-        const bundleProductWrapper = document.getElementById("bundleProductWrapper")
-        // Default Styling 
-        bundleProductWrapper.style.visibility= "hidden"
-       bundleProductWrapper.style.transform= "translate(-50%, 100%)"
-        bundleProductWrapper.style.opacity= "0"
-        bundleProductWrapper.style.transition= ".5s ease all"
+        const closeButton = bundleProductWrapper.querySelector(".close-button");
 
-        const closeButton =  bundleProductWrapper.querySelector(".close-button")
-
-
-        // Handle Close 
+        // Handle Close
         const handleClose = () => {
-          bundleProductWrapper.style.visibility= "hidden"
-          bundleProductWrapper.style.transform= "translate(-50%, 100%)"
-          bundleProductWrapper.style.opacity= "0"
-         
+          bundleProductWrapper.style.visibility = "hidden";
+          bundleProductWrapper.style.transform = "translate(-50%, 100%)";
+          bundleProductWrapper.style.opacity = "0";
+
           setTimeout(() => {
-            accBody.style.display = "none"
-          }, 200)
-        }
+            accBody.style.display = "none";
+          }, 200);
+        };
 
         closeButton.addEventListener("click", () => {
-          handleClose()
-          handleOverlay({show : false, })
-        })
+          handleClose();
+          handleOverlay({ show: false });
+        });
 
         // Show Product Wrapper
         button.addEventListener("click", () => {
-          bundleProductWrapper.style.visibility= "visible"
-          bundleProductWrapper.style.transform= "translate(-50%, 0)"
-          bundleProductWrapper.style.opacity= "1"
-          accBody.style.display = "block"
-          handleOverlay({show : true, action : handleClose})
-        })
-        
+          bundleProductWrapper.style.visibility = "visible";
+          bundleProductWrapper.style.transform = "translate(-50%, 0)";
+          bundleProductWrapper.style.opacity = "1";
+          accBody.style.display = "block";
+          handleOverlay({ show: true, action: handleClose });
+        });
       }
     });
   })();
 
   // =====================
-  // BEFORE AFTER SECTION
+  // COMPARISON R SECTION
   (function () {
-    const cmpImgWrapper = document.getElementById("comparison-image-wrapper");
-    const cmpSliderBtn = document.getElementById("comparison-slider-button");
-    const cmpRange = document.getElementById("comparison-range-slider");
-    const imgWidth = cmpRange.value;
-    cmpSliderBtn.style.left = `calc(${imgWidth}% - ${
-      cmpSliderBtn.clientWidth / 2
-    }px)`;
-    cmpImgWrapper.style.width = `${imgWidth}%`;
+    const ImgWrapper = document.getElementById("comparison-image-wrapper");
+    const sliderBtn = document.getElementById("comparison-slider-button");
+    const range = document.getElementById("comparison-range-slider");
 
-    cmpRange.addEventListener("input", () => {
-      const imgWidth = cmpRange.value;
-      cmpSliderBtn.style.left = `calc(${imgWidth}% - ${
-        cmpSliderBtn.clientWidth / 2
+    range.value = 0;
+    ImgWrapper.style.width = 0;
+    sliderBtn.style.left = `-${sliderBtn.clientWidth / 2}px`;
+
+    // SLIDE CHANGE USING LISTENER
+    range.addEventListener("input", () => {
+      const imgWidth = range.value;
+      sliderBtn.style.left = `calc(${imgWidth}% - ${
+        sliderBtn.clientWidth / 2
       }px)`;
-      cmpImgWrapper.style.width = `${imgWidth}%`;
+      ImgWrapper.style.width = `${imgWidth}%`;
+    });
+
+    const handleAutoSlide = () => {
+      range.value = 50;
+      ImgWrapper.style.width = `50%`;
+      sliderBtn.style.left = `calc(50% - ${sliderBtn.clientWidth / 2}px)`;
+    };
+
+    gsap.to("#comparison-image-wrapper", {
+      scrollTrigger: {
+        trigger: ".comparison-section",
+        start: "top 10%",
+      },
+      width: "50%",
+    });
+
+    gsap.to("#comparison-slider-button", {
+      scrollTrigger: {
+        trigger: ".comparison-section",
+        start: "top 10%",
+      },
+      left: `calc(50% - ${sliderBtn.clientWidth / 2}px)`,
     });
   })();
 
@@ -1085,15 +1086,14 @@ window.addEventListener("DOMContentLoaded", () => {
   (function () {
     // Initialize thumbnail Swiper for product details
     const productDetailsThumb = new Swiper(".product-details-thumb-swiper", {
-      spaceBetween: 12,
-      slidesPerView: 5,
-      freeMode: true,
-      speed: 900,
-      breakpoints: {
-        1200: {
-          slidesPerView: 5,
-        },
-      },
+      spaceBetween: 10,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      touchRatio: 0.2,
+      slideToClickedSlide: true,
+      loop: true,
+      loopedSlides: 10,
+      speed: 2000,
     });
 
     // Initialize main product detail Swiper
@@ -1101,68 +1101,50 @@ window.addEventListener("DOMContentLoaded", () => {
       spaceBetween: 10,
       slidesPerView: 1.3,
       centeredSlides: true,
-      loop: true,
-      speed: 900,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      thumbs: {
-        swiper: productDetailsThumb,
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 1,
-        },
-        1400: {
-          slidesPerView: 1.3,
-        },
-      },
+      loop: true,
+      loopedSlides: 10,
+      speed: 1000,
     });
+
+    productDetailsThumb.controller.control = productDetail;
+    productDetail.controller.control = productDetailsThumb;
   })();
 
   // =====================
   // RECENT ADDED SECTION START
-  const recentAddedSwiper = document.querySelectorAll(".recent-added-swiper");
 
-  recentAddedSwiper.forEach((item, index) => {
-    const swiper = new Swiper(item, {
-      direction: "horizontal",
-      speed: 5000,
-      autoplay: {
-        delay: 5,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-        reverseDirection: index === 0,
-      },
-      loop: true,
-      slidesPerView: "auto",
-      watchSlidesProgress: true,
-      spaceBetween: 24,
-      grabCursor: true,
+  (function () {
+    const recentAddedSwiper = document.querySelectorAll(".recent-added-swiper");
 
-      breakpoints: {
-        1200: {
-          direction: "vertical",
+    recentAddedSwiper.forEach((item, index) => {
+      const swiper = new Swiper(item, {
+        direction: "horizontal",
+        speed: 5000,
+        autoplay: {
+          delay: 5,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          reverseDirection: index === 0,
         },
-      },
-    });
-  });
+        loop: true,
+        slidesPerView: "auto",
+        watchSlidesProgress: true,
+        spaceBetween: 24,
+        grabCursor: true,
 
-  //
-  if (document.body.clientWidth > 1200) {
-    gsap.from(".recent-added-card-wrapper ", {
-      scrollTrigger: {
-        trigger: ".recent-added-section",
-        start: "top 70%",
-      },
-      opacity: 0,
-      xPercent: 50,
-      scale: 0.6,
-      duration: 2,
-      ease: "power2.out",
+        breakpoints: {
+          1200: {
+            direction: "vertical",
+          },
+        },
+      });
     });
-  }
+  })();
+
   // =====================
   // STYLISH SECTION START
   const stylishProducts = new Swiper(".stylish-product-swiper", {
@@ -1202,6 +1184,9 @@ window.addEventListener("DOMContentLoaded", () => {
     loop: true,
     speed: 900,
     centeredSlides: true,
+    autoplay: {
+      delay: 4000,
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,

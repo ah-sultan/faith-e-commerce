@@ -120,14 +120,14 @@ button path {
     currentColor,
     currentColor 100%
   ) !important;
-  background-size: 0% 1px !important;
+  background-size: 0% 0.1rem !important;
   background-repeat: no-repeat !important;
   background-position: right bottom !important;
   transition: background-size 0.5s cubic-bezier(0.3, 1, 0.3, 1) !important;
 }
 
 .link-animation:hover {
-  background-size: 100% 1px !important;
+  background-size: 100% 0.1rem !important;
   background-position: left bottom !important;
 }
 
@@ -492,7 +492,7 @@ h6,
   width: 100%;
   height: 100%;
   opacity: 1 !important;
-  border: 1px solid var(--color-heading);
+  border: 0.1rem solid var(--color-heading);
   color: var(--color-heading);
 }
 
@@ -539,7 +539,7 @@ h6,
   content: "";
   display: block;
   width: 0%;
-  height: 1px;
+  height: 0.1rem;
   background: var(--color-background);
   position: absolute;
   left: 0;
@@ -562,7 +562,7 @@ h6,
   width: 4rem;
   height: 4rem;
   background: #ffffff;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   box-shadow: 0px 0px 20px var(--color-shadow);
   border-radius: 1.2rem;
   -webkit-border-radius: 1.2rem;
@@ -601,7 +601,7 @@ h6,
 
 .section-caption .section-heading span {
   color: #bffd3b;
-  -webkit-text-stroke: 1px var(--color-heading);
+  -webkit-text-stroke: 0.1rem var(--color-heading);
 }
 
 @media screen and (min-width: 992px) {
@@ -654,13 +654,9 @@ h6,
   align-items: center;
   width: 32px;
   height: 32px;
-  border: 1px solid var(--color-primary-button-outline);
+  border: 0.1rem solid var(--color-primary-button-outline);
   color: var(--color-primary-button-outline);
-  border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
+  border-radius: 10rem;
 }
 
 .swiper-button-prev svg,
@@ -989,7 +985,7 @@ MOBILE MENU START
   left: 0px;
   top: 0px;
   background: #ffffff;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 0px 0px 2rem 2rem;
   -webkit-border-radius: 0px 0px 2rem 2rem;
   -moz-border-radius: 0px 0px 2rem 2rem;
@@ -1032,7 +1028,7 @@ MOBILE MENU START
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
-  border: 1px solid var(--color-heading);
+  border: 0.1rem solid var(--color-heading);
 }
 
 .mobile-menu-footer {
@@ -1046,7 +1042,7 @@ MOBILE MENU START
   padding: 2rem 1.6rem;
   bottom: 0px;
   background: #ffffff;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 2rem 2rem 0 0;
   -webkit-border-radius: 2rem 2rem 0 0;
   -moz-border-radius: 2rem 2rem 0 0;
@@ -1090,7 +1086,7 @@ MOBILE MENU START
   font-family: var(--font-body);
   padding: 0.8rem 2rem;
   color: var(--color-heading);
-  border: 1px solid var(--color-border) !important;
+  border: 0.1rem solid var(--color-border) !important;
   border-radius: 3rem;
   -webkit-border-radius: 3rem;
   -moz-border-radius: 3rem;
@@ -1113,7 +1109,7 @@ MOBILE MENU START
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 0.1rem solid var(--color-border);
   padding-top: 1.6rem;
 }
 
@@ -1141,7 +1137,7 @@ MOBILE MENU START
 .mobile-submenu-back-button {
   padding: 1.2rem 1.6rem;
   background-color: #fff;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -1319,7 +1315,7 @@ SEARCHBAR START
   align-items: center;
   padding: 1.2rem 2.3rem;
   gap: 2.4rem;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 10rem;
   -webkit-border-radius: 10rem;
   -moz-border-radius: 10rem;
@@ -1433,7 +1429,7 @@ SEARCHBAR START
 
 .search-drawer-suggest-tag li button {
   padding: 0.8rem 1.6rem;
-  border: 1px solid #e3e3e3;
+  border: 0.1rem solid #e3e3e3;
   border-radius: 1rem;
   -webkit-border-radius: 10rem;
   -moz-border-radius: 1rem;
@@ -1693,7 +1689,7 @@ CART DRAWER START
 .cart-drawer-deals {
   padding: 1rem;
   overflow: hidden;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 1.6rem;
   -webkit-border-radius: 1.6rem;
   -moz-border-radius: 1.6rem;
@@ -1949,7 +1945,7 @@ CART DRAWER START
   justify-content: space-between;
   padding-bottom: 0.6rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 0.1rem solid var(--color-border);
 }
 
 .cart-drawer-suggest-products-header h5 {
@@ -2009,7 +2005,7 @@ CART DRAWER START
   left: 0px;
   bottom: 0px;
   background: #ffffff;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   box-shadow: 0px 0px 2rem var(--color-shadow);
   z-index: 20;
   padding: 2rem 2rem 2.4rem;
@@ -2063,7 +2059,7 @@ CART DRAWER START
 
 .cart-drawer-footer-button-wrapper .secondary-button {
   color: var(--color-heading);
-  border: 1px solid var(--color-heading);
+  border: 0.1rem solid var(--color-heading);
 }
 
 /* ========================
@@ -2274,7 +2270,7 @@ ANNOUNCE BAR START
   --color-foreground: #ffff;
   color: var(--color-foreground);
   background: transparent;
-  border: 1px solid var(--color-accent);
+  border: 0.1rem solid var(--color-accent);
   font-family: var(--font-body);
   font-size: 12px;
   line-height: 1;
@@ -2475,7 +2471,7 @@ HEADER SECTION START
   --color-foreground: var(--color-heading);
   --color-border: rgb(255, 255, 255, 0.2);
   padding: 1.6rem 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 0.1rem solid var(--color-border);
   position: none;
   width: 100%;
   top: 6rem;
@@ -2572,7 +2568,7 @@ header:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-foreground);
+  border: 0.1rem solid var(--color-foreground);
   color: var(--color-foreground);
   border-radius: 1.2rem;
   -webkit-border-radius: 1.2rem;
@@ -2653,7 +2649,7 @@ header:hover {
   position: absolute;
   display: inline-block;
   background: var(--color-badge-background);
-  border: 1px solid var(--color-badge-border);
+  border: 0.1rem solid var(--color-badge-border);
   color: var(--color-badge-foreground);
   padding: 0.4rem;
   font-size: 1.6rem;
@@ -2856,7 +2852,7 @@ MEGA MENU SECTION
 .header-megamenu-list {
   --color-border: rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
-  border-left: 1px solid var(--color-border);
+  border-left: 0.1rem solid var(--color-border);
   padding-left: 14px;
 }
 
@@ -3400,7 +3396,7 @@ PROMO SECTION START
   display: inline-block;
   inset: -0.8rem;
   border-radius: 100%;
-  border: 2rem solid #ffffff;
+  border: 2rem fff;
   animation: promoVideoPulse 1.5s ease infinite;
   z-index: -1;
   transform: scale(0);
@@ -3409,7 +3405,7 @@ PROMO SECTION START
 
 .promo-video-play-button::after {
   inset: -1.6rem;
-  border: 0.8rem solid #ffffff;
+  border: 0.8rem fff;
   animation-duration: 2.5s;
 }
 
@@ -3762,7 +3758,7 @@ CATEGORY SECTION START
   --color-border: #000;
   --color-heading: #fff;
   color: var(--color-heading);
-  -webkit-text-stroke: 1px var(--color-border);
+  -webkit-text-stroke: 0.1rem var(--color-border);
 }
 
 .category-header ul li::after,
@@ -3889,7 +3885,7 @@ CATEGORY SECTION START
 
 .category-list-item .category-list-item-image img {
   width: 100%;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 10rem;
   -webkit-border-radius: 10rem;
   -moz-border-radius: 10rem;
@@ -4014,7 +4010,7 @@ NEW ARRIVAL SECTION START
 
   .new-arrival-card.swiper-slide-active .new-arrival-card-image-wrapper {
     height: 58rem;
-    border: 1px solid #000;
+    border: 0.1rem solid #000;
     top: 13rem;
     transform: none;
   }
@@ -4538,7 +4534,7 @@ COUNTDOWN SECTION START
   line-height: 100%;
   color: var(--color-heading);
   margin-bottom: 0.8rem;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
 }
 
 @media screen and (min-width: 576px) {
@@ -4709,7 +4705,7 @@ HOT DEALS SECTION START
 }
 
 .hot-deals-card-banner-title span {
-  -webkit-text-stroke: 1px var(--color-heading);
+  -webkit-text-stroke: 0.1rem var(--color-heading);
   color: transparent;
 }
 
@@ -4768,13 +4764,17 @@ HOT DEALS SECTION START
   display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   z-index: 2;
-  
+
   transition: 0.5s all ease-in-out;
 }
 
-@media screen and (min-width: 1200px) { 
+@media screen and (min-width: 1200px) {
   .hot-deals-card::after {
     transform: translateY(1rem) scale(0.9);
     opacity: 0;
@@ -4784,9 +4784,7 @@ HOT DEALS SECTION START
     transform: translateY(0) scale(1);
     opacity: 1;
   }
-  
 }
-
 
 .hot-deals-card-img-wrapper {
   text-align: center;
@@ -4838,8 +4836,6 @@ HOT DEALS SECTION START
   left: 0;
 }
 
-
-
 @media screen and (min-width: 1200px) {
   .hot-deals-card-content {
     padding: 3.2rem;
@@ -4873,8 +4869,6 @@ HOT DEALS SECTION START
   margin-bottom: 2rem;
 }
 
-
-
 @media screen and (min-width: 1200px) {
   .hot-deals-card-content p {
     display: block;
@@ -4885,7 +4879,7 @@ HOT DEALS SECTION START
 
 .hot-deals-card .card-marquee-slider {
   width: 100%;
-  padding: .4rem 0;
+  padding: 0.4rem 0;
   position: absolute;
   bottom: 1.4rem;
   background: rgba(255, 255, 255, 0.8);
@@ -4893,25 +4887,20 @@ HOT DEALS SECTION START
   transition: all 0.5s ease;
 }
 
-
 .hot-deals-card .card-marquee-slider li {
   padding: 0 1rem;
 }
 
-
-
-@media screen and (min-width: 1400px) { 
+@media screen and (min-width: 1400px) {
   .hot-deals-card .card-marquee-slider {
     padding: 1rem 0;
 
     bottom: 2.4rem;
-
   }
   .hot-deals-card:hover .card-marquee-slider {
     transform: translateY(1rem);
     opacity: 0;
   }
-  
 }
 
 /* ============================
@@ -5000,7 +4989,7 @@ HOT DEALS SECTION START
   align-items: center;
   width: 4.8rem;
   height: 4.8rem;
-  border: 1px solid #ffffff;
+  border: 0.1rem fff;
   border-radius: 100%;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -5008,13 +4997,13 @@ HOT DEALS SECTION START
   -o-border-radius: 100%;
   z-index: 1;
   color: var(--color-heading);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   animation: bundle-product-toggler-pulse 2s infinite;
 }
 
-  .bundle-product-toggler-button:hover{
-    scale: 1.2;
-  }
+.bundle-product-toggler-button:hover {
+  scale: 1.2;
+}
 
 .bundle-product-toggler-button:nth-child(even) {
   align-self: flex-end;
@@ -5028,14 +5017,15 @@ HOT DEALS SECTION START
   position: absolute;
   inset: 1rem;
   z-index: -1;
-  animation: bundle-product-toggler-pulse 4s infinite;}
+  animation: bundle-product-toggler-pulse 4s infinite;
+}
 
 @keyframes bundle-product-toggler-pulse {
   0% {
-    box-shadow: 0 0 0 0px rgba(2555,255,255, 0.5);
+    box-shadow: 0 0 0 0px rgba(2555, 255, 255, 0.5);
   }
   100% {
-    box-shadow: 0 0 0 2rem rgba(2555,255,255, 0);
+    box-shadow: 0 0 0 2rem rgba(2555, 255, 255, 0);
   }
 }
 
@@ -5064,7 +5054,7 @@ HOT DEALS SECTION START
   padding: 1.6rem;
   grid-template-columns: 1fr;
   gap: 8px;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 1.6rem;
   -webkit-border-radius: 1.6rem;
   -moz-border-radius: 1.6rem;
@@ -5091,7 +5081,7 @@ HOT DEALS SECTION START
   padding: 1.6rem;
   gap: 2.4rem;
   background: #ffffff;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   box-shadow: 0px 0px 20px var(--color-shadow);
   border-radius: 16px;
   -webkit-border-radius: 16px;
@@ -5160,14 +5150,13 @@ HOT DEALS SECTION START
   -o-border-radius: 1.4rem;
 }
 
-
 /* Styling For Mobile device */
 
 .bundle-product-wrapper .close-button-wrapper {
   display: none;
 }
 
-@media screen and (max-width: 1200px) { 
+@media screen and (max-width: 1200px) {
   .bundle-product-wrapper {
     position: fixed;
     width: 90%;
@@ -5187,29 +5176,27 @@ HOT DEALS SECTION START
     justify-content: center;
   }
 
-  .bundle-product-wrapper .close-button-wrapper .close-button{
-position: unset;
-border-radius: 1.2rem 1.2rem 0 0;
-border: 0;
+  .bundle-product-wrapper .close-button-wrapper .close-button {
+    position: unset;
+    border-radius: 1.2rem 1.2rem 0 0;
+    border: 0;
   }
 
-  .bundle-product-header-wrapper{
+  .bundle-product-header-wrapper {
     display: none;
   }
-  
-  .bundle-product{
+
+  .bundle-product {
     margin: 0;
   }
 
-  .bundle-product-body-wrapper{
+  .bundle-product-body-wrapper {
     display: none;
     height: 100%;
     overflow-y: auto;
     border: 0;
-    
   }
 }
-
 
 /* ============================
  FEATURES SECTION START
@@ -5252,7 +5239,7 @@ border: 0;
   gap: 1.2rem;
   min-width: 30rem;
   background: var(--color-background);
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 1.6rem;
   -webkit-border-radius: 1.6rem;
   -moz-border-radius: 1.6rem;
@@ -5262,36 +5249,35 @@ border: 0;
 }
 
 .features-card * {
-  transition: all .5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
-.features-card:hover{
-  --color-heading : #fff;
-  --color-foreground : #fff;
+.features-card:hover {
+  --color-heading: #fff;
+  --color-foreground: #fff;
 }
 
-.features-card::after{
-  content:  "";
-  --color-background : #020714;
+.features-card::after {
+  content: "";
+  --color-background: #020714;
   position: absolute;
   top: 0;
   right: 0;
-  display: block;width: 100%;
+  display: block;
+  width: 100%;
   height: 100%;
   background: var(--color-background);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transform-origin: top right;
   transform: scale(0);
   border-radius: 1.6rem 1.6rem 1.6rem 100%;
   z-index: -1;
-  
 }
 
-.features-card:hover::after{
+.features-card:hover::after {
   transform: scale(1);
   border-radius: 1.6rem;
 }
-
 
 .features-card .card-icon {
   box-sizing: border-box;
@@ -5304,18 +5290,18 @@ border: 0;
   right: 3.2rem;
   top: -2.4rem;
   background: var(--color-background);
-  border: .1rem solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 1.2rem;
   color: var(--color-heading);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.features-card .card-icon svg{
+.features-card .card-icon svg {
   color: currentColor;
   fill: currentColor;
 }
 
-.features-card:hover .card-icon{
+.features-card:hover .card-icon {
   transform: translate(-1rem, 1rem);
 }
 
@@ -5326,9 +5312,8 @@ border: 0;
   line-height: 7.8rem;
   color: transparent;
   opacity: 0.4;
-  -webkit-text-stroke: 1px var(--color-heading);
+  -webkit-text-stroke: 0.1rem var(--color-heading);
 }
-
 
 .features-card .features-card-title {
   font-family: var(--font-heading);
@@ -5338,7 +5323,6 @@ border: 0;
   line-height: 2.6rem;
   color: var(--color-heading);
 }
-
 
 /* ============================
  COMPARISON SECTION START
@@ -5493,7 +5477,7 @@ input.comparison-range-slider[type="range"]::-moz-range-thumb {
   -ms-border-radius: 4.6rem;
   -o-border-radius: 4.6rem;
   padding: 0;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   overflow: hidden;
 }
 
@@ -5532,7 +5516,7 @@ input.comparison-range-slider[type="range"]::-moz-range-thumb {
   .newsletter-content-wrapper {
     border-radius: 3.2rem;
     padding: 4rem;
-    border: 1px solid var(--color-border);
+    border: 0.1rem solid var(--color-border);
     -webkit-border-radius: 3.2rem;
     -moz-border-radius: 3.2rem;
     -ms-border-radius: 3.2rem;
@@ -5599,7 +5583,7 @@ input.comparison-range-slider[type="range"]::-moz-range-thumb {
   width: 100%;
   padding: 1.2rem 2rem;
   font-family: var(--font-body);
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 10rem;
   -webkit-border-radius: 10rem;
   -moz-border-radius: 10rem;
@@ -5641,7 +5625,7 @@ input.comparison-range-slider[type="range"]::-moz-range-thumb {
   top: -1rem;
   padding: 0.4rem 1.2rem;
   background: #fff;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 10rem;
   -webkit-border-radius: 10rem;
   -moz-border-radius: 10rem;
@@ -5664,7 +5648,7 @@ input.comparison-range-slider[type="range"]::-moz-range-thumb {
 
 .newsletter-form-wrapper input:focus {
   border: 0;
-  border: 1px dashed var(--color-heading);
+  border: 0.1rem dashed var(--color-heading);
 }
 
 .newsletter-form-wrapper .primary-button {
@@ -5958,7 +5942,7 @@ PRODUCT DETAILS SECTION START
 }
 
 .stylish-product-card {
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   position: relative;
   overflow: hidden;
 }
@@ -6278,7 +6262,7 @@ TESTIMONIAL SECTION
   --color-border: var(--color-heading);
   width: 4.8rem;
   height: 4.8rem;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: 100%;
   overflow: hidden;
 }
@@ -6427,22 +6411,22 @@ TESTIMONIAL SECTION
 .blog-card-grid::before,
 .blog-card-list::before,
 .blog-card-grid::after,
-.blog-card-list::after{
+.blog-card-list::after {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: -1;
-  background:var(--color-accent);
+  background: var(--color-accent);
   left: 0;
   bottom: 0;
   transform-origin: left;
-  transition: all .7s ease-in-out;
+  transition: all 0.7s ease-in-out;
   transform: scaleX(0);
 }
 
 .blog-card-grid::before,
-.blog-card-list::before{
+.blog-card-list::before {
   transform-origin: right;
 }
 
@@ -6450,7 +6434,7 @@ TESTIMONIAL SECTION
 .blog-card-list:hover::before,
 .blog-card-grid:hover::after,
 .blog-card-list:hover::after {
-  transform: scaleX(1); 
+  transform: scaleX(1);
 }
 
 @media screen and (min-width: 575px) {
@@ -6536,16 +6520,13 @@ TESTIMONIAL SECTION
   -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-
 
 .blog-card-grid:hover .blog-desc,
 .blog-card-list:hover .blog-desc {
   color: var(--color-heading);
 }
-
-
 
 /* ========================
 MEDIA GALLERY SECTION START
@@ -6597,7 +6578,7 @@ MEDIA GALLERY SECTION START
   align-items: center;
   gap: 0.2rem;
   padding: 0.2rem;
-  overflow: scroll;
+  overflow-x: auto;
 }
 
 @media screen and (min-width: 1200px) {
@@ -6631,19 +6612,99 @@ MEDIA GALLERY SECTION START
   -o-transition: all 0.3s ease-in-out;
 }
 
+.media-gallery-card:hover img {
+  transform: scale(1.05) translateX(1rem);
+}
+
+.media-gallery-video-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
 .media-gallery-card video {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   inset: 0;
+  z-index: 20;
+}
+
+.media-gallery-card .play-button {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  top: 1.6rem;
+  right: 1.6rem;
+  z-index: 30;
+  background: #fff;
+  color: #fff;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 97, 245, 1) 0%,
+    rgba(234, 18, 134, 1) 46%,
+    rgba(244, 81, 0, 1) 100%
+  );
+}
+
+.media-gallery-card .play-button::before,
+.media-gallery-card .play-button::after {
+  content: "";
+  inset: -0.4rem;
+  display: block;
+  border-radius: 100%;
+  background: rgb(175, 97, 245);
+  background: linear-gradient(
+    0deg,
+    rgba(175, 97, 245, 1) 0%,
+    rgba(234, 18, 134, 1) 46%,
+    rgba(244, 81, 0, 1) 100%
+  );
+  animation: mediaGalleryVideoPlayPulse infinite 1.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.media-gallery-card .play-button::after {
+  animation-delay: 0.3s;
+  border: 0.1rem;
+}
+
+@keyframes mediaGalleryVideoPlayPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.media-gallery-card .play-button span {
+  width: 2.4rem;
+  display: none;
+}
+
+.media-gallery-card .play-button.video-played .pause-icon {
+  display: block;
+}
+.media-gallery-card .play-button.video-paused .play-icon {
+  display: block;
 }
 
 .media-gallery-card-body {
   position: absolute;
   inset: 2rem;
   z-index: 20;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6783,7 +6844,7 @@ FOOTERS SECTION START
 .footer-newsletter-form input {
   padding: 1.6rem 2rem;
   gap: 1rem;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   width: 100%;
   font-size: 1.6rem;
   line-height: 1.5;
@@ -6836,9 +6897,8 @@ FOOTERS SECTION START
   position: unset;
 }
 
-.footer-newsletter-button > div {
+.footer-newsletter-button:hover > div {
   border-radius: 1.2rem;
-  display: none;
 }
 
 .footer-newsletter-button:hover {
@@ -6878,7 +6938,7 @@ FOOTERS SECTION START
   line-height: 1.5;
   color: var(--color-heading);
   margin-bottom: 1.6rem;
-  border-bottom: 1px solid #ffffff24;
+  border-bottom: 0.1rem fff24;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -6981,7 +7041,7 @@ FOOTERS SECTION START
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7017,7 +7077,7 @@ FOOTERS SECTION START
   -moz-border-radius: 1.2rem;
   -ms-border-radius: 1.2rem;
   -o-border-radius: 1.2rem;
-  border: 1px solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   line-height: 1;
 }
 
@@ -7040,10 +7100,24 @@ FOOTERS SECTION START
   margin: 3.2rem;
 }
 
-.footer-logo svg,
-.footer-logo path {
-  fill: none;
+.footer-logo ul{
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
+
+.footer-logo ul li svg {
+  transition: all .3s ease-in-out;
+  transform-origin: 50% 85.5% 0px;
+  width: 100%;
+}
+
+.footer-logo ul li:hover svg {
+transform: scaleY(.4);
+}
+
 
 @media screen and (min-width: 768px) {
   .footer-logo {
@@ -7161,6 +7235,7 @@ FOOTERS SECTION START
   max-width: none;
 }
 
+
 /* =========================
 SCROLL TO TOP
 ============================ */
@@ -7177,12 +7252,8 @@ SCROLL TO TOP
   bottom: 0;
   position: fixed;
   background: var(--color-background);
-  border: 1px solid var(--color-heading);
+  border: 0.1rem solid var(--color-heading);
   border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
   opacity: 0;
   transition: all ease-in-out 0.3s;
   -webkit-transition: all ease-in-out 0.3s;

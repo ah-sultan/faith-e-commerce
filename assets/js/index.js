@@ -898,8 +898,9 @@ window.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // BUNDLE PRODUCT SECTION START
-  // =====================
+  /* -------------------------------
+  BUNDLE PRODUCT SECTION START
+  -------------------------------- */
 
   (function () {
     const bundleProductAcc = document.querySelectorAll(".bundle-product-acc");
@@ -1173,8 +1174,9 @@ window.addEventListener("DOMContentLoaded", () => {
     item.appendChild(productWrapper);
   });
 
-  // =====================
-  // TESTIMONIAL SECTION START
+  /* ------------------------------
+  TESTIMONIAL SECTION START
+  -------------------------------- */
 
   const testimonialCard = new Swiper(".testimonial-swiper", {
     spaceBetween: 20,
@@ -1199,8 +1201,46 @@ window.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // =====================
-  // FOOTER SECTION  START
+  /* ------------------------------
+  Media Gallery
+  -------------------------------- */
+
+  (function () {
+    const videoWrapper = document.querySelectorAll(
+      ".media-gallery-video-wrapper"
+    );
+
+    videoWrapper.forEach((item) => {
+      const video = item.querySelector("video");
+      const playButton = item.querySelector(".play-button");
+
+      // Default Activation
+      if (video.autoplay) {
+        playButton.classList.remove("video-paused");
+        playButton.classList.add("video-played");
+      }else{
+        playButton.classList.add("video-paused");
+        playButton.classList.remove("video-played");
+      }
+
+         // Listener Activations
+      playButton.addEventListener("click", function () {
+        if (video.paused) {
+          video.play();
+          playButton.classList.add("video-played");
+          playButton.classList.remove("video-paused");
+        } else {
+          video.pause();
+          playButton.classList.remove("video-played");
+          playButton.classList.add("video-paused");
+        }
+      });
+    });
+  })();
+
+  /* ------------------------------
+  FOOTER SECTION  START
+  -------------------------------- */
 
   // CHECK IF THE VIEWPORT WIDTH IS LESS THAN 992 PIXELS
   if (document.body.clientWidth < 992) {

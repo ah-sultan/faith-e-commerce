@@ -1,7 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  
   gsap.registerPlugin(ScrollTrigger);
-  
 
   // =====================
   /// GSAP ANIMATION
@@ -63,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
       borderWidth: "400px",
       borderColor: "var(--color-background)",
       borderStyle: "solid",
-      zIndex: 9999,
+      zIndex: 999,
     });
 
     // TIMELINE ANIMATION FOR BORDER SHRINKING
@@ -916,10 +914,10 @@ window.addEventListener("DOMContentLoaded", () => {
         snap: 1 / (cards.length - 1),
         // base vertical scrolling on how wide the container is so it feels more natural.
         end: "+=3500",
-      }
+      },
     });
-
   })();
+
   // BUNDLE PRODUCT SECTION START
   // =====================
 
@@ -933,93 +931,134 @@ window.addEventListener("DOMContentLoaded", () => {
         "bundleProductButtonWrapper"
       );
       bundleProductButtonWrapper.appendChild(button);
-      button.classList.add("bundle-toggler-button");
-      button.innerHTML = `<svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg><svg class="minus-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z"></path></svg>`;
+      button.classList.add("bundle-product-toggler-button");
+      button.innerHTML = `
+        <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+          <path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path>
+        </svg>
+        <svg class="minus-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+          <path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z"></path>
+        </svg>
+      `;
 
+      // Find Acc Header & body
       const accHeader = item.querySelector(".bundle-product-header-wrapper");
       const accBody = item.querySelector(".bundle-product-body-wrapper");
 
+      // Get Height Acc Body & Header
       const accHeaderHeight = accHeader.firstElementChild.clientHeight;
       const accBodyHeight = accBody.firstElementChild.clientHeight;
 
-      // STYLE ACC HEADER
-      accHeader.style.transition = ".4s ease-in-out all";
-      accHeader.style.overflow = "hidden";
-      accHeader.style.height = `${accHeaderHeight + 2}px`;
-      item.style.height = "fit-content";
-      item.style.overflow = "hidden";
+      // This Style For Large Device
+      if (document.body.clientWidth > 1199) {
+        // Acc Body Default Styling
+        accBody.style.transition = "height ease .5s";
+        accBody.style.height = "0";
+        accBody.style.overflow = "hidden";
 
-      // STYLE ACC BODY
-      accBody.style.transition = ".4s ease-in-out all";
-      accBody.style.overflow = "hidden";
-      accBody.style.height = `0px`;
+        // Acc Header Default Styling
+        accHeader.style.transition = "height ease .5s";
+        accHeader.style.overflow = "hidden";
 
-      // HANDLE ACTION
-      button.addEventListener("click", () => {
-        if (button.classList.contains("active")) {
-          // IS  ACTIVE ACC ITEM
-          accBody.style.height = `0`;
-          button.classList.remove("active");
-          item.classList.remove("active");
-          setTimeout(() => {
-            accHeader.style.height = `${accHeaderHeight + 4}px`;
-          }, 300);
-        } else {
-          // IS NOT ACTIVE ACC ITEM
-          accHeader.style.height = 0;
-          button.classList.add("active");
-          item.classList.add("active");
-          handleAutoScroll();
-
-          setTimeout(() => {
-            accBody.style.height = `${accBodyHeight + 4}px`;
-          }, 300);
-        }
-      });
-
-      // DEFAULT ACTIVE
-      if (item.classList.contains("active")) {
-        accHeader.style.height = 0;
-
-        button.classList.add("active");
-        setTimeout(() => {
+        // Active Default Acc
+        if (item.classList.contains("active")) {
           accBody.style.height = `${accBodyHeight + 4}px`;
-        }, 300);
-      }
-
-      /* 
-  THIS FUNCTION WILL CONTROL IF WINDOW WIDTH < 1200PX THEN WINDOW 
-  WILL SCROLL TO TARGETED PRODUCT
-  */
-      const handleAutoScroll = () => {
-        if (document.body.clientWidth < 1200) {
-          const targetPosition =
-            item.getBoundingClientRect().top + window.scrollY;
-          const startPosition = window.scrollY;
-          const distance = targetPosition - startPosition;
-          const duration = 1000;
-          const startTime = Date.now();
-
-          const interval = setInterval(() => {
-            const elapsedTime = Date.now() - startTime;
-            const progress = elapsedTime / duration;
-
-            if (progress >= 1) {
-              clearInterval(interval);
-              window.scrollTo(0, targetPosition);
-            } else {
-              const easeInOut =
-                progress < 0.5
-                  ? 4 * progress * progress * progress
-                  : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-
-              window.scrollTo(0, startPosition + easeInOut * distance);
-            }
-          }, 16);
+          accHeader.style.height = `0`;
+          button.classList.add("active");
         }
-      };
+
+        // Handle Deactivate  Activated Acc
+        const handleDeactivate = () => {
+          // ACC Deactivations
+          const getAllAcc = document.querySelectorAll(".bundle-product-acc");
+          const getAllBtn = document.querySelectorAll(
+            ".bundle-product-toggler-button"
+          );
+
+          // Acc Header & Body
+          getAllAcc.forEach((item) => {
+            item.classList.remove("active");
+
+            // Find Acc Header & body
+            const accHeader = item.querySelector(
+              ".bundle-product-header-wrapper"
+            );
+            const accBody = item.querySelector(".bundle-product-body-wrapper");
+
+            // Get Height Acc Body & Header
+            const accHeaderHeight = accHeader.firstElementChild.clientHeight;
+
+            // Acc Body & Header
+            accBody.style.height = "0";
+            accHeader.style.height = `${accHeaderHeight + 2}px`;
+          });
+
+          // Acc Header & Body
+          getAllBtn.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+        };
+
+        // Handle Activations
+        button.addEventListener("click", () => {
+          if (item.classList.contains("active")) {
+            // If Activated Item It Will Deactivate
+            item.classList.remove("active");
+            button.classList.remove("active");
+
+            accBody.style.height = 0;
+            accHeader.style.height = `${accHeaderHeight + 4}px`;
+          } else {
+            // If Deactivate Item It Will Activated
+            handleDeactivate();
+            item.classList.add("active");
+            button.classList.add("active");
+
+            accBody.style.height = `${accBodyHeight + 4}px`;
+            accHeader.style.height = `0`;
+          }
+        });
+      } else {
+
+        const bundleProductWrapper = document.getElementById("bundleProductWrapper")
+        // Default Styling 
+        bundleProductWrapper.style.visibility= "hidden"
+       bundleProductWrapper.style.transform= "translate(-50%, 100%)"
+        bundleProductWrapper.style.opacity= "0"
+        bundleProductWrapper.style.transition= ".5s ease all"
+
+        const closeButton =  bundleProductWrapper.querySelector(".close-button")
+
+
+        // Handle Close 
+        const handleClose = () => {
+          bundleProductWrapper.style.visibility= "hidden"
+          bundleProductWrapper.style.transform= "translate(-50%, 100%)"
+          bundleProductWrapper.style.opacity= "0"
+         
+          setTimeout(() => {
+            accBody.style.display = "none"
+          }, 200)
+        }
+
+        closeButton.addEventListener("click", () => {
+          handleClose()
+          handleOverlay({show : false, })
+        })
+
+        // Show Product Wrapper
+        button.addEventListener("click", () => {
+          bundleProductWrapper.style.visibility= "visible"
+          bundleProductWrapper.style.transform= "translate(-50%, 0)"
+          bundleProductWrapper.style.opacity= "1"
+          accBody.style.display = "block"
+          handleOverlay({show : true, action : handleClose})
+        })
+        
+      }
     });
   })();
+
   // =====================
   // BEFORE AFTER SECTION
   (function () {
@@ -1265,58 +1304,6 @@ window.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth", duration: 3000 });
     });
   })();
-
-  // ========================
-  // COUNT DOWN SECTION START
-
-  const countDown = document.querySelectorAll(".count-down");
-
-  const startCountDown = async (item) => {
-    // data-target-count="Dec 5, 2024 15:37:25"
-    const targetDate = item.getAttribute("data-target-count");
-
-    const countDownDate = new Date(targetDate).getTime();
-
-    // COUNT DOWN EL
-    const daysEl = item.querySelector(".count-down-day");
-    const hrsEl = item.querySelector(".count-down-hrs");
-    const minsEl = item.querySelector(".count-down-mins");
-    const secsEl = item.querySelector(".count-down-secs");
-
-    while (true) {
-      const currentDate = new Date().getTime();
-      const distance = countDownDate - currentDate;
-
-      // TIME CALCULATIONS
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hrs = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // INSERT DATE ON DOM
-      if (distance < 0) {
-        daysEl.innerText = "00";
-        hrsEl.innerText = "00";
-        minsEl.innerText = "00";
-        secsEl.innerText = "00";
-        break; // Exit the loop when the countdown is over
-      } else {
-        daysEl.innerText = days.toString().padStart(2, "0");
-        hrsEl.innerText = hrs.toString().padStart(2, "0");
-        minsEl.innerText = mins.toString().padStart(2, "0");
-        secsEl.innerText = secs.toString().padStart(2, "0");
-      }
-
-      // Wait for 1 second before the next update
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-    }
-  };
-
-  countDown.forEach((item) => {
-    startCountDown(item);
-  });
 
   // =============================
   // MARQUEE SECTION START

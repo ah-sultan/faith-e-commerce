@@ -8,8 +8,11 @@
     <title>Faith E-commerce Shop</title>
 
     <!-- PLUGINS FILES -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script> -->
+
+    <script src="./assets/js/gsap.min.js" defer></script>
+    <script src="./assets/js/ScrollTrigger.min.js" defer></script>
     <script src="./assets/js/swiper-bundle.min.js" defer></script>
     <script src="./assets/js/index.js" defer="defer"></script>
     <script src="./assets/js//count-down.js" defer="defer"></script>
@@ -262,24 +265,35 @@
                 </a>
                 <!-- LANGUAGE LIST -->
                 <div class="mobile-footer-option-wrapper">
-                    <select class="mobile-menu-languge">
-                        <option value="EN">EN</option>
-                        <option value="US">US</option>
-                        <option value="SP">SP</option>
-                        <option value="FR">FR</option>
-                    </select>
+                    <div class="mobile-menu-languge custom-select">
+                        <div class="select-box">
+                            <span class="selected">EN</span>
+                        </div>
+                        <ul class="select-options-list">
+                            <li class="option" data-value="EN">EN</li>
+                            <li class="option" data-value="US">US</li>
+                            <li class="option" data-value="SP">SP</li>
+                            <li class="option" data-value="FR">FR</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- CURRENCY LIST -->
+                <!-- LANGUAGE LIST -->
                 <div class="mobile-footer-option-wrapper">
-                    <select class="mobile-menu-currency">
-                        <option value="$USD">$USD</option>
-                        <option value="€EUR">€EUR</option>
-                        <option value="£GBP">£GBP</option>
-                        <option value="¥JPY">¥JPY</option>
-                        <option value="₹INR">₹INR</option>
-                    </select>
+                    <div class="mobile-menu-currency custom-select">
+                        <div class="select-box">
+                            <span class="selected">EN</span>
+                        </div>
+                        <ul class="select-options-list">
+                            <option class="option" data-value="$USD">$USD</option>
+                        <option class="option" data-value="€EUR">€EUR</option>
+                        <option class="option" data-value="£GBP">£GBP</option>
+                        <option class="option" data-value="¥JPY">¥JPY</option>
+                        <option class="option" data-value="₹INR">₹INR</option>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
             <!-- MOBILE MENU SOCIAL MEDIA -->
             <ul class="mobile-menu-social">
@@ -5757,13 +5771,11 @@
                         <div class="swiper-slide">
                             <div class="countdown-wrapper">
                                 <div class="countdown-banner-wrapper">
-                                    <video width="320" height="240" autoplay loop class="countdown-banner-video">
+                                    <video width="320" height="240" controls autoplay loop class="countdown-banner-video" poster="./assets/images/countdown/banner-image.jpg">
                                         <source
-                                            src="https://videocdn.cdnpk.net/videos/56024950-db68-4856-a401-dd372c2b715f/horizontal/previews/clear/large.mp4?token=exp=1729262920~hmac=7ec3609d848362c3d50f0f138a91b8eff2bd84613d981aa47b1321f5f87fd848"
+                                            src="https://videocdn.cdnpk.net/videos/ff79013d-1255-4bed-8abd-867c4770801b/horizontal/previews/clear/large.mp4?token=exp=1729423246~hmac=1e6dc16ebb0ed9229304bf8e04620d932ae78c5bc36f3a98f83778f593ca6550"
+                                        
                                             type="video/mp4">
-                                        <source
-                                            src="https://videocdn.cdnpk.net/videos/56024950-db68-4856-a401-dd372c2b715f/horizontal/previews/clear/large.mp4?token=exp=1729262920~hmac=7ec3609d848362c3d50f0f138a91b8eff2bd84613d981aa47b1321f5f87fd848"
-                                            type="video/ogg">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
@@ -9992,12 +10004,11 @@
                                   <span class="selected">Select an option</span>
                                 </div>
                                 <ul class="select-options-list">
-
-                                    <li data-value="USD">United States ($ USD)</li>
-                                <li data-value="EUR">Euro (€ EUR)</li>
-                                <li data-value="GBP">United Kingdom (£ GBP)</li>
-                                <li data-value="JPY">Japan (¥ JPY)</li>
-                                <li data-value="AUD">Australia ($ AUD)</li>
+                                <li class="option" data-value="USD">USA ($ USD)</li>
+                                <li class="option" data-value="EUR">Euro (€ EUR)</li>
+                                <li class="option" data-value="GBP">UK (£ GBP)</li>
+                                <li class="option" data-value="JPY">Japan (¥ JPY)</li>
+                                <li class="option" data-value="AUD">Australia ($ AUD)</li>
                                 </ul>
                               </div>
                               

@@ -847,7 +847,7 @@ TAB BUTTON SECTION START
   width: 50%;
   background: var(--color-primary-button);
   border-radius: 5rem;
-  transition: 0.4s all ease-in-out;
+  transition: transform 0.3s ease, max-width 0.3s ease;
 }
 
 @media screen and (min-width: 992px) {
@@ -912,10 +912,12 @@ OPTION & SELECT SECTION START
   font-size: 2.4rem;
   transition: transform .5s ease-in-out;
   transform: rotate(90deg);
+  transform-origin: center;
 }
 
 .custom-select.open::after {
   transform: rotate(-90deg);
+  transform-origin: .3rem center;
 }
 
 .custom-select .selected {
@@ -953,6 +955,8 @@ OPTION & SELECT SECTION START
   transform: scaleY(0);
   visibility: hidden  ;
   transform-origin: bottom;
+  left: 0;
+
 }
 
 .custom-select.open
@@ -1154,14 +1158,6 @@ MOBILE MENU START
 .mobile-footer-option-wrapper {
   width: 100%;
   height: 100%;
-  position: relative;
-}
-
-.mobile-footer-option-wrapper::after {
-  content: url('data:image/svg+xml,<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.841 1.71433L6.46598 6.08933C6.40501 6.15051 6.33257 6.19905 6.2528 6.23218C6.17303 6.2653 6.08751 6.28235 6.00114 6.28235C5.91477 6.28235 5.82924 6.2653 5.74948 6.23218C5.66971 6.19905 5.59726 6.15051 5.53629 6.08933L1.16129 1.71433C1.03801 1.59105 0.96875 1.42384 0.96875 1.24949C0.96875 1.07514 1.03801 0.907928 1.16129 0.784644C1.28458 0.66136 1.45179 0.5921 1.62614 0.5921C1.80049 0.5921 1.9677 0.66136 2.09098 0.784644L6.00169 4.69535L9.91239 0.784098C10.0357 0.660813 10.2029 0.591553 10.3772 0.591553C10.5516 0.591553 10.7188 0.660813 10.8421 0.784098C10.9654 0.907382 11.0346 1.07459 11.0346 1.24894C11.0346 1.42329 10.9654 1.5905 10.8421 1.71379L10.841 1.71433Z" fill="%23020714"/></svg>');
-  position: absolute;
-  top: 0.4rem;
-  right: 2rem;
 }
 
 .mobile-menu-footer-button-wrapper .primary-button {
@@ -1171,7 +1167,8 @@ MOBILE MENU START
   width: 100%;
 }
 
-.mobile-menu-footer-button-wrapper select {
+.mobile-footer-option-wrapper .custom-select{
+  width: 100%;
   cursor: pointer;
   background-color: #f1f4f9 !;
   width: 100%;
@@ -1181,16 +1178,13 @@ MOBILE MENU START
   color: var(--color-heading);
   border: 0.1rem solid var(--color-border) !important;
   border-radius: 3rem;
-  -webkit-border-radius: 3rem;
-  -moz-border-radius: 3rem;
-  -ms-border-radius: 3rem;
-  -o-border-radius: 3rem;
   font-weight: 600;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  position: relative;
   line-height: 150%;
+}
+
+.mobile-footer-option-wrapper .custom-select::after{
+  top: 25%;
+  right: 1rem;
 }
 
 .mobile-menu-footer-button-wrapper .mobile-menu-currency {
@@ -3087,11 +3081,14 @@ MEGA MENU SECTION
   margin-bottom: 0;
 }
 
+.megamenu-collection-product-list h6 {
+  margin: 1rem 0;
+}
 .megamenu-collection-product-list h6 a {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 150%;
-  margin: 8px 0;
+  margin: .8rem 0;
   display: block;
   width: fit-content;
 }
@@ -3141,6 +3138,12 @@ SLIDESHOW SECTION START
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
+}
+
+@media screen and (min-width: 1200px) {
+  .slideshow-content {
+    top: calc(50% + 4rem);
+  }
 }
 
 @media screen and (min-width: 1536px) {
@@ -3201,7 +3204,7 @@ SLIDESHOW SECTION START
   padding: 3.2rem 0;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1536px) {
   .slideshow-desc {
     font-size: 2rem;
     line-height: 150%;
@@ -3490,7 +3493,7 @@ PROMO SECTION START
   display: inline-block;
   inset: -0.8rem;
   border-radius: 100%;
-  border: 2rem fff;
+  border: 2rem solid #fff;
   animation: promoVideoPulse 1.5s ease infinite;
   z-index: -1;
   transform: scale(0);
@@ -3499,7 +3502,7 @@ PROMO SECTION START
 
 .promo-video-play-button::after {
   inset: -1.6rem;
-  border: 0.8rem fff;
+  border: 0.8rem solid #fff;
   animation-duration: 2.5s;
 }
 
@@ -4418,10 +4421,10 @@ COLLAGE GALLERY SECTION START
   display: none;
 }
 
-.collage-gallery-video-control.play .play-icon {
+.collage-gallery-video-control.video-played .pause-icon {
   display: block;
 }
-.collage-gallery-video-control.pause .pause-icon {
+.collage-gallery-video-control.video-paused .play-icon {
   display: block;
 }
 
@@ -5083,7 +5086,7 @@ HOT DEALS SECTION START
   align-items: center;
   width: 4.8rem;
   height: 4.8rem;
-  border: 0.1rem fff;
+  border: 0.1rem #fff;
   border-radius: 100%;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -5248,6 +5251,7 @@ HOT DEALS SECTION START
 
 .bundle-product-wrapper .close-button-wrapper {
   display: none;
+  
 }
 
 @media screen and (max-width: 1200px) {
@@ -5261,6 +5265,7 @@ HOT DEALS SECTION START
     transform: translateX(-50%);
     overflow-y: hidden;
     padding-bottom: 2rem;
+    visibility: hidden;
   }
 
   .bundle-product-wrapper .close-button-wrapper {
@@ -7034,7 +7039,7 @@ FOOTERS SECTION START
   line-height: 1.5;
   color: var(--color-heading);
   margin-bottom: 1.6rem;
-  border-bottom: 0.1rem fff24;
+  border-bottom: 0.1rem #ddd;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -7215,6 +7220,7 @@ FOOTERS SECTION START
   transition: all .3s ease-in-out;
   transform-origin: 50% 85.5% 0px;
   width: 100%;
+  height: auto;
 }
 
 .footer-logo ul li:hover svg {

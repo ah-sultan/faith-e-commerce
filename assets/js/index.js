@@ -202,7 +202,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Open Menu Function
     function openMobileMenu() {
-      handleOverlay({ show: true });
+      handleOverlay({ show: true, action : closeMobileMenu });
 
       // GSAP Open Timeline
       const tl = gsap.timeline();
@@ -717,7 +717,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Function to handle the positioning and size of the active indicator
     const handleActiveEl = ({ left = 0, width = 0 }) => {
-      tabActiveEl.style.left = `${left}px`;
+      tabActiveEl.style.transform = `translateX(${left}px)`;
       tabActiveEl.style.width = `${width}px`;
     };
 
@@ -907,18 +907,27 @@ window.addEventListener("DOMContentLoaded", () => {
   const collageVideo = document.querySelectorAll(".collage-gallery-video");
 
   collageVideo.forEach((item) => {
-    const button = item.querySelector(".collage-gallery-video-control");
-    const videoPlayer = item.querySelector(".collage-gallery-video-player");
+    const playButton = item.querySelector(".collage-gallery-video-control");
+    const video = item.querySelector(".collage-gallery-video-player");
 
-    button.addEventListener("click", function () {
-      if (videoPlayer.paused) {
-        videoPlayer.play();
-        button.classList.remove("play");
-        button.classList.add("pause");
+    // Default Activation
+    if (video.autoplay) {
+      playButton.classList.remove("video-paused");
+      playButton.classList.add("video-played");
+    } else {
+      playButton.classList.add("video-paused");
+      playButton.classList.remove("video-played");
+    }
+
+    playButton.addEventListener("click", function () {
+      if (video.paused) {
+        video.play();
+        playButton.classList.add("video-played");
+        playButton.classList.remove("video-paused");
       } else {
-        videoPlayer.pause();
-        button.classList.remove("pause");
-        button.classList.add("play");
+        video.pause();
+        playButton.classList.remove("video-played");
+        playButton.classList.add("video-paused");
       }
     });
   });
@@ -1298,7 +1307,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // SET INITIAL STYLES FOR THE MENU
         item.style.overflow = "hidden";
         item.style.height = `${headerHeight + 4}px`;
-        item.style.transition = "all ease-in-out .1s";
+        item.style.transition = "all ease-in-out .3s";
 
         item.addEventListener("click", () => {
           if (item.classList.contains("active")) {

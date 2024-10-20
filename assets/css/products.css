@@ -977,7 +977,7 @@ PRODUCT DETAILS SECTION START
 
 @media screen and (min-width: 992px) {  
   .product-details-thumb-image .swiper-slide{
-    width: 15rem !important;
+    width: 12rem !important;
   }
 }
 

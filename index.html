@@ -14,6 +14,7 @@
     <script src="./assets/js/gsap.min.js" defer></script>
     <script src="./assets/js/ScrollTrigger.min.js" defer></script>
     <script src="./assets/js/swiper-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <script src="./assets/js/index.js" defer="defer"></script>
     <script src="./assets/js//count-down.js" defer="defer"></script>
     
@@ -21,8 +22,10 @@
     <!-- CSS FILES -->
     <link href="./assets/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="./assets/css/swiper-bundle.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.14/dist/lenis.css">
     <link href="./assets/css/styles.css" rel="stylesheet" type="text/css" media="all" />
     <link href="./assets/css/products.css" rel="stylesheet" type="text/css" media="all" />
+    
 </head>
 
 <body>
@@ -4563,9 +4566,18 @@
         <section class="new-arrival-section">
             <div class="container">
                 <div class="section-caption">
-                    <h2 class="new-arrival-section-heading">
+                    <h2 class="new-arrival-section-heading" style="display: none;">
                         NEW <span>ARRIVAL</span>
                     </h2>
+                    <div id="newArrival" class="new-arrival-heading-svg">
+                        <svg width="1189" height="127" viewBox="0 0 1189 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M107.88 126H82.6799L25.6199 39.78V126H0.419922V0.179993H25.6199L82.6799 86.58V0.179993H107.88V126ZM157.983 20.7V52.2H200.283V72.18H157.983V105.48H205.683V126H132.783V0.179993H205.683V20.7H157.983ZM396.524 0.360001L361.424 126H331.724L308.144 36.54L283.484 126L253.964 126.18L220.124 0.360001H247.124L269.264 97.92L294.824 0.360001H322.904L347.024 97.38L369.344 0.360001H396.524ZM532.909 102.06H482.869L474.589 126H448.129L493.309 0.179993H522.649L567.829 126H541.189L532.909 102.06ZM526.069 81.9L507.889 29.34L489.709 81.9H526.069ZM649.517 126L621.797 77.04H609.917V126H584.717V0.360001H631.877C641.597 0.360001 649.877 2.1 656.717 5.58C663.557 8.94 668.657 13.56 672.017 19.44C675.497 25.2 677.237 31.68 677.237 38.88C677.237 47.16 674.837 54.66 670.037 61.38C665.237 67.98 658.097 72.54 648.617 75.06L678.677 126H649.517ZM609.917 58.14H630.977C637.817 58.14 642.917 56.52 646.277 53.28C649.637 49.92 651.317 45.3 651.317 39.42C651.317 33.66 649.637 29.22 646.277 26.1C642.917 22.86 637.817 21.24 630.977 21.24H609.917V58.14ZM764.829 126L737.109 77.04H725.229V126H700.029V0.360001H747.189C756.909 0.360001 765.189 2.1 772.029 5.58C778.869 8.94 783.969 13.56 787.329 19.44C790.809 25.2 792.549 31.68 792.549 38.88C792.549 47.16 790.149 54.66 785.349 61.38C780.549 67.98 773.409 72.54 763.929 75.06L793.989 126H764.829ZM725.229 58.14H746.289C753.129 58.14 758.229 56.52 761.589 53.28C764.949 49.92 766.629 45.3 766.629 39.42C766.629 33.66 764.949 29.22 761.589 26.1C758.229 22.86 753.129 21.24 746.289 21.24H725.229V58.14ZM840.542 0.360001V126H815.342V0.360001H840.542ZM978.299 0.360001L932.219 126H901.619L855.539 0.360001H882.539L917.099 100.26L951.479 0.360001H978.299ZM1070.45 102.06H1020.41L1012.13 126H985.668L1030.85 0.179993H1060.19L1105.37 126H1078.73L1070.45 102.06ZM1063.61 81.9L1045.43 29.34L1027.25 81.9H1063.61ZM1147.46 106.02H1188.86V126H1122.26V0.360001H1147.46V106.02Z" fill="#D9D9D9"/>
+                            </svg>
+                            
+                            
+                            
+                    </div>
+                        
                 </div>
                 <div class="new-arrival-card-wrapper swiper new-arrival-swiper">
                     <div class="swiper-wrapper">

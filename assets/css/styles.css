@@ -851,7 +851,7 @@ TAB BUTTON SECTION START
 }
 
 @media screen and (min-width: 992px) {
-  .tabs-button-list li {
+  .tabs-button-list .tabs-button{
     padding: 1.6rem 2rem;
   }
 }
@@ -4064,11 +4064,46 @@ NEW ARRIVAL SECTION START
   -webkit-text-stroke: 2px var(--color-heading);
 }
 
-.new-arrival-card-wrapper {
-  padding: 1.2rem;
-}
+
+
+/* SVG ANIMATION  */
+.new-arrival-heading-svg{
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  }
+
+  .new-arrival-heading-svg svg{
+    width: 100%;
+    height: auto;
+    color: transparent;
+    fill: transparent;
+    stroke: var(--color-heading);
+    stroke-width: .2rem;
+  }
+
+  .new-arrival-heading-svg svg path {
+    fill: currentColor;
+    color: currentColor;
+  }
+
+
+  
+  @media screen and (min-width: 1440px) {
+    .new-arrival-heading-svg{
+      width: 1230px;
+      margin-bottom: 6rem;
+      }
+  }
+
+
 
 /* New Arrival Card */
+.new-arrival-card-wrapper {
+  padding: 1.2rem;
+  
+}
+
 .new-arrival-card {
   position: relative;
 }

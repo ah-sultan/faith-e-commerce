@@ -1,6 +1,20 @@
 window.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  /* ----------------------
+    Initialize Lenis
+  ----------------------- */
+  const lenis = new Lenis({
+    duration: 5,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
   // =====================
   /// GSAP ANIMATION
 
@@ -202,7 +216,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Open Menu Function
     function openMobileMenu() {
-      handleOverlay({ show: true, action : closeMobileMenu });
+      handleOverlay({ show: true, action: closeMobileMenu });
 
       // GSAP Open Timeline
       const tl = gsap.timeline();
@@ -827,6 +841,24 @@ window.addEventListener("DOMContentLoaded", () => {
   --------------------*/
 
   (function () {
+    const newArrival = document.getElementById("newArrival");
+    const newArrivalPath = newArrival.querySelectorAll("path");
+
+    newArrivalPath.forEach((item) => {
+      const pathLength = item.getTotalLength();
+
+      item.style.strokeDasharray = pathLength;
+      item.style.strokeDashoffset = pathLength;
+
+      gsap.to(item, {
+        duration: 5,
+        strokeDashoffset: 0,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo : true,
+      });
+    });
+
     const newArrivalSwiper = new Swiper(".new-arrival-swiper", {
       spaceBetween: 24,
       slidesPerView: 1,
@@ -904,6 +936,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // COLLAGE SECTION START
 
+(() => {
   const collageVideo = document.querySelectorAll(".collage-gallery-video");
 
   collageVideo.forEach((item) => {
@@ -931,6 +964,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+})()
 
   // =====================
   // COUNTDOWN BANNER SECTION START
@@ -1375,7 +1409,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Scroll to top animation
     scrollToTopButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth", duration: 3000 });
+      // window.scrollTo({ top: 0, behavior: "smooth", duration: 3000 });
+      lenis.scrollTo(0);
     });
   })();
 

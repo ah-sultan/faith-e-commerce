@@ -522,6 +522,44 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   })();
 
+  /* ------------------------------
+  SELECT & OPTION  SECTION  START
+  -------------------------------- */
+  (function () {
+    const customSelect = document.querySelectorAll(".custom-select");
+
+    // CHECK CUSTOM SELECT EXIT
+    if (customSelect.length > 0) {
+      customSelect.forEach((item) => {
+        const selectBox = item.querySelector(".select-box");
+        const list = item.querySelector(".select-options-list");
+        const options = item.querySelectorAll(".option");
+        const selected = item.querySelector(".selected");
+
+        // CHECK SELECT BOX & LIST EXIT
+        if (selectBox && list) {
+          selectBox.addEventListener("click", () => {
+            item.classList.toggle("open");
+          });
+        }
+
+        // CHECK IF OPTION EXIST
+        if (options.length > 0) {
+          options.forEach((opt) => {
+            opt.addEventListener("click", () => {
+              if (selected) {
+                // Update the selected text
+                selected.textContent = opt.textContent;
+              }
+              // Close the dropdown list after selecting
+              item.classList.remove("open");
+            });
+          });
+        }
+      });
+    }
+  })();
+
   // =====================
   // ANNOUNCEMENT BAR
   // =====================
@@ -1218,12 +1256,12 @@ window.addEventListener("DOMContentLoaded", () => {
       if (video.autoplay) {
         playButton.classList.remove("video-paused");
         playButton.classList.add("video-played");
-      }else{
+      } else {
         playButton.classList.add("video-paused");
         playButton.classList.remove("video-played");
       }
 
-         // Listener Activations
+      // Listener Activations
       playButton.addEventListener("click", function () {
         if (video.paused) {
           video.play();
@@ -1242,37 +1280,39 @@ window.addEventListener("DOMContentLoaded", () => {
   FOOTER SECTION  START
   -------------------------------- */
 
-  // CHECK IF THE VIEWPORT WIDTH IS LESS THAN 992 PIXELS
-  if (document.body.clientWidth < 992) {
-    const footerMenuWrappers = document.querySelectorAll(
-      ".footer-menu-wrapper"
-    );
+  (function () {
+    // CHECK IF THE VIEWPORT WIDTH IS LESS THAN 992 PIXELS
+    if (document.body.clientWidth < 992) {
+      const footerMenuWrappers = document.querySelectorAll(
+        ".footer-menu-wrapper"
+      );
 
-    footerMenuWrappers.forEach((item) => {
-      // GET THE HEIGHT OF THE HEADER AND THE MENU LIST
-      const headerHeight = item.querySelector(
-        ".footer-menu-heading"
-      ).clientHeight;
-      const menuListHeight =
-        item.querySelector(".footer-menu-acc").clientHeight;
+      footerMenuWrappers.forEach((item) => {
+        // GET THE HEIGHT OF THE HEADER AND THE MENU LIST
+        const headerHeight = item.querySelector(
+          ".footer-menu-heading"
+        ).clientHeight;
+        const menuListHeight =
+          item.querySelector(".footer-menu-acc").clientHeight;
 
-      // SET INITIAL STYLES FOR THE MENU
-      item.style.overflow = "hidden";
-      item.style.height = `${headerHeight + 4}px`;
-      item.style.transition = "all ease-in-out .1s";
+        // SET INITIAL STYLES FOR THE MENU
+        item.style.overflow = "hidden";
+        item.style.height = `${headerHeight + 4}px`;
+        item.style.transition = "all ease-in-out .1s";
 
-      item.addEventListener("click", () => {
-        if (item.classList.contains("active")) {
-          item.style.height = `${headerHeight + 4}px`;
-          item.classList.remove("active");
-        } else {
-          // EXPAND THE MENU
-          item.style.height = `${menuListHeight + headerHeight + 40}px`; // EXPANDED HEIGHT
-          item.classList.add("active");
-        }
+        item.addEventListener("click", () => {
+          if (item.classList.contains("active")) {
+            item.style.height = `${headerHeight + 4}px`;
+            item.classList.remove("active");
+          } else {
+            // EXPAND THE MENU
+            item.style.height = `${menuListHeight + headerHeight + 40}px`; // EXPANDED HEIGHT
+            item.classList.add("active");
+          }
+        });
       });
-    });
-  }
+    }
+  })();
 
   // ========================
   // PRODUCT SECTION START

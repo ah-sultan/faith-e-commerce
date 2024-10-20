@@ -17,6 +17,8 @@
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <script src="./assets/js/index.js" defer="defer"></script>
     <script src="./assets/js//count-down.js" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/terser@5.15.1/dist/bundle.min.js"></script>
+
     
 
     <!-- CSS FILES -->
@@ -25,6 +27,13 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.14/dist/lenis.css">
     <link href="./assets/css/styles.css" rel="stylesheet" type="text/css" media="all" />
     <link href="./assets/css/products.css" rel="stylesheet" type="text/css" media="all" />
+    <script defer>
+        const code = "function add(a, b) { return a + b; }";
+        Terser.minify(code).then(minified => {
+          console.log(minified.code); // function add(a,b){return a+b;}
+        });
+      </script>
+      
     
 </head>
 

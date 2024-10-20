@@ -1229,31 +1229,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // =====================
   // STYLISH SECTION START
-  const stylishProducts = new Swiper(".stylish-product-swiper", {
-    spaceBetween: 10,
-    slidesPerView: "auto",
-    slidePerGroup: 1,
-    centeredSlides: true,
-    loop: true,
-    speed: 900,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    initialSlide: 2,
-    freeMode: true,
-    autoHeight: true,
-  });
 
-  /* CLONE STYLISH PRODUCT WRAPPER AND
-  APPEND IT ON STYLISH PRODUCT CARD ELEMENT */
-  const stylishProductCard = document.querySelectorAll(".stylish-product-card");
 
-  stylishProductCard.forEach((item) => {
-    const productWrapper = item?.firstElementChild?.cloneNode(true);
-    item.appendChild(productWrapper);
-  });
 
   /* ------------------------------
   TESTIMONIAL SECTION START

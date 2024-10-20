@@ -711,9 +711,17 @@ COUNTDOWN PRODUCT SECTION START
 
 .countdown-product-card-wrapper{
   padding-top: 6rem;
-  margin-top: 5rem;
   align-items: center;
 }
+
+
+@media screen and (min-width: 992px) { 
+  .countdown-product-card-wrapper{
+    padding-top: 6rem;
+    margin-top: 5rem;
+  }
+ }
+
 
 .countdown-product-card {
   margin: 0 1.2rem;
@@ -962,15 +970,29 @@ PRODUCT DETAILS SECTION START
   margin-top: 2rem;
 }
 
+
 .product-details-thumb-image .swiper-slide{
-  width: 15rem !important;
+  width: 10rem !important;
+}
+
+@media screen and (min-width: 992px) {  
+  .product-details-thumb-image .swiper-slide{
+    width: 15rem !important;
+  }
 }
 
 .product-details-thumb-image img {
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-radius: 0.8rem;
   border: 1px solid transparent;
   transition: all .3s ease-in-out;
+}
+
+
+@media screen and (min-width: 992px) {  
+  .product-details-thumb-image img {
+    margin-top: 2rem;
+  }
 }
 
 .product-details-thumb-image 

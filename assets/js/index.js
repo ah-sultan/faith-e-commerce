@@ -315,7 +315,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function openSearchDrawer() {
       document.body.style.overflowY = "hidden";
       searchDrawer.classList.add("active");
-      handleOverlay({ show: false });
+      handleOverlay({ show: true, action: closeSearchDrawer });
 
       const tl = gsap.timeline();
       tl.from(".search-drawer-panel", {

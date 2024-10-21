@@ -866,6 +866,7 @@ window.addEventListener("DOMContentLoaded", () => {
       speed: 1000,
       autoplay: {
         delay: 3000,
+        pauseOnMouseEnter: true,
       },
       breakpoints: {
         768: {
@@ -944,13 +945,14 @@ window.addEventListener("DOMContentLoaded", () => {
       const video = item.querySelector(".collage-gallery-video-player");
 
       // Default Activation
-      if (video.autoplay) {
+      if (!video.paused) {
         playButton.classList.remove("video-paused");
         playButton.classList.add("video-played");
       } else {
         playButton.classList.add("video-paused");
         playButton.classList.remove("video-played");
       }
+
 
       playButton.addEventListener("click", function () {
         if (video.paused) {
@@ -962,7 +964,7 @@ window.addEventListener("DOMContentLoaded", () => {
           playButton.classList.remove("video-played");
           playButton.classList.add("video-paused");
         }
-      });
+      });      
     });
   })();
 
@@ -1332,7 +1334,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const playButton = item.querySelector(".play-button");
 
       // Default Activation
-      if (video.autoplay) {
+      if (!video.paused) {
         playButton.classList.remove("video-paused");
         playButton.classList.add("video-played");
       } else {

@@ -851,11 +851,11 @@ window.addEventListener("DOMContentLoaded", () => {
       item.style.strokeDashoffset = pathLength;
 
       gsap.to(item, {
-        duration: 5,
+        duration: 2,
         strokeDashoffset: 0,
         ease: "power1.inOut",
         repeat: -1,
-        yoyo : true,
+        yoyo: true,
       });
     });
 
@@ -936,35 +936,35 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // COLLAGE SECTION START
 
-(() => {
-  const collageVideo = document.querySelectorAll(".collage-gallery-video");
+  (() => {
+    const collageVideo = document.querySelectorAll(".collage-gallery-video");
 
-  collageVideo.forEach((item) => {
-    const playButton = item.querySelector(".collage-gallery-video-control");
-    const video = item.querySelector(".collage-gallery-video-player");
+    collageVideo.forEach((item) => {
+      const playButton = item.querySelector(".collage-gallery-video-control");
+      const video = item.querySelector(".collage-gallery-video-player");
 
-    // Default Activation
-    if (video.autoplay) {
-      playButton.classList.remove("video-paused");
-      playButton.classList.add("video-played");
-    } else {
-      playButton.classList.add("video-paused");
-      playButton.classList.remove("video-played");
-    }
-
-    playButton.addEventListener("click", function () {
-      if (video.paused) {
-        video.play();
-        playButton.classList.add("video-played");
+      // Default Activation
+      if (video.autoplay) {
         playButton.classList.remove("video-paused");
+        playButton.classList.add("video-played");
       } else {
-        video.pause();
-        playButton.classList.remove("video-played");
         playButton.classList.add("video-paused");
+        playButton.classList.remove("video-played");
       }
+
+      playButton.addEventListener("click", function () {
+        if (video.paused) {
+          video.play();
+          playButton.classList.add("video-played");
+          playButton.classList.remove("video-paused");
+        } else {
+          video.pause();
+          playButton.classList.remove("video-played");
+          playButton.classList.add("video-paused");
+        }
+      });
     });
-  });
-})()
+  })();
 
   // =====================
   // COUNTDOWN BANNER SECTION START
@@ -1227,10 +1227,69 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   })();
 
-  // =====================
-  // STYLISH SECTION START
+  /* --------------------------------
+  STYLISH SECTION START 
+  ----------------------------------
 
+  (function () {
+    const stylishProduct = document.querySelectorAll(".stylish-product-image-wrapper");
+  
+    stylishProduct.forEach((imgWrap) => {
+      const imgList = imgWrap.querySelector(".product-image-list");
+      const imgItems = Array.from(imgList.children);
+      const swiperPagination = imgWrap.querySelector(".swiper-pagination");
+  
+      imgItems.forEach((item, idx) => {
+        // Create the pagination bullet
+        const bullet = document.createElement("span");
+        swiperPagination.appendChild(bullet);
+  
+        // CALCULATIONS
+        const getCenterPoint = (100 / imgItems.length) * idx;
+  
+        // ADD LISTENER
+        bullet.addEventListener("click", () => {
+          // Remove active class from all bullets
+          const bullets = swiperPagination.querySelectorAll("span");
+          bullets.forEach(b => b.classList.remove("swiper-pagination-bullet-active"));
+  
+          // Add active class to the clicked bullet
+          bullet.classList.add("swiper-pagination-bullet-active");
+  
+          // IMG LIST TRANSLATE
+          imgList.style.transform = `translateX(-${getCenterPoint}%)`;
+        });
+  
+        // Set the second bullet as active by default
+        if (idx === 1) {
+          bullet.classList.add("swiper-pagination-bullet-active");
+          imgList.style.transform = `translateX(-${getCenterPoint}%)`; // Center the second slide
+        }
+      });
+    });
+  })();
+  
+  */
 
+  (function () {
+    const stylishProductSwiper = document.querySelectorAll(
+      ".stylish-product-swiper"
+    );
+
+    stylishProductSwiper.forEach((item) => {
+      const swiper = new Swiper(item, {
+        spaceBetween: 0,
+        slidesPerView: "auto",
+        initialSlide: 1,
+        centeredSlides: true,
+        speed: 900,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    });
+  })();
 
   /* ------------------------------
   TESTIMONIAL SECTION START

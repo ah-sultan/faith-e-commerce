@@ -6055,8 +6055,8 @@ PRODUCT DETAILS SECTION START
   border: 0.1rem solid var(--color-border);
   position: relative;
   overflow: hidden;
-  --stylish-image-wrap-height : 66.2rem
-  ; height: 84.5rem;
+  --stylish-image-wrap-height: 66.2rem;
+  height: 84.5rem;
   padding: 4rem 8rem;
   z-index: 1;
 }
@@ -6065,30 +6065,29 @@ PRODUCT DETAILS SECTION START
 .stylish-product-card * {
   transition: all 0.7s ease;
 }
-.stylish-product-card:hover{
-      --stylish-image-wrap-height: 40rem;
-      --color-foreground : var(--color-heading);
-
-  }
+.stylish-product-card:hover {
+  --stylish-image-wrap-height: 40rem;
+  --color-foreground: var(--color-heading);
+}
 
 .stylish-product-card::after {
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--color-accent) url('../images/stylish-product/bg-image.png') center/contain;
+  background: var(--color-accent) url("../images/stylish-product/bg-image.png")
+    center/contain;
   position: absolute;
   inset: 0;
   display: block;
   z-index: -1;
   opacity: 0;
-  transition: all .5s ease;
-  transform: translate(2rem,2rem) rotate(10deg) scale(1.5) ;
+  transition: all 0.5s ease;
+  transform: translate(2rem, 2rem) rotate(10deg) scale(1.5);
 }
 
-.stylish-product-card:hover:after{
-transform: translate(0,0) rotate(0) scale(1) ;
-opacity: 1;
-
+.stylish-product-card:hover:after {
+  transform: translate(0, 0) rotate(0) scale(1);
+  opacity: 1;
 }
 
 .stylish-product-image-wrapper {
@@ -6120,53 +6119,51 @@ opacity: 1;
   border-radius: 1.2rem;
 }
 
-.stylish-product-card-content{
+.stylish-product-card-content {
   width: 100%;
-  display: flex;align-items: center;
+  display: flex;
+  align-items: center;
   margin-top: 2.4rem;
   padding: 0 2rem;
 }
 
-.stylish-product-card-content
-.card-content-wrapper{
+.stylish-product-card-content .card-content-wrapper {
   width: 54rem;
   max-width: 100%;
   position: relative;
   margin: 0 auto;
 }
 
-.stylish-product-card-content
-.product-add-cart-outline-button{
+.stylish-product-card-content .product-add-cart-outline-button {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 20;
 }
 
-.stylish-product-title{
+.stylish-product-title {
   font-size: 3rem;
   font-weight: 500;
   margin: 0;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 
-.stylish-product-card-content .card-body{
+.stylish-product-card-content .card-body {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   transform: translate(10%, 100%);
-  transition: all .7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
-.stylish-product-card:hover .stylish-product-card-content .card-body{
-  transform: translate(0,0);
+.stylish-product-card:hover .stylish-product-card-content .card-body {
+  transform: translate(0, 0);
 }
 
-.stylish-product-card-content .stylish-product-desc{
+.stylish-product-card-content .stylish-product-desc {
   color: var(--color-heading);
 }
-
 
 /* ===========================
 TESTIMONIAL SECTION

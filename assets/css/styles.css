@@ -4514,6 +4514,7 @@ COUNTDOWN SECTION START
   position: relative;
   overflow: hidden;
   background: 2rem;
+  height: 100%;
 }
 
 .countdown-banner-wrapper {
@@ -4522,7 +4523,6 @@ COUNTDOWN SECTION START
   height: 100%;
   z-index: -1;
   inset: 0;
-  height: 100%;
 }
 
 .countdown-banner-wrapper img {

@@ -1159,7 +1159,7 @@ window.addEventListener("DOMContentLoaded", () => {
     gsap.to("#comparison-slider-button", {
       scrollTrigger: {
         trigger: ".comparison-section",
-        start: "top 10%",
+        start: "top 50%",
       },
       left: `calc(50% - ${sliderBtn.clientWidth / 2}px)`,
     });

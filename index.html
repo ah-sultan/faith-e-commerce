@@ -680,7 +680,7 @@
             <!-- FREE SHIPPING -->
             <div class="cart-drawer-deals active" id="cardDrawerDeals">
                 <p class="cart-drawer-deals-text">
-                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="arrow-icon" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M8 15.25C9.33502 15.25 10.6401 14.8541 11.7501 14.1124C12.8601 13.3707 13.7253 12.3165 14.2362 11.0831C14.7471 9.84971 14.8807 8.49251 14.6203 7.18314C14.3598 5.87377 13.717 4.67103 12.773 3.72703C11.829 2.78302 10.6262 2.14015 9.31686 1.8797C8.00748 1.61925 6.65029 1.75292 5.41688 2.26381C4.18348 2.7747 3.12928 3.63987 2.38758 4.7499C1.64588 5.85993 1.25 7.16498 1.25 8.5C1.25198 10.2896 1.96378 12.0053 3.22922 13.2708C4.49466 14.5362 6.21039 15.248 8 15.25ZM8 3.25C9.03835 3.25 10.0534 3.55791 10.9167 4.13478C11.7801 4.71166 12.453 5.5316 12.8504 6.49091C13.2477 7.45022 13.3517 8.50582 13.1491 9.52422C12.9465 10.5426 12.4465 11.4781 11.7123 12.2123C10.9781 12.9465 10.0426 13.4466 9.02422 13.6491C8.00582 13.8517 6.95022 13.7477 5.99091 13.3504C5.0316 12.953 4.21166 12.2801 3.63478 11.4167C3.0579 10.5534 2.75 9.53835 2.75 8.5C2.75149 7.10807 3.30509 5.77358 4.28933 4.78933C5.27357 3.80509 6.60807 3.25149 8 3.25ZM4.96937 10.0306C4.89945 9.96095 4.84398 9.87815 4.80612 9.78699C4.76827 9.69583 4.74878 9.59809 4.74878 9.49937C4.74878 9.40066 4.76827 9.30292 4.80612 9.21176C4.84398 9.1206 4.89945 9.0378 4.96937 8.96812L7.46937 6.46813C7.53905 6.39821 7.62184 6.34273 7.71301 6.30487C7.80417 6.26702 7.90191 6.24753 8.00062 6.24753C8.09933 6.24753 8.19707 6.26702 8.28824 6.30487C8.3794 6.34273 8.46219 6.39821 8.53187 6.46813L11.0319 8.96812C11.1728 9.10902 11.2519 9.30012 11.2519 9.49937C11.2519 9.69863 11.1728 9.88973 11.0319 10.0306C10.891 10.1715 10.6999 10.2507 10.5006 10.2507C10.3014 10.2507 10.1103 10.1715 9.96937 10.0306L8 8.0625L6.03062 10.0325C5.96084 10.1021 5.87803 10.1573 5.78691 10.1949C5.6958 10.2324 5.59817 10.2517 5.49961 10.2515C5.40105 10.2514 5.30349 10.2318 5.2125 10.1939C5.12152 10.1559 5.0389 10.1005 4.96937 10.0306Z"
                             fill="#020714" />
@@ -1187,7 +1187,7 @@
         <!-- CART DRAWER FOOTER -->
         <div class="cart-drawer-footer">
             <div class="cart-drawer-footer-heading">
-                <h4><span>Subtotal</span> <span>$240.26</span></h4>
+                <h4><span>Total</span> <span>$240.26</span></h4>
                 <p>Text & shipping calculated at Checkout</p>
             </div>
             <div class="cart-drawer-footer-button-wrapper">
@@ -1231,7 +1231,7 @@
                     <div class="product-details-image-block">
                         <div class="product-details-image-wrapper">
                             <!-- PRODUCT DETAILS IMAGE WRAPPER -->
-                            <div class="swiper product-quick-view-swiper">
+                            <div class="swiper product-details-swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <img loading="lazy" src="./assets/images/products/porduct-details-image-01.jpg"
@@ -1276,8 +1276,8 @@
                             </div>
                         </div>
                         <!-- PRODUCT DETAILS WRAPPER -->
-                        <div class="swiper product-quick-view-thumb-swiper" thumbsSlider="">
-                            <ul class="swiper-wrapper product-details-thumb-image">
+                        <div class="swiper product-details-thumb-swiper" thumbsSlider="">
+                            <ul class="swiper-wrapper">
                                 <li class="swiper-slide">
                                     <img loading="lazy" src="./assets/images/products/porduct-details-image-01.jpg"
                                         alt="Product Imaage">
@@ -2471,16 +2471,16 @@
             <div class="promo-wrapper">
                 <ul role="list" class="promo-left">
                     <li class="promo-fade-up promo-item-hover">
-                        <div class="promo-img-wrap">
+                        <a href="shop.html" class="promo-img-wrap">
                         <img loading="lazy" src="./assets/images/promo/video-image.png" alt="video-image"
                             class="promo-video-image" />
-                            </div>
+                            </a>
                     </li>
                     <li class="promo-video-wrapper promo-fade-up promo-item-hover">
-                        <div class="promo-img-wrap">
+                        <a href="shop.html" class="promo-img-wrap">
                         <img loading="lazy" src="./assets/images/promo/promo-video-banner.png" alt="video-image"
                             class="promo-video-banner border-animation" />
-                            </div>
+                            </a>
                         <!-- VIDEO -->
                         <button class="promo-video-play-button" id="promoVideoPopupButton">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000"
@@ -2495,37 +2495,45 @@
                 <div class="promo-right">
                     <ul role="list" class="promo-list">
                         <li class="promo-fade-up promo-item-hover">
-                            <div class="promo-img-wrap">
-                                <img loading="lazy" src="./assets/images/promo/accessories.png" alt="Accessories"/>
-                            </div>
-                            <p>
-                                <a href="shop.html" class="link-animation">Accessories</a>
-                            </p>
+                            <a href="shop.html">
+                                <div class="promo-img-wrap">
+                                    <img loading="lazy" src="./assets/images/promo/accessories.png" alt="Accessories"/>
+                                </div>
+                                <p >
+                                  <span class="link-animation"> Accessories</span>
+                                </p>
+                            </a>
                         </li>
                         <li class="promo-fade-up promo-item-hover">
-                            <div class="promo-img-wrap">
-                            <img loading="lazy" src="./assets/images/promo/new-arrivals.png" alt="New Arrivals" />
-                            </div>
-                            <p>
-                                <a href="shop.html" class="link-animation">New Arrivals</a>
-                            </p>
+                            <a href="shop.html">
+                                <div class="promo-img-wrap">
+                                    <img loading="lazy" src="./assets/images/promo/new-arrivals.png" alt="New Arrivals" />
+                                    </div>
+                                    <p>
+                                        <span class="link-animation">New Arrivals</span>
+                                    </p>
+                            </a>
                         </li>
                         <li class="big-image promo-fade-up promo-item-hover">
-                            <div class="promo-img-wrap">
-                            <img loading="lazy" class="promo-highlight-image"
-                                src="./assets/images/promo/women-collection.png" alt="Women Collection" />
-                                </div>
-                            <p>
-                                <a href="shop.html" class="link-animation">Street Were </a>
-                            </p>
+                            <a href="shop.html">
+                                <div class="promo-img-wrap">
+                                    <img loading="lazy" class="promo-highlight-image"
+                                        src="./assets/images/promo/women-collection.png" alt="Women Collection" />
+                                        </div>
+                                    <p>
+                                        <span class="link-animation">Street Were </span>
+                                    </p>
+                            </a>
                         </li>
                         <li class="promo-fade-up promo-item-hover">
-                            <div class="promo-img-wrap">
-                            <img loading="lazy" src="./assets/images/promo/street-were.png" alt="Street Were" />
-                           </div>
-                            <p>
-                                <a href="shop.html" class="link-animation">Street Were </a>
-                            </p>
+                            <a href="shop.html">
+                                <div class="promo-img-wrap">
+                                    <img loading="lazy" src="./assets/images/promo/street-were.png" alt="Street Were" />
+                                   </div>
+                                    <p>
+                                        <span class="link-animation">Street Were </span>
+                                    </p>
+                            </a>
                         </li>
                     </ul>
                     <div class="promo-caption promo-fade-up">

@@ -367,7 +367,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Function to open the quick view
     function openQuickView() {
-      handleOverlay({ show: true, action : closeQuickView  });
+      handleOverlay({ show: true, action: closeQuickView });
       productQuickView.classList.add("active");
     }
 
@@ -385,31 +385,6 @@ window.addEventListener("DOMContentLoaded", () => {
     // Attach event listener to close quick view button
     productQuickCloseButton.addEventListener("click", closeQuickView);
   })();
-
-  // Initialize Swiper for product quick view thumbnails
-  const productQuickViewThumb = new Swiper(".product-quick-view-thumb-swiper", {
-    spaceBetween: 12,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    speed: 900,
-  });
-
-  // Initialize Swiper for product quick view details
-  const productQuickViewDetails = new Swiper(".product-quick-view-swiper", {
-    spaceBetween: 10,
-    slidesPerView: 1,
-    centeredSlides: true,
-    loop: true,
-    speed: 900,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-      swiper: productQuickViewThumb,
-    },
-  });
 
   // =====================
   // CART DRAWER SECTION START
@@ -531,6 +506,15 @@ window.addEventListener("DOMContentLoaded", () => {
     // CHECK CUSTOM SELECT EXIT
     if (customSelect.length > 0) {
       customSelect.forEach((item) => {
+        // Dom Element Deactive
+        window.addEventListener("click", () => {
+          if (item.classList.contains("open")) {
+            item.classList.toggle("open");
+          }
+        });
+      });
+
+      customSelect.forEach((item) => {
         const selectBox = item.querySelector(".select-box");
         const list = item.querySelector(".select-options-list");
         const options = item.querySelectorAll(".option");
@@ -548,10 +532,8 @@ window.addEventListener("DOMContentLoaded", () => {
           options.forEach((opt) => {
             opt.addEventListener("click", () => {
               if (selected) {
-                // Update the selected text
                 selected.textContent = opt.textContent;
               }
-              // Close the dropdown list after selecting
               item.classList.remove("open");
             });
           });
@@ -925,11 +907,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   (() => {
     const collageVideos = document.querySelectorAll(".collage-gallery-video");
-  
+
     collageVideos.forEach((item) => {
       const playButton = item.querySelector(".collage-gallery-video-control");
       const video = item.querySelector(".collage-gallery-video-player");
-  
+
       // Default Activation - set the correct button state based on the video
       if (video.paused) {
         playButton.classList.add("video-paused");
@@ -938,7 +920,7 @@ window.addEventListener("DOMContentLoaded", () => {
         playButton.classList.add("video-played");
         playButton.classList.remove("video-paused");
       }
-  
+
       // Click event to toggle video play/pause and button state
       playButton.addEventListener("click", function () {
         if (video.paused) {
@@ -953,7 +935,6 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
   })();
-  
 
   // =====================
   // COUNTDOWN BANNER SECTION START
@@ -1155,34 +1136,52 @@ window.addEventListener("DOMContentLoaded", () => {
   // =====================
   // PRODUCT DETAILS
   (function () {
-    // Initialize thumbnail Swiper for product details
-    const productDetailsThumb = new Swiper(".product-details-thumb-swiper", {
-      spaceBetween: 10,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      touchRatio: 0.2,
-      slideToClickedSlide: true,
-      loop: true,
-      loopedSlides: 10,
-      speed: 2000,
-    });
+    const productDetailsSwiper = document.querySelectorAll(
+     ".product-details-image-block"
+    );
 
-    // Initialize main product detail Swiper
-    const productDetail = new Swiper(" .product-details-swiper", {
-      spaceBetween: 10,
-      slidesPerView: 1.3,
-      centeredSlides: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      loop: true,
-      loopedSlides: 10,
-      speed: 1000,
-    });
+    productDetailsSwiper.forEach((item) => {
+      const imageWrap = item.querySelector(".product-details-swiper")
+      const thumbWrap = item.querySelector(".product-details-thumb-swiper")
+      const thumbDirection = item.getAttribute("data-thumb-dir")
+      const imgPerView = item.getAttribute("img-preview")
+      const thumbPerView = item.getAttribute("thumb-preview")
+      
 
-    productDetailsThumb.controller.control = productDetail;
-    productDetail.controller.control = productDetailsThumb;
+      const galleryThumbs = new Swiper(thumbWrap, {
+        direction : thumbDirection ? " vertical" : "horizontal",
+        spaceBetween: 10,
+        slidesPerView: 4,
+        watchSlidesVisibility: true,
+        slideToClickedSlide: true,
+        breakpoints :{
+          1200 : {
+            slidesPerView : thumbPerView ? thumbPerView : 4
+          }
+        }
+      });
+      const galleryTop = new Swiper(imageWrap, {
+        spaceBetween: 24,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+          swiper: galleryThumbs,
+        },
+
+        breakpoints :{
+          1200 : {
+            slidesPerView : imgPerView ? imgPerView : 1
+          }
+        }
+      });
+      
+
+
+
+  
+    });
   })();
 
   // =====================

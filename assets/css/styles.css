@@ -1409,6 +1409,17 @@ GOOGLE FONTS
    -o-border-radius: 10rem;
  }
  
+ .search-drawer-form .select-options-list{
+ z-index: 2;
+
+ }
+ .search-drawer-form 
+ .custom-select .select-options-list{
+  transform-origin: top;
+  top: 100%;
+  bottom: inherit;z-index: 9999;
+
+ }
 
  
  @media screen and (max-width: 992px) {
@@ -1538,6 +1549,8 @@ GOOGLE FONTS
  
  .search-drawer-product-wrapper {
    margin-top: 3.2rem;
+   position: relative;
+   z-index: -1;
  }
  
  @media screen and (min-width: 1200px) {
@@ -1747,6 +1760,17 @@ GOOGLE FONTS
      font-weight: 600;
      color: var(--color-heading);
    }
+
+ }
+
+ .cart-drawer-deals-text 
+ .arrow-icon{
+  transform: rotate(180deg);
+  transition: all .3s ease-in;
+ }
+
+ .cart-drawer-deals.active   .cart-drawer-deals-text  .arrow-icon {
+  transform: rotate(0);
  }
  
  .cart-drawer-deals-rang-wrapper {
@@ -2099,32 +2123,12 @@ GOOGLE FONTS
    transition: all 0.7s ease-in-out;
    transform-origin: bottom right;
    transform: translate(4rem, 4rem) scale(0);
-   -webkit-transform: translate(4rem, 4rem) scale(0);
-   -moz-transform: translate(4rem, 4rem) scale(0);
-   -ms-transform: translate(4rem, 4rem) scale(0);
-   -o-transform: translate(4rem, 4rem) scale(0);
    border-radius: 100%;
-   -webkit-border-radius: 100%;
-   -moz-border-radius: 100%;
-   -ms-border-radius: 100%;
-   -o-border-radius: 100%;
-   -webkit-transition: all 0.7s ease-in-out;
-   -moz-transition: all 0.7s ease-in-out;
-   -ms-transition: all 0.7s ease-in-out;
-   -o-transition: all 0.7s ease-in-out;
  }
  
  .product-quick-view.active {
    transform: translate(0, 0) scale(1);
-   -webkit-transform: translate(0, 0) scale(1);
-   -moz-transform: translate(0, 0) scale(1);
-   -ms-transform: translate(0, 0) scale(1);
-   -o-transform: translate(0, 0) scale(1);
    border-radius: 0;
-   -webkit-border-radius: 0;
-   -moz-border-radius: 0;
-   -ms-border-radius: 0;
-   -o-border-radius: 0;
  }
  
  .product-quick-view .popup-wrapper {
@@ -2137,13 +2141,9 @@ GOOGLE FONTS
  .product-quick-view-wrapper {
    width: 90%;
    height: 80vh;
-   overflow: scroll;
+   overflow-y: hidden;
    background: #ffffff;
    border-radius: 2rem;
-   -webkit-border-radius: 2rem;
-   -moz-border-radius: 2rem;
-   -ms-border-radius: 2rem;
-   -o-border-radius: 2rem;
    position: relative;
  }
  
@@ -2177,12 +2177,10 @@ GOOGLE FONTS
    padding: 1.4rem;
    grid-template-columns: 1fr;
    border: 0;
-   border-radius: 0;
-   -webkit-border-radius: 0;
-   -moz-border-radius: 0;
-   -ms-border-radius: 0;
-   -o-border-radius: 0;
    gap: 3.2rem;
+   height: 100%;
+   width: 100%;
+   overflow-y: auto;
  }
  
  @media screen and (min-width: 557px) {
@@ -2921,10 +2919,12 @@ GOOGLE FONTS
  }
  .header-megamenu-list ul li a {
    color: var(--color-heading);
-   padding: 0 .3rem;
+   padding: 0;
+   line-height: 1.5;
    font-weight: 400;
    font-family: var(--font-heading);
    text-transform: capitalize;
+   border-radius: 0;
  }
  
  .header .header-megamenu-list ul li:hover a {
@@ -3373,6 +3373,7 @@ GOOGLE FONTS
   position: relative;
   z-index: 1;
   overflow: hidden;
+  display: block;
  }
 
  .promo-img-wrap::after{

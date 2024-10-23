@@ -367,7 +367,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Function to open the quick view
     function openQuickView() {
-      handleOverlay({ show: false });
+      handleOverlay({ show: true, action : closeQuickView  });
       productQuickView.classList.add("active");
     }
 
@@ -924,22 +924,22 @@ window.addEventListener("DOMContentLoaded", () => {
   // COLLAGE SECTION START
 
   (() => {
-    const collageVideo = document.querySelectorAll(".collage-gallery-video");
-
-    collageVideo.forEach((item) => {
+    const collageVideos = document.querySelectorAll(".collage-gallery-video");
+  
+    collageVideos.forEach((item) => {
       const playButton = item.querySelector(".collage-gallery-video-control");
       const video = item.querySelector(".collage-gallery-video-player");
-
-      // Default Activation
-      if (!video.paused) {
-        playButton.classList.remove("video-paused");
-        playButton.classList.add("video-played");
-      } else {
+  
+      // Default Activation - set the correct button state based on the video
+      if (video.paused) {
         playButton.classList.add("video-paused");
         playButton.classList.remove("video-played");
+      } else {
+        playButton.classList.add("video-played");
+        playButton.classList.remove("video-paused");
       }
-
-
+  
+      // Click event to toggle video play/pause and button state
       playButton.addEventListener("click", function () {
         if (video.paused) {
           video.play();
@@ -947,12 +947,13 @@ window.addEventListener("DOMContentLoaded", () => {
           playButton.classList.remove("video-paused");
         } else {
           video.pause();
-          playButton.classList.remove("video-played");
           playButton.classList.add("video-paused");
+          playButton.classList.remove("video-played");
         }
-      });      
+      });
     });
   })();
+  
 
   // =====================
   // COUNTDOWN BANNER SECTION START
@@ -1320,12 +1321,12 @@ window.addEventListener("DOMContentLoaded", () => {
       const playButton = item.querySelector(".play-button");
 
       // Default Activation
-      if (!video.paused) {
-        playButton.classList.remove("video-paused");
-        playButton.classList.add("video-played");
-      } else {
+      if (video.pause) {
         playButton.classList.add("video-paused");
         playButton.classList.remove("video-played");
+      } else {
+        playButton.classList.remove("video-paused");
+        playButton.classList.add("video-played");
       }
 
       // Listener Activations

@@ -662,24 +662,39 @@ PRODUCT COLOR VARIANT
   bottom: 12rem;
 }
 
-.product-card-countdown b {
-  font-weight: 600;
+
+.product-card .product-card-countdown .countdown-marquee-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  span{
+    white-space: nowrap;
+  }
 }
 
-.product-card-image .count-down ul li {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 150%;
-  color: var(--color-heading);
+.product-card 
+.count-down{
+  display: flex;
+  align-items: center;
 }
-.product-card-image .count-down ul .time {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 150%;
-  color: var(--color-heading);
+
+.product-card 
+.count-down li{
+width: 2rem;
+  height: 1.4rem;
+  text-align: center;
+  line-height: 1;
 }
+
+.product-card 
+.count-down li.divider{
+width: 1rem;
+font-weight: bold;
+
+}
+
+
 
 .product-card-body {
   display: flex;
@@ -842,14 +857,21 @@ COUNTDOWN PRODUCT SECTION START
   align-items: center;
   font-family: var(--font-heading);
   position: relative;
+  justify-content: center;
+  gap: 1rem;
+   
 }
+.countdown-product-card-timer-item 
+div {
+  width: 4rem;
+  height: 3.2rem;}
 
 .countdown-product-card-timer-item span {
   color: var(--color-foreground);
   font-size: 1.2rem;
   font-weight: 600;
   position: absolute;
-  bottom: -.5rem;
+  bottom: -1rem;
   left: 0;
   width: 100%;
   line-height: 1;
@@ -864,7 +886,7 @@ COUNTDOWN PRODUCT SECTION START
 }
 
 .countdown-product-card-timer-item:last-child:after {
-  display: none;
+  opacity: 0;
 }
 
 @media screen and (min-width: 992px) {

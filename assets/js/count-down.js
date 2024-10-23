@@ -1,5 +1,5 @@
-// ========================
-// COUNT DOWN SECTION START
+window.addEventListener("DOMContentLoaded", () => {
+  
 
 const countDown = document.querySelectorAll(".count-down");
 
@@ -111,3 +111,5 @@ countDown.forEach((item) => {
   startCountDown(item);
 });
 
+
+})

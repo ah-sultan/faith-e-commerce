@@ -17,6 +17,7 @@
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <script src="./assets/js/index.js" defer="defer"></script>
     <script src="./assets/js//count-down.js" defer="defer"></script>
+
     
 
     <!-- CSS FILES -->
@@ -433,13 +434,18 @@
                     <div class="search-drawer-form">
                         <!-- SEARCH OPTIONS -->
                         <div class="search-drawer-form-category">
-                            <select name="search-bar" id="search-bar">
-                                <option value="All Categories">All Categories</option>
-                                <option value="All Categories">Summer Cloth</option>
-                                <option value="All Categories">Women Collection</option>
-                                <option value="All Categories">New Arrival</option>
-                                <option value="All Categories">Recent Added</option>
-                            </select>
+                            <div class="custom-select">
+                                <div class="select-box">
+                                  <span class="selected">Select an option</span>
+                                </div>
+                                <ul class="select-options-list">
+                                    <option class="option" value="All Categories">All Categories</option>
+                                    <option class="option" value="Summer Cloth">Summer Cloth</option>
+                                    <option class="option" value="Women Collection">Women Collection</option>
+                                    <option class="option" value="New Arrival">New Arrival</option>
+                                    <option class="option" value="Recent Added">Recent Added</option>
+                                </ul>
+                              </div>
                         </div>
                         <div class="divider"></div>
                         <!-- SEARCH INPUT -->
@@ -681,7 +687,7 @@
                     </svg>
                     <span>
                         Free shipping on orders over $100!
-                        <a href="shop.html">Shop Now</a>
+                        <a href="shop.html" class="link-animation">Shop Now</a>
                     </span>
                 </p>
                 <div class="cart-drawer-deals-rang-wrapper">
@@ -1003,7 +1009,7 @@
                                 </div>
                             </a>
                             <div class="content-wrapper">
-                                <a href="shop.html" class="link-animation">
+                                <a href="shop.html">
                                     <!-- Product Rating -->
                                     <div class="rating-star">
                                         <span>
@@ -1047,7 +1053,7 @@
                                             </svg>
                                         </span>
                                     </div>
-                                    <h4 class="product-title">Floral Maxi Dress</h4>
+                                    <h4 class="product-title"><span class="link-animation">Floral Maxi Dress</span></h4>
                                     <p class="product-price">$12.00 <del>$20.00</del></p>
                                 </a>
                             </div>
@@ -1063,7 +1069,7 @@
                                 </div>
                             </a>
                             <div class="content-wrapper">
-                                <a href="shop.html" class="link-animation">
+                                <a href="shop.html">
                                     <!-- Product Rating -->
                                     <div class="rating-star">
                                         <span>
@@ -1107,7 +1113,7 @@
                                             </svg>
                                         </span>
                                     </div>
-                                    <h4 class="product-title">Floral Maxi Dress</h4>
+                                    <h4 class="product-title"><span class="link-animation">Floral Maxi Dress</span></h4>
                                     <p class="product-price">$12.00 <del>$20.00</del></p>
                                 </a>
                             </div>
@@ -1123,7 +1129,7 @@
                                 </div>
                             </a>
                             <div class="content-wrapper">
-                                <a href="shop.html" class="link-animation">
+                                <a href="shop.html">
                                     <!-- Product Rating -->
                                     <div class="rating-star">
                                         <span>
@@ -1167,71 +1173,12 @@
                                             </svg>
                                         </span>
                                     </div>
-                                    <h4 class="product-title">Floral Maxi Dress</h4>
+                                    <h4 class="product-title"><span class="link-animation">Floral Maxi Dress</span></h4>
                                     <p class="product-price">$12.00 <del>$20.00</del></p>
                                 </a>
                             </div>
                         </li>
-                        <!-- SUGGEST PRODUCT ITEMS -->
-                        <li class="swiper-slide product">
-                            <a href="shop-details.html" class="image-wrapper">
-                                <div class="product-image">
-                                    <img loading="lazy" src="./assets/images/products/product-image-02.jpg"
-                                        alt="Product Image">
-                                    <img loading="lazy" src="./assets/images/products/product-image-01.jpg"
-                                        alt="Product Image">
-                                </div>
-                            </a>
-                            <div class="content-wrapper">
-                                <a href="shop.html" class="link-animation">
-                                    <!-- Product Rating -->
-                                    <div class="rating-star">
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="#000000" viewBox="0 0 256 256">
-                                                <path
-                                                    d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="#000000" viewBox="0 0 256 256">
-                                                <path
-                                                    d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="#000000" viewBox="0 0 256 256">
-                                                <path
-                                                    d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="#000000" viewBox="0 0 256 256">
-                                                <path
-                                                    d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="#000000" viewBox="0 0 256 256">
-                                                <path
-                                                    d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <h4 class="product-title">Floral Maxi Dress</h4>
-                                    <p class="product-price">$12.00 <del>$20.00</del></p>
-                                </a>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -1363,12 +1310,12 @@
                                 <span class="badge sale">-20% OFF</span>
                             </div>
                         </div>
-                        <h2 class="product-details-title">Ardene Microfiber Tights</h2>
+                        <h2 class="product-details-title"><a href="#" class="link-animation">Ardene Microfiber Tights</a></h2>
                         <p class="product-details-desc">It combines the top and pants into a single garment, offering a
                             sleek and fashionable look. This style is popular for casual</p>
                         <!-- PRODUCT RATING -->
                         <div class="product-rating-review">
-                            <div class="rating-star">
+                            <a href="#" class="rating-star">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
                                         viewBox="0 0 256 256">
@@ -1409,7 +1356,7 @@
                                         </path>
                                     </svg>
                                 </span>
-                            </div>
+                            </a>
                             <span class="product-review">24 Reviews</span>
                         </div>
                         <div class="product-details-variant-wrapper">
@@ -1439,20 +1386,16 @@
                                 <p class="product-variant-caption">Color: Lime Pink</p>
                                 <ul role="list" class="product-color-variant-list">
                                     <li role="button" style="--color-variant-color: #f6bd60">
-                                        <input name="color" type="radio">
-                                        <label>Off White</label>
+                                        <label class="label">Off White</label>
                                     </li>
                                     <li role="button" class="selected" style="--color-variant-color: #000">
-                                        <input name="color" type="radio">
-                                        <label>Black</label>
+                                        <label class="label">Black</label>
                                     </li>
                                     <li role="button" style="--color-variant-color: #f28482">
-                                        <input name="color" type="radio">
-                                        <label>Soft Pink</label>
+                                        <label class="label">Soft Pink</label>
                                     </li>
                                     <li role="button" style="--color-variant-color: #f5cac3">
-                                        <input name="color" type="radio">
-                                        <label>Lime Yellow</label>
+                                        <label class="label">Lime Yellow</label>
                                     </li>
                                 </ul>
                             </fieldset>
@@ -1496,23 +1439,6 @@
                                             d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm52-84a12,12,0,0,1-12,12H140v28a12,12,0,0,1-24,0V140H88a12,12,0,0,1,0-24h28V88a12,12,0,0,1,24,0v28h28A12,12,0,0,1,180,128Z">
                                         </path>
                                     </svg> Add To Cart
-                                </button>
-                                <button role="button" type="button" class="product-outline-button">
-                                    <!-- Spinner -->
-                                    <span class="spinner">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
-                                            viewBox="0 0 256 256">
-                                            <path
-                                                d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm84,84H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000"
-                                        viewBox="0 0 256 256">
-                                        <path
-                                            d="M251,123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63,57.67,164,44,128,44S59.37,57.67,33.51,83.52C14.16,102.87,5.4,122.32,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212s68.63-13.66,94.48-39.51c19.36-19.35,28.12-38.79,28.49-39.61A12.08,12.08,0,0,0,251,123.13Zm-46.06,33C183.47,177.27,157.59,188,128,188s-55.47-10.73-76.91-31.88A130.36,130.36,0,0,1,29.52,128,130.45,130.45,0,0,1,51.09,99.89C72.54,78.73,98.41,68,128,68s55.46,10.73,76.91,31.89A130.36,130.36,0,0,1,226.48,128,130.45,130.45,0,0,1,204.91,156.12ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z">
-                                        </path>
-                                    </svg>
                                 </button>
                                 <button role="button" type="button" class="product-outline-button">
                                     <!-- Spinner -->
@@ -1731,7 +1657,7 @@
                                     </a>
                                 </div>
                                 <div class="announcement-bar-drawer-images">
-                                    <a href="shop.html"><img loading="lazy" src="./assets/images/announcement-bar/announcement-image.png"
+                                    <a href="shop.html"><img loading="lazy" src="./assets/images/announcement-bar/announcement-image.jpg"
                                         alt="Announcement Image" /></a>
                                 </div>
                             </div>
@@ -1757,34 +1683,13 @@
                                     </a>
                                 </div>
                                 <div class="announcement-bar-drawer-images">
-                                    <a href="shop.html"><img loading="lazy" src="./assets/images/announcement-bar/announcement-image.png"
-                                        alt="Announcement Image" /></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide Show Slide -->
-                        <div class="swiper-slide">
-                            <div class="announcement-bar-drawer-wrapper">
-                                <div class="announcement-bar-drawer-content">
-                                    <h6>New Arrival. Up to</h6>
-                                    <h3>50% OFF</h3>
-                                    <p>
-                                        We're excited to introduce a fresh collection of must-have products. From
-                                        stylish fashion pieces to.
-                                    </p>
-                                    <a href="#" role="link" class="secondary-button">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12.75 4V10.5C12.75 10.6989 12.671 10.8897 12.5303 11.0303C12.3896 11.171 12.1989 11.25 12 11.25C11.8011 11.25 11.6103 11.171 11.4696 11.0303C11.329 10.8897 11.25 10.6989 11.25 10.5V5.8125L4.5306 12.5306C4.3897 12.6715 4.19861 12.7507 3.99935 12.7507C3.80009 12.7507 3.60899 12.6715 3.4681 12.5306C3.3272 12.3897 3.24805 12.1986 3.24805 11.9994C3.24805 11.8001 3.3272 11.609 3.4681 11.4681L10.1875 4.75H5.49997C5.30106 4.75 5.11029 4.67098 4.96964 4.53033C4.82899 4.38968 4.74997 4.19891 4.74997 4C4.74997 3.80109 4.82899 3.61032 4.96964 3.46967C5.11029 3.32902 5.30106 3.25 5.49997 3.25H12C12.1989 3.25 12.3896 3.32902 12.5303 3.46967C12.671 3.61032 12.75 3.80109 12.75 4Z"
-                                                fill="#020714" />
-                                        </svg>
-                                        Shop Now
-                                    </a>
-                                </div>
-                                <div class="announcement-bar-drawer-images">
-                                    <img loading="lazy" src="./assets/images/announcement-bar/announcement-image.png"
+                                    <a href="shop.html">
+                                        <img loading="lazy" 
                                         alt="Announcement Image" />
+                                        <video width="100%" height="100%" controls="true" autoplay="true" poster="./assets/images/announcement-bar/announcement-image.png">
+                                            <source src="https://videos.pexels.com/video-files/5379129/5379129-uhd_2732_1440_25fps.mp4" type="mp4">
+                                        </video>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -2080,7 +1985,7 @@
                                                             <span class="badge new">Sale</span>
                                                         </li>
                                                         <li>
-                                                            <a href="#">Women Shirt</a>
+                                                            <a href="#" class="link-animation">Women Shirt</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -2536,7 +2441,7 @@
      DISCOUNT MARQUEE SECTION START
      =========================== -->
         <section class="discount-marquee-section">
-            <div class="discount-marquee-slider swiper marquee-slider" data-speed="5000" data-direction="reverse">
+            <div class="discount-marquee-slider swiper marquee-slider" data-speed="5000">
                 <ul role="list" class="swiper-wrapper">
                     <li class="swiper-slide">New Arrival Sale 20% Discount <a href="#" class="link-animation">Shop
                             Now</a></li>
@@ -2565,13 +2470,17 @@
         <section class="promo-section">
             <div class="promo-wrapper">
                 <ul role="list" class="promo-left">
-                    <li class="promo-fade-up">
+                    <li class="promo-fade-up promo-item-hover">
+                        <div class="promo-img-wrap">
                         <img loading="lazy" src="./assets/images/promo/video-image.png" alt="video-image"
                             class="promo-video-image" />
+                            </div>
                     </li>
-                    <li class="promo-video-wrapper promo-fade-up">
+                    <li class="promo-video-wrapper promo-fade-up promo-item-hover">
+                        <div class="promo-img-wrap">
                         <img loading="lazy" src="./assets/images/promo/promo-video-banner.png" alt="video-image"
-                            class="promo-video-banner" />
+                            class="promo-video-banner border-animation" />
+                            </div>
                         <!-- VIDEO -->
                         <button class="promo-video-play-button" id="promoVideoPopupButton">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000"
@@ -2585,27 +2494,35 @@
                 </ul>
                 <div class="promo-right">
                     <ul role="list" class="promo-list">
-                        <li class="promo-fade-up">
-                            <img loading="lazy" src="./assets/images/promo/accessories.png" alt="Accessories" />
+                        <li class="promo-fade-up promo-item-hover">
+                            <div class="promo-img-wrap">
+                                <img loading="lazy" src="./assets/images/promo/accessories.png" alt="Accessories"/>
+                            </div>
                             <p>
                                 <a href="shop.html" class="link-animation">Accessories</a>
                             </p>
                         </li>
-                        <li class="promo-fade-up">
+                        <li class="promo-fade-up promo-item-hover">
+                            <div class="promo-img-wrap">
                             <img loading="lazy" src="./assets/images/promo/new-arrivals.png" alt="New Arrivals" />
+                            </div>
                             <p>
                                 <a href="shop.html" class="link-animation">New Arrivals</a>
                             </p>
                         </li>
-                        <li class="big-image promo-fade-up">
+                        <li class="big-image promo-fade-up promo-item-hover">
+                            <div class="promo-img-wrap">
                             <img loading="lazy" class="promo-highlight-image"
                                 src="./assets/images/promo/women-collection.png" alt="Women Collection" />
+                                </div>
                             <p>
                                 <a href="shop.html" class="link-animation">Street Were </a>
                             </p>
                         </li>
-                        <li class="promo-fade-up">
+                        <li class="promo-fade-up promo-item-hover">
+                            <div class="promo-img-wrap">
                             <img loading="lazy" src="./assets/images/promo/street-were.png" alt="Street Were" />
+                           </div>
                             <p>
                                 <a href="shop.html" class="link-animation">Street Were </a>
                             </p>
@@ -2840,26 +2757,18 @@
                                 <!-- COUNT DOWN TIMER -->
                                 <div class="product-card-countdown swiper marquee-slider">
                                     <ul class="swiper-wrapper">
-                                        <li class="swiper-slide">
-                                            <span>Hurry Up!</span>
-                                            <b class="count-down-timmer count-down"
+                                        <li class="countdown-marquee-item swiper-slide">
+                                            <span>★ Hurry Up!</span>
+                                            <ul class="count-down-timmer count-down"
                                                 data-target-count="Dec 5, 2024 15:37:25">
-                                                <span class="count-down-day">00</span> :
-                                                <span class="count-down-hrs">00</span> :
-                                                <span class="count-down-mins">00</span> :
-                                                <span class="count-down-secs">00</span>
-                                            </b>
-                                            <span>Offer Ends</span>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <span>Hurry Up!</span>
-                                            <b class="count-down-timmer count-down"
-                                                data-target-count="Dec 5, 2024 15:37:25">
-                                                <span class="count-down-day">00</span> :
-                                                <span class="count-down-hrs">00</span> :
-                                                <span class="count-down-mins">00</span> :
-                                                <span class="count-down-secs">00</span>
-                                            </b>
+                                                <li class="count-down-day">00</li>
+                                                <li class="divider">:</li>
+                                                <li class="count-down-hrs">00</li>
+                                                <li class="divider">:</li>
+                                                <li class="count-down-mins">00</li>
+                                                <li class="divider">:</li>
+                                                <li class="count-down-secs">00</li>
+                                            </ul>
                                             <span>Offer Ends</span>
                                         </li>
                                     </ul>
@@ -5860,7 +5769,7 @@
       COUNTDOWN PRODUCT SECTION START 
        =========================== -->
         <section class="countdown-product-section" data-speed="2000">
-            <div class="swiper marquee-slider">
+            <div class="swiper">
                 <div class="countdown-product-card-wrapper swiper-wrapper">
                     <!-- Count Down Product -->
                     <div class="countdown-product-card product swiper-slide">
@@ -5883,7 +5792,7 @@
                                     <a href="shop-details.html" class="link-animation">Floral Maxi Gown</a>
                                 </h4>
                                 <!-- Product Rating -->
-                                <div class="product-rating-review">
+                                <a href="#" class="product-rating-review">
                                     <div class="rating-star">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
@@ -5927,7 +5836,7 @@
                                         </span>
                                     </div>
                                     <span class="product-review">24 Reviews</span>
-                                </div>
+                                </a>
                             </div>
                             <!-- Size variant -->
                             <fieldset class="product-size-variant">
@@ -6907,7 +6816,7 @@
                                     </p>
                                     <div class="bundel-product-header-content">
                                         <h3><a href="#" class="link-animation">Off-Shoulder Jumpsuit</a></h3>
-                                        <div class="product-rating-review">
+                                        <a href="#" class="product-rating-review">
                                             <div class="rating-star">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -6951,7 +6860,7 @@
                                                 </span>
                                             </div>
                                             <span class="product-review">24 Reviews</span>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -6968,7 +6877,7 @@
                                         </p>
                                         <h2 class=".h2"><a href="shop-details.html" class="link-animation">Floral Maxi Gown</a></h2>
                                         <!-- Product Rating -->
-                                        <div class="product-rating-review">
+                                        <a href="#" class="product-rating-review">
                                             <div class="rating-star">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7012,7 +6921,7 @@
                                                 </span>
                                             </div>
                                             <span class="product-review">24 Reviews</span>
-                                        </div>
+                                        </a>
                                     </div>
                                     <!-- Size variant -->
                                     <fieldset class="product-size-variant">
@@ -7146,7 +7055,7 @@
                                     </p>
                                     <div class="bundel-product-header-content">
                                         <h3><a href="#" class="link-animation">Off-Shoulder Jumpsuit</a></h3>
-                                        <div class="product-rating-review">
+                                        <a href="#" class="product-rating-review">
                                             <div class="rating-star">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7190,7 +7099,7 @@
                                                 </span>
                                             </div>
                                             <span class="product-review">24 Reviews</span>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -7207,7 +7116,7 @@
                                         </p>
                                         <h2 class=".h2"><a href="shop-details.html" class="link-animation">Floral Maxi Gown</a></h2>
                                         <!-- Product Rating -->
-                                        <div class="product-rating-review">
+                                        <a href="#" class="product-rating-review">
                                             <div class="rating-star">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7251,7 +7160,7 @@
                                                 </span>
                                             </div>
                                             <span class="product-review">24 Reviews</span>
-                                        </div>
+                                        </a>
                                     </div>
                                     <!-- Size variant -->
                                     <fieldset class="product-size-variant">
@@ -7385,7 +7294,7 @@
                                     </p>
                                     <div class="bundel-product-header-content">
                                         <h3><a href="#" class="link-animation">Off-Shoulder Jumpsuit</a></h3>
-                                        <div class="product-rating-review">
+                                        <a href="#" class="product-rating-review">
                                             <div class="rating-star">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7429,7 +7338,7 @@
                                                 </span>
                                             </div>
                                             <span class="product-review">24 Reviews</span>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -7446,7 +7355,7 @@
                                         </p>
                                         <h2 class=".h2"><a href="shop-details.html" class="link-animation">Floral Maxi Gown</a></h2>
                                         <!-- Product Rating -->
-                                        <div class="product-rating-review">
+                                        <a href="#" class="product-rating-review">
                                             <div class="rating-star">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7490,7 +7399,7 @@
                                                 </span>
                                             </div>
                                             <span class="product-review">24 Reviews</span>
-                                        </div>
+                                        </a>
                                     </div>
                                     <!-- Size variant -->
                                     <fieldset class="product-size-variant">
@@ -7614,6 +7523,7 @@
                                 </div>
                             </div>
                         </div>
+  
                     </div>
 
                 </div>
@@ -7818,7 +7728,7 @@
                         <p class="product-details-desc">It combines the top and pants into a single garment, offering a
                             sleek and fashionable look. This style is popular for casual</p>
                         <!-- PRODUCT RATING -->
-                        <div class="product-rating-review">
+                        <a href="#" class="product-rating-review">
                             <div class="rating-star">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
@@ -7862,7 +7772,7 @@
                                 </span>
                             </div>
                             <span class="product-review">24 Reviews</span>
-                        </div>
+                        </a>
                         <!-- PRODUCT STOCK -->
                         <fieldset class="product-stock-variant">
                             <p class="product-stock-single">

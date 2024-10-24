@@ -505,11 +505,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // CHECK CUSTOM SELECT EXIT
     if (customSelect.length > 0) {
-      customSelect.forEach((item) => {
-        // Dom Element Deactive
-        window.addEventListener("click", () => {
-          if (item.classList.contains("open")) {
-            item.classList.toggle("open");
+      window.addEventListener("click", (e) => {
+        customSelect.forEach((item) => {
+          if (!item.contains(e.target)) {
+            item.classList.remove("open");
           }
         });
       });
@@ -912,15 +911,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const playButton = item.querySelector(".collage-gallery-video-control");
       const video = item.querySelector(".collage-gallery-video-player");
 
-      // Default Activation - set the correct button state based on the video
-      if (video.paused) {
-        playButton.classList.add("video-paused");
-        playButton.classList.remove("video-played");
-      } else {
-        playButton.classList.add("video-played");
-        playButton.classList.remove("video-paused");
-      }
-
       // Click event to toggle video play/pause and button state
       playButton.addEventListener("click", function () {
         if (video.paused) {
@@ -1137,50 +1127,46 @@ window.addEventListener("DOMContentLoaded", () => {
   // PRODUCT DETAILS
   (function () {
     const productDetailsSwiper = document.querySelectorAll(
-     ".product-details-image-block"
+      ".product-details-image-block"
     );
 
     productDetailsSwiper.forEach((item) => {
-      const imageWrap = item.querySelector(".product-details-swiper")
-      const thumbWrap = item.querySelector(".product-details-thumb-swiper")
-      const thumbDirection = item.getAttribute("data-thumb-dir")
-      const imgPerView = item.getAttribute("img-preview")
-      const thumbPerView = item.getAttribute("thumb-preview")
-      
+      const imageWrap = item.querySelector(".product-details-swiper");
+      const thumbWrap = item.querySelector(".product-details-thumb-swiper");
+      const thumbDirection = item.getAttribute("data-thumb-dir");
+      const imgPerView = item.getAttribute("img-preview");
+      const thumbPerView = item.getAttribute("thumb-preview");
 
       const galleryThumbs = new Swiper(thumbWrap, {
-        direction : thumbDirection ? " vertical" : "horizontal",
+        direction: thumbDirection ? " vertical" : "horizontal",
         spaceBetween: 10,
         slidesPerView: 4,
         watchSlidesVisibility: true,
         slideToClickedSlide: true,
-        breakpoints :{
-          1200 : {
-            slidesPerView : thumbPerView ? thumbPerView : 4
-          }
-        }
+        breakpoints: {
+          1200: {
+            slidesPerView: thumbPerView ? thumbPerView : 4,
+          },
+        },
       });
       const galleryTop = new Swiper(imageWrap, {
         spaceBetween: 24,
+        slidesPerView: 1,
+
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         thumbs: {
           swiper: galleryThumbs,
         },
 
-        breakpoints :{
-          1200 : {
-            slidesPerView : imgPerView ? imgPerView : 1
-          }
-        }
+        breakpoints: {
+          1200: {
+            slidesPerView: imgPerView ? imgPerView : 1,
+          },
+        },
       });
-      
-
-
-
-  
     });
   })();
 
@@ -1319,15 +1305,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const video = item.querySelector("video");
       const playButton = item.querySelector(".play-button");
 
-      // Default Activation
-      if (video.pause) {
-        playButton.classList.add("video-paused");
-        playButton.classList.remove("video-played");
-      } else {
-        playButton.classList.remove("video-paused");
-        playButton.classList.add("video-played");
-      }
-
       // Listener Activations
       playButton.addEventListener("click", function () {
         if (video.paused) {
@@ -1379,6 +1356,29 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
+
+    // FOOTER LOGO
+    const footerLogo = document.getElementById("footerLogo");
+    const logoItems = footerLogo.querySelectorAll("li");
+
+    const handleLogoAnimation = () => {
+      logoItems.forEach((item) => {
+        item.classList.add("is-animated");
+    
+        setTimeout(() => {
+          item.classList.remove("is-animated");
+        }, 500);
+      });
+    };
+    
+    // Create a ScrollTrigger instance
+    ScrollTrigger.create({
+      trigger: ".footer-section", 
+      start: "top end", //
+      onEnter: handleLogoAnimation, 
+      onEnterBack: handleLogoAnimation, 
+    });
+
   })();
 
   // ========================

@@ -556,24 +556,36 @@ PRODUCT COLOR VARIANT
   border-radius: 1rem;
   transition: all 0.7s ease;
   z-index: 20;
-  opacity: 0;
+
+  right: 1.6rem;
+    opacity: 1;
+    top: 1.4rem;
 }
 
 .product-card-quickview-button:hover {
   --color-background: #020714;
   --color-foreground: #fff;
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
-.product-card:hover .product-card-quickview-button {
-  right: 1.6rem;
-  opacity: 1;
-  top: 1.4rem;
-}
+@media screen and (min-width: 992px) { 
+  .product-card:hover .product-card-quickview-button {
+    right: 1.6rem;
+    opacity: 1;
+    top: 1.4rem;
+  }
+  .product-card-quickview-button {
+    right: 0;
+  opacity: 0;
+  top: 0;
+  }
+  
+
+ }
+
+
+
+
 
 /* PRODUCT SIZE BOX */
 .product-card .product-size-box {
@@ -686,12 +698,13 @@ width: 2rem;
   height: 1.4rem;
   text-align: center;
   line-height: 1;
+  font-weight: bold;
+
 }
 
 .product-card 
 .count-down li.divider{
 width: 1rem;
-font-weight: bold;
 
 }
 
@@ -929,8 +942,6 @@ PRODUCT DETAILS SECTION START
 }
 
 .product-details-wrapper {
-  display: grid;
-  grid-template-columns: 100%;
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: 2.4rem;
@@ -944,6 +955,8 @@ PRODUCT DETAILS SECTION START
     grid-template-columns: 1fr 1fr;
     gap: 3.2rem;
     padding: 2rem;
+    display: grid;
+
   }
 }
 
@@ -956,6 +969,9 @@ PRODUCT DETAILS SECTION START
   }
 }
 
+.product-details-image-block{
+  overflow-x: auto;
+}
 
 .product-details-image-wrapper img {
   border-radius: 2rem;
@@ -1001,11 +1017,27 @@ PRODUCT DETAILS SECTION START
 }
 
 .product-details-thumb-swiper
+.swiper-slide-thumb-active{
+  padding: .2rem;
+}
+
+.product-details-thumb-swiper
 .swiper-slide-thumb-active img {
-  border: 1px solid var(--color-heading);
+  border: .1rem solid var(--color-heading);
 }
 
 /* PRODUCT DETAILS INFO */
+
+.product-details-info{
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 992px) { 
+  .product-details-info{
+    margin-top: 0rem;
+  }
+ }
+
 
 .product-details-price {
   display: flex;

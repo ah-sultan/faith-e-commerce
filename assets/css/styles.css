@@ -1481,15 +1481,12 @@ h6,
   padding: 0.8rem 1.6rem;
   border: 0.1rem solid #e3e3e3;
   border-radius: 1rem;
-  -webkit-border-radius: 10rem;
-  -moz-border-radius: 1rem;
-  -ms-border-radius: 1rem;
-  -o-border-radius: 1rem;
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 150%;
   color: var(--color-foreground);
+  transition: all .3s ease;border-radius: 10rem;
 }
 
 .search-drawer-suggest-tag li button:hover {
@@ -1537,7 +1534,7 @@ h6,
 .search-drawer-product-wrapper {
   margin-top: 3.2rem;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1569,7 +1566,7 @@ h6,
 
 .searched-product-content .product-title {
   font-weight: 500;
-  margin-top: 1rem;
+  margin: 1rem 0 .6rem;
   font-size: 1.6rem;
 }
 
@@ -2257,6 +2254,11 @@ h6,
   display: none;
   align-items: center;
   gap: 12px;
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -3084,17 +3086,7 @@ header:hover {
   }
 }
 
-.slideshow-content-wrapper {
-  width: 100%;
-  max-width: 100%;
-}
 
-@media screen and (min-width: 992px) {
-  .slideshow-content-wrapper {
-    width: 61rem;
-    max-width: 100%;
-  }
-}
 .slideshow-heading {
   font-family: var(--font-heading);
   font-style: normal;
@@ -3134,13 +3126,23 @@ header:hover {
   line-height: 150%;
   color: var(--color-foreground);
   padding: 3.2rem 0;
+  width: 100%;
+  max-width: 100%;
 }
+
+@media screen and (min-width: 992px) {
+  .slideshow-desc{
+    width: 61rem;
+    max-width: 100%;
+  }
+}
+
 
 @media screen and (min-width: 1536px) {
   .slideshow-desc {
     font-size: 2rem;
     line-height: 150%;
-    padding: 4.8rem 0;
+    padding: 4rem 0 4.8rem;
   }
 }
 
@@ -5426,6 +5428,7 @@ header:hover {
 
 .features-card:hover .card-icon {
   transform: translate(-1rem, 1rem);
+  color: #020713;
 }
 
 .features-card .card-count {

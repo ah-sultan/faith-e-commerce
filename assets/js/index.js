@@ -316,26 +316,6 @@ window.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflowY = "hidden";
       searchDrawer.classList.add("active");
       handleOverlay({ show: true, action: closeSearchDrawer });
-
-      const tl = gsap.timeline();
-      tl.from(".search-drawer-panel", {
-        yPercent: -50,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      })
-        .from(".searched-products", {
-          yPercent: 50,
-          opacity: 0,
-          duration: 1,
-          ease: "power2.out",
-        })
-        .from(".suggested-products", {
-          yPercent: -50,
-          opacity: 0,
-          duration: 1,
-          ease: "power2.out",
-        });
     }
 
     // Close Search Drawer Function
@@ -1134,13 +1114,15 @@ window.addEventListener("DOMContentLoaded", () => {
       const imageWrap = item.querySelector(".product-details-swiper");
       const thumbWrap = item.querySelector(".product-details-thumb-swiper");
       const thumbDirection = item.getAttribute("data-thumb-dir");
-      const imgPerView = item.getAttribute("img-preview");
-      const thumbPerView = item.getAttribute("thumb-preview");
+      const imgPerView = item.getAttribute("data-img-preview");
+      const thumbPerView = item.getAttribute("data-thumb-preview");
 
       const galleryThumbs = new Swiper(thumbWrap, {
         direction: thumbDirection ? " vertical" : "horizontal",
         spaceBetween: 10,
         slidesPerView: 4,
+        speed : 1000,
+        initialSlide: 1,
         watchSlidesVisibility: true,
         slideToClickedSlide: true,
         breakpoints: {
@@ -1150,8 +1132,11 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       });
       const galleryTop = new Swiper(imageWrap, {
-        spaceBetween: 24,
+        spaceBetween: 16,
         slidesPerView: 1,
+        centeredSlides : true,
+        speed : 1000,
+        initialSlide : 1,
 
         navigation: {
           nextEl: ".swiper-button-next",
@@ -1433,8 +1418,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Scroll to top animation
     scrollToTopButton.addEventListener("click", () => {
-      // window.scrollTo({ top: 0, behavior: "smooth", duration: 3000 });
-      lenis.scrollTo(0);
+      window.scrollTo({ top: 0, behavior: "smooth", duration: 3000 });
+      
     });
   })();
 

@@ -975,13 +975,13 @@ PRODUCT DETAILS SECTION START
 
 .product-details-image-wrapper img {
   border-radius: 2rem;
-  transform: scale(.9);
+  transform: scale(.95);
   transition-delay: .2s;
   transition: all .7s ease;
   
 }
 
-.product-details-image-wrapper
+.product-details-swiper
 .swiper-slide-active img{
   transform: scale(1);
 }

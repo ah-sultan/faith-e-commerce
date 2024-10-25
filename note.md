@@ -8,7 +8,7 @@
 # SideCard Arrow Will Rotate - DONE
 # SuggestProduct Link - DONE
 # Subtotal - Total - DONE
-# New Arrival Design
+# New Arrival Design - DOEN
 # Collage Video - DONE
 # CountDown Banner Content - DONE
 # Hot Deals Section - DONE
@@ -17,5 +17,7 @@
 # BlogCard Issue - DONE
 # Footer Newsletter Padding - DONE
 # FOOTER LOGO -- DONE
-# CHECK RESPONSIVE
-# PRODUCT CARD QUICK VIEW BUTTON FREZE
+# QUICK VIEW CHECK RESPONSIVE - DONE
+# PRODUCT CARD QUICK VIEW BUTTON FREZE - DONE
+# Mobile Menu Arrow Click
+# Mobile Menu Click Fixed
